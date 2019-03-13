@@ -1,3 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.scss';
+
 const e = React.createElement;
 
 // components creation using functional components
@@ -28,7 +32,7 @@ const MovieLink = props => e(
     href: props.link,
     target: '_blank',
   },
-  "Whatch trailer"
+  "Watch trailer"
 );
 
 // component creation using React.Component
