@@ -8,7 +8,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index.js'
+    filename: 'index.js',
   },
   devtool: 'source-map',
   watch: true,
@@ -17,10 +17,10 @@ module.exports = {
     compress: true,
     port: 3000,
     open: true,
-    hot: true
+    hot: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
   },
   module: {
     rules: [
@@ -28,7 +28,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
         },
       },
       {
@@ -37,30 +37,30 @@ module.exports = {
           {
             loader: 'style-loader',
             options: {
-                sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             loader: 'css-loader',
             options: {
-                sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-                sourceMap: true
-            }
-          }
+              sourceMap: true,
+            },
+          },
         ],
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template:  path.join(__dirname, '/public/index.html'),
-      favicon:  path.join(__dirname, '/public/favicon.ico'),
-      title: 'MovieApp'
-    })
-  ]
+      template: path.join(__dirname, '/public/index.html'),
+      favicon: path.join(__dirname, '/public/favicon.ico'),
+      title: 'MovieApp',
+    }),
+  ],
 };

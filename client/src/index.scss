@@ -1,22 +1,21 @@
-body{
+body {
   background-color: #17181c;
   color: #fff;
   font-family: Helvetica, sans-serif;
 }
 
-.app__title{
+.app__title {
   font-size: 40px;
   text-align: center;
   margin-bottom: 40px;
-  text-shadow: 1px 5px 20px rgba(255,255,255,0.4);
+  text-shadow: 1px 5px 20px rgba(255, 255, 255, .4);
 }
 
-.list{
+.list {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row  wrap;
   align-items: flex-start;
   justify-content: space-around;
 }
@@ -28,25 +27,25 @@ body{
   flex-direction: column;
 }
 
-.list-item__title{
+.list-item__title {
   text-align: center;
 }
 
-.list-item__img{
+.list-item__img {
   margin: 0 auto 20px;
-  box-shadow: 4px 4px 20px rgba(0,0,0,0.6);
-  transition-duration: 0.5s;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
+  transition-duration: .5s;
 }
 
-.list-item__img:hover{
+.list-item__img:hover {
   transform: scale(1.06);
 }
 
-.list-item__description{
+.list-item__description {
   text-align: justify;
 }
 
-.list-item__link{
+.list-item__link {
   margin-top: 10px;
   color: #7488ab;
   text-decoration: none;
@@ -55,12 +54,12 @@ body{
   border-radius: 3px;
   display: block;
   align-self: center;
-  transition-duration: 0.5s;
+  transition-duration: .5s;
 }
 
-.list-item__link:hover{
+.list-item__link:hover {
   color: #fff;
   border-color: #fff;
-  box-shadow: 0 0.5em 0.5em -0.4em #fff;
-  transform: translateY(-0.25em);
+  box-shadow: 0 .5em .5em -.4em #fff;
+  transform: translateY(-.25em);
 }
