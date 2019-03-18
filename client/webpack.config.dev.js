@@ -1,19 +1,24 @@
+/* eslint-disable */
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const outputPath = path.resolve(__dirname, './dist');
+const srcPath = path.resolve(__dirname, './src');
+const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
-  context: path.join(__dirname, '/src'),
+  context: srcPath,
   mode: 'development',
   entry: './index.js',
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: outputPath,
     filename: 'index.js',
   },
   devtool: 'source-map',
   watch: true,
   devServer: {
-    contentBase: path.join(__dirname, '/dist'),
+    contentBase: outputPath,
     compress: true,
     port: 3000,
     open: true,
@@ -21,6 +26,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
+    modules: [nodeModulesPath, srcPath],
   },
   module: {
     rules: [

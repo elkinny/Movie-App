@@ -1,19 +1,26 @@
+/* eslint-disable */
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+const outputPath = path.resolve(__dirname, './build');
+const srcPath = path.resolve(__dirname, './src');
+const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+
 module.exports = {
-  context: path.join(__dirname, '/src'),
+  context: srcPath,
   mode: 'production',
   entry: './index.js',
   output: {
-    path: path.join(__dirname, '/build'),
+    path: outputPath,
     filename: 'index-[hash].js',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
+    modules: [nodeModulesPath, srcPath],
   },
   module: {
     rules: [
