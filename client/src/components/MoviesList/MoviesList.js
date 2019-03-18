@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import MovieItem from './MovieItem/MovieItem';
 
-import './movies-list.scss';
+import styles from './movies-list.scss';
 
 export default class MoviesList extends PureComponent {
   constructor() {
@@ -99,6 +99,6 @@ export default class MoviesList extends PureComponent {
   }
 
   render() {
-    return <div className="movie-list">{this.createList()}</div>;
+    return <div className={styles['movie-list']}>{this.createList()}</div>;
   }
 }
