@@ -1,11 +1,28 @@
 .movie-item {
   width: 300px;
   margin: 0 20px 60px;
-  display: flex;
-  flex-direction: column;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 
   &__title {
     text-align: center;
+    margin-bottom: 0;
+  }
+
+  &__year,
+  &__genre {
+    color: #7488ab;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__img {
@@ -18,30 +35,11 @@
     }
   }
 
+  &__genre {
+    align-self: flex-start;
+  }
+
   &__description {
     text-align: justify;
   }
-
-  &__link {
-    margin-top: 10px;
-    color: #7488ab;
-    text-decoration: none;
-    padding: 7px 15px;
-    border: 1px solid #7488ab;
-    border-radius: 3px;
-    display: block;
-    align-self: center;
-    transition-duration: .5s;
-
-    &:hover {
-      color: #fff;
-      border-color: #fff;
-      box-shadow: 0 .5em .5em -.4em #fff;
-      transform: translateY(-.25em);
-    }
-  }
-}
-
-.movie-item__title {
-  text-align: center;
 }

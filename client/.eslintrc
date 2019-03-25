@@ -4,7 +4,7 @@
       "es6": true,
       "jest": true
   },
-  "extends": [ 
+  "extends": [
       "eslint:recommended",
       "plugin:prettier/recommended",
       "plugin:react/recommended"],
