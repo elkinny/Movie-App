@@ -1,9 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
+import { render } from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import App from './containers/App';
+import App from 'containers/App';
+import MoviesList from 'containers/MoviesList';
 
-const e = React.createElement;
-
-ReactDOM.render(e(App), document.getElementById('root'));
+render(
+  <Router>
+    <App>
+      <Switch>
+        <Route exact path="/" component={MoviesList} />
+      </Switch>
+    </App>
+  </Router>,
+  document.getElementById('root'),
+);

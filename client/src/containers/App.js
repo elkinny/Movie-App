@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import MoviesList from 'components/MoviesList';
+
+import { Header } from 'components/Common';
 
 import styles from './app.scss';
 
 export default class App extends Component {
   render() {
     return (
-      <div className="app">
-        <h1 className={styles['app__title']}>Movie app</h1>
-        <MoviesList />
+      <div className={styles.wrapper}>
+        <Header />
+        <div className={styles.container}>
+          <main>{this.props.children}</main>
+        </div>
       </div>
     );
   }
