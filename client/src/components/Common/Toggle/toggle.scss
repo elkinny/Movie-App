@@ -1,4 +1,11 @@
 .toggle {
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
   .btn {
     border: 2px solid #7488ab;
     color: #7488ab;
@@ -13,6 +20,12 @@
   &__label {
     color: #7488ab;
     margin-right: 15px;
+    margin-bottom: 0;
+
+    @media screen and (max-width: 800px) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
   }
 
   &__item {

@@ -7,4 +7,8 @@
   color: #7488ab;
   border-top: 1px solid #7488ab;
   border-bottom: 1px solid #7488ab;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 }

@@ -9,6 +9,8 @@ export default class MoviesList extends PureComponent {
     movies: [
       {
         id: '1',
+        duration: '120min',
+        rating: '4.5',
         title: 'Captain Marvel',
         genre: 'Action',
         year: 2019,
@@ -20,6 +22,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '2',
+        duration: '120min',
+        rating: '4.5',
         title: 'Dark Phoenix',
         year: 2019,
         genre: 'Action',
@@ -31,6 +35,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '3',
+        duration: '120min',
+        rating: '4.5',
         title: 'Hellboy',
         year: 2019,
         genre: 'Action',
@@ -42,6 +48,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '4',
+        duration: '120min',
+        rating: '4.5',
         title: 'The Lion King',
         year: 2019,
         genre: 'Cartoon',
@@ -52,6 +60,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '5',
+        duration: '120min',
+        rating: '4.5',
         title: 'Alita: Battle Angel',
         year: 2019,
         genre: 'Cartoon',
@@ -63,6 +73,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '6',
+        duration: '120min',
+        rating: '4.5',
         title: 'Pokémon Detective',
         year: 2019,
         genre: 'Cartoon',
@@ -74,6 +86,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '7',
+        duration: '120min',
+        rating: '4.5',
         title: 'Aquaman',
         year: 2018,
         genre: 'Action',
@@ -85,6 +99,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '8',
+        duration: '120min',
+        rating: '4.5',
         title: 'Avengers: Infinity War',
         year: 2018,
         genre: 'Action',
@@ -96,6 +112,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '9',
+        duration: '120min',
+        rating: '4.5',
         title: 'Robin Hood',
         year: 2019,
         genre: 'Action',
@@ -107,6 +125,8 @@ export default class MoviesList extends PureComponent {
       },
       {
         id: '10',
+        duration: '120min',
+        rating: '4.5',
         title: 'Mortal Engines',
         year: 2019,
         genre: 'Action',
