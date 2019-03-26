@@ -31,6 +31,6 @@
           "error",
           { "allow": ["error", "log"] }
       ],
-      "react/prop-types": [2, { "ignore": ["children"] }]
+      "react/prop-types": [2, { "ignore": ["children", "match"] }]
   }
 }

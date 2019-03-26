@@ -1,20 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import FormComponent from 'components/FormComponent';
 import { Toggle, Navigation } from 'components/Common';
 
-export default class SearchForm extends PureComponent {
-  state = {
-    toggled_filterValue: 'rating',
-    toggled_searchValue: 'title',
-  };
-
-  handleInput = e => {
-    this.setState({
-      [`${e.target.name}Value`]: e.target.value,
-    });
-  };
-
+export default class SearchForm extends Component {
   render() {
     return (
       <>
@@ -23,13 +13,18 @@ export default class SearchForm extends PureComponent {
             e.preventDefault();
           }}
         >
-          <input type="text" name="search" placeholder="Search..." onChange={this.handleInput} />
+          <input
+            type="text"
+            name="search"
+            placeholder="Search..."
+            onChange={this.props.handleInput}
+          />
           <input type="submit" value="Search" />
           <Toggle
             labels={['Genre', 'Title']}
             type="search"
             text="Search by:"
-            onChange={this.handleInput}
+            onChange={this.props.handleInput}
           />
         </FormComponent>
         <Navigation>
@@ -38,10 +33,15 @@ export default class SearchForm extends PureComponent {
             labels={['Date', 'Rating']}
             type="filter"
             text="Filter by:"
-            onChange={this.handleInput}
+            onChange={this.props.handleInput}
           />
         </Navigation>
       </>
     );
   }
 }
+
+SearchForm.propTypes = {
+  movies: PropTypes.array.isRequired,
+  handleInput: PropTypes.func.isRequired,
+};
