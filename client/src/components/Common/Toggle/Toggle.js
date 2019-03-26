@@ -13,7 +13,7 @@ export default class Toggle extends Component {
           <input
             id={'toggle-' + labels[0]}
             className={styles['toggle__item--left']}
-            name={'toggled_' + type}
+            name={type + 'Type'}
             type="radio"
             value={labels[0].toLowerCase()}
             defaultChecked={!this.props.value}
@@ -25,7 +25,7 @@ export default class Toggle extends Component {
           <input
             id={'toggle-' + labels[1]}
             className={styles['toggle__item--right']}
-            name={'toggled_' + type}
+            name={type + 'Type'}
             value={labels[1].toLowerCase()}
             type="radio"
             defaultChecked={this.props.value}

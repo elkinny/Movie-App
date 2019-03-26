@@ -14,36 +14,30 @@ import data from 'data.json';
 
 export default class App extends Component {
   state = {
-    toggled_sortValue: 'rating',
-    toggled_searchValue: 'title',
+    sortTypeValue: 'rating',
+    searchTypeValue: 'title',
     searchValue: '',
     movies: data.movies,
   };
 
-  handleInput = e => {
-    this.setState({
-      [`${e.target.name}Value`]: e.target.value,
-    });
+  handleSubmit = (e, data) => {
+    e.preventDefault();
+    this.setState({ searchValue: data });
   };
 
-  searchMovie = (e, data) => {
-    e.preventDefault();
-    console.log(e.value);
-    this.setState({
-      [`${e.target.name}Value`]: data,
-    });
+  handleToggle = e => {
+    this.setState({ [`${e.target.name}Value`]: e.target.value });
   };
 
   render() {
-    const { toggled_searchValue, toggled_sortValue, searchValue } = this.state;
+    const { searchTypeValue, sortTypeValue, searchValue } = this.state;
     let { movies } = data;
     movies = [...movies].sort((a, b) => {
-      console.log(a, b, toggled_sortValue);
-      return b[toggled_sortValue] - a[toggled_sortValue];
+      return b[sortTypeValue] - a[sortTypeValue];
     });
     if (searchValue !== '') {
       movies = movies.filter(el => {
-        return el[toggled_searchValue].toLowerCase().indexOf(searchValue.toLowerCase()) == 0;
+        return el[searchTypeValue].toLowerCase().indexOf(searchValue.toLowerCase()) == 0;
       });
     }
     return (
@@ -57,11 +51,11 @@ export default class App extends Component {
                 path="/"
                 render={() => (
                   <SearchForm
-                    movies={movies}
-                    handleInput={this.handleInput}
-                    searchMovie={this.searchMovie}
-                    toggled_searchValue={toggled_searchValue}
-                    toggled_sortValue={toggled_sortValue}
+                    moviesCount={movies.length}
+                    handleSubmit={this.handleSubmit}
+                    handleToggle={this.handleToggle}
+                    searchTypeValue={searchTypeValue}
+                    sortTypeValue={sortTypeValue}
                   />
                 )}
               />

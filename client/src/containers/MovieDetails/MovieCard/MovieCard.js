@@ -26,10 +26,10 @@ const MovieCard = props => {
             <span className={styles['movie-card__duration']}> {duration} </span>
           </div>
           <p className={styles['movie-card__description']}>{description}</p>
+          <LinkButton to="/" className={styles['movie-card__link-back']}>
+            Back
+          </LinkButton>
         </div>
-        <LinkButton to="/" className={styles['movie-card__link-back']}>
-          Back
-        </LinkButton>
       </div>
     </>
   );

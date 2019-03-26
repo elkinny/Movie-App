@@ -6,22 +6,30 @@ import { Toggle, Navigation } from 'components/Common';
 
 export default class SearchForm extends Component {
   render() {
+    const {
+      moviesCount,
+      searchTypeValue,
+      sortTypeValue,
+      handleSubmit,
+      handleToggle,
+      searchMovie,
+    } = this.props;
     return (
       <>
         <FormComponent
-          searchMovie={this.props.searchMovie}
-          handleInput={this.props.handleInput}
-          toggled_sortValue={this.props.toggled_searchValue}
-          toggled_searchValue={this.props.toggled_searchValue}
+          searchMovie={searchMovie}
+          handleSubmit={handleSubmit}
+          handleToggle={handleToggle}
+          sortTypeValue={searchTypeValue}
         />
         <Navigation>
-          <span>10 films are found</span>
+          <span>{moviesCount + ' films are found'}</span>
           <Toggle
             labels={['Rating', 'Year']}
             type="sort"
             text="Sort by:"
-            onChange={this.props.handleInput}
-            value={'rating' !== this.props.toggled_sortValue}
+            onChange={handleToggle}
+            value={'rating' !== sortTypeValue}
           />
         </Navigation>
       </>
@@ -30,9 +38,10 @@ export default class SearchForm extends Component {
 }
 
 SearchForm.propTypes = {
-  movies: PropTypes.array.isRequired,
-  handleInput: PropTypes.func.isRequired,
+  moviesCount: PropTypes.number.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleToggle: PropTypes.func.isRequired,
   searchMovie: PropTypes.func.isRequired,
-  toggled_sortValue: PropTypes.string.isRequired,
-  toggled_searchValue: PropTypes.string.isRequired,
+  sortTypeValue: PropTypes.string.isRequired,
+  searchTypeValue: PropTypes.string.isRequired,
 };
