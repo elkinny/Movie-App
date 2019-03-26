@@ -8,35 +8,32 @@ import styles from './form-component.scss';
 export default class FormComponent extends Component {
   state = {
     searchValue: '',
+    searchToggleValue: this.props.searchToggleValue,
   };
 
   handleInput = e => {
-    this.setState({ searchValue: e.target.value });
+    this.setState({ [`${e.target.name}Value`]: e.target.value });
   };
 
   render() {
     return (
-      <form
-        className={styles.form}
-        onSubmit={e => this.props.handleSubmit(e, this.state.searchValue)}
-      >
+      <form className={styles.form} onSubmit={e => this.props.handleSubmit(e, this.state)}>
         <input type="text" name="search" placeholder="Search..." onChange={this.handleInput} />
-        <input type="submit" value="Search" />
         <Toggle
           labels={['Title', 'Genre']}
           type="search"
           text="Search by:"
-          onChange={this.props.handleToggle}
-          value={'title' !== this.props.sortTypeValue}
+          onChange={this.handleInput}
+          value={'title' !== this.props.searchToggleValue}
         />
+        <input type="submit" value="Search" />
       </form>
     );
   }
 }
 
 FormComponent.propTypes = {
-  searchMovie: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleToggle: PropTypes.func.isRequired,
-  sortTypeValue: PropTypes.string.isRequired,
+  searchToggleValue: PropTypes.string.isRequired,
 };

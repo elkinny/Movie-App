@@ -8,7 +8,12 @@ import styles from './movies-list.scss';
 export default class MoviesList extends Component {
   createList() {
     const { movies } = this.props;
-    return movies.map((movie, i) => <MovieItem {...movie} key={`${movie.title}_${i}`} />);
+    if (movies.length)
+      return movies.map((movie, i) => <MovieItem {...movie} key={`${movie.title}_${i}`} />);
+    else
+      return (
+        <span className={styles['movie-list__message']}> No movies that match your query </span>
+      );
   }
 
   render() {

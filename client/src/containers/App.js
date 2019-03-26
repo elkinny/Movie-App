@@ -14,15 +14,16 @@ import data from 'data.json';
 
 export default class App extends Component {
   state = {
-    sortTypeValue: 'rating',
-    searchTypeValue: 'title',
+    sortToggleValue: 'rating',
+    searchToggleValue: 'title',
     searchValue: '',
     movies: data.movies,
   };
 
   handleSubmit = (e, data) => {
     e.preventDefault();
-    this.setState({ searchValue: data });
+    console.log(data);
+    this.setState({ searchValue: data.searchValue, searchToggleValue: data.searchToggleValue });
   };
 
   handleToggle = e => {
@@ -30,14 +31,14 @@ export default class App extends Component {
   };
 
   render() {
-    const { searchTypeValue, sortTypeValue, searchValue } = this.state;
+    const { searchToggleValue, sortToggleValue, searchValue } = this.state;
     let { movies } = data;
     movies = [...movies].sort((a, b) => {
-      return b[sortTypeValue] - a[sortTypeValue];
+      return b[sortToggleValue] - a[sortToggleValue];
     });
     if (searchValue !== '') {
       movies = movies.filter(el => {
-        return el[searchTypeValue].toLowerCase().indexOf(searchValue.toLowerCase()) == 0;
+        return el[searchToggleValue].toLowerCase().indexOf(searchValue.toLowerCase()) >= 0;
       });
     }
     return (
@@ -54,8 +55,8 @@ export default class App extends Component {
                     moviesCount={movies.length}
                     handleSubmit={this.handleSubmit}
                     handleToggle={this.handleToggle}
-                    searchTypeValue={searchTypeValue}
-                    sortTypeValue={sortTypeValue}
+                    searchToggleValue={searchToggleValue}
+                    sortToggleValue={sortToggleValue}
                   />
                 )}
               />

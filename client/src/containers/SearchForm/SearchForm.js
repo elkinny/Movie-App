@@ -8,19 +8,17 @@ export default class SearchForm extends Component {
   render() {
     const {
       moviesCount,
-      searchTypeValue,
-      sortTypeValue,
+      searchToggleValue,
+      sortToggleValue,
       handleSubmit,
       handleToggle,
-      searchMovie,
     } = this.props;
     return (
       <>
         <FormComponent
-          searchMovie={searchMovie}
           handleSubmit={handleSubmit}
           handleToggle={handleToggle}
-          sortTypeValue={searchTypeValue}
+          searchToggleValue={searchToggleValue}
         />
         <Navigation>
           <span>{moviesCount + ' films are found'}</span>
@@ -29,7 +27,7 @@ export default class SearchForm extends Component {
             type="sort"
             text="Sort by:"
             onChange={handleToggle}
-            value={'rating' !== sortTypeValue}
+            value={'rating' !== sortToggleValue}
           />
         </Navigation>
       </>
@@ -41,7 +39,6 @@ SearchForm.propTypes = {
   moviesCount: PropTypes.number.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleToggle: PropTypes.func.isRequired,
-  searchMovie: PropTypes.func.isRequired,
-  sortTypeValue: PropTypes.string.isRequired,
-  searchTypeValue: PropTypes.string.isRequired,
+  sortToggleValue: PropTypes.string.isRequired,
+  searchToggleValue: PropTypes.string.isRequired,
 };
