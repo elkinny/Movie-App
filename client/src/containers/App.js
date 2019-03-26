@@ -26,6 +26,10 @@ export default class App extends Component {
     });
   };
 
+  searchMovie = e => {
+    e.preventDefault();
+  };
+
   render() {
     return (
       <Router>
@@ -37,7 +41,13 @@ export default class App extends Component {
                 exact
                 path="/"
                 render={() => (
-                  <SearchForm movies={this.state.movies} handleInput={this.handleInput} />
+                  <SearchForm
+                    movies={this.state.movies}
+                    handleInput={this.handleInput}
+                    searchMovie={this.searchMovie}
+                    toggled_searchValue={this.state.toggled_searchValue}
+                    toggled_filterValue={this.state.toggled_filterValue}
+                  />
                 )}
               />
               <Route

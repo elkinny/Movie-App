@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import FormComponent from 'components/FormComponent';
+import FormComponent from './FormComponent';
 import { Toggle, Navigation } from 'components/Common';
 
 export default class SearchForm extends Component {
@@ -9,31 +9,18 @@ export default class SearchForm extends Component {
     return (
       <>
         <FormComponent
-          onSubmit={e => {
-            e.preventDefault();
-          }}
-        >
-          <input
-            type="text"
-            name="search"
-            placeholder="Search..."
-            onChange={this.props.handleInput}
-          />
-          <input type="submit" value="Search" />
-          <Toggle
-            labels={['Genre', 'Title']}
-            type="search"
-            text="Search by:"
-            onChange={this.props.handleInput}
-          />
-        </FormComponent>
+          onSubmit={this.props.searchMovie}
+          handleInput={this.props.handleInput}
+          toggled_filterValue={this.props.toggled_searchValue}
+        />
         <Navigation>
           <span>10 films are found</span>
           <Toggle
-            labels={['Date', 'Rating']}
+            labels={['Rating', 'Date']}
             type="filter"
             text="Filter by:"
             onChange={this.props.handleInput}
+            value={'Rating' === this.props.toggled_filterValue}
           />
         </Navigation>
       </>
@@ -44,4 +31,7 @@ export default class SearchForm extends Component {
 SearchForm.propTypes = {
   movies: PropTypes.array.isRequired,
   handleInput: PropTypes.func.isRequired,
+  searchMovie: PropTypes.func.isRequired,
+  toggled_filterValue: PropTypes.string.isRequired,
+  toggled_searchValue: PropTypes.string.isRequired,
 };
