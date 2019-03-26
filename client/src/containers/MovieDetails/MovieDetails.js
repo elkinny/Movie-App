@@ -19,5 +19,5 @@ export default class MovieDetails extends Component {
 }
 
 MovieDetails.propTypes = {
-  movie: PropTypes.array.isRequired,
+  movie: PropTypes.object.isRequired,
 };

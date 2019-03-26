@@ -7,7 +7,7 @@ import styles from './form-component.scss';
 
 const FormComponent = props => {
   return (
-    <form className={styles.form} onSubmit={props.onSubmit}>
+    <form className={styles.form} onSubmit={props.searchMovie}>
       <input type="text" name="search" placeholder="Search..." onChange={props.handleInput} />
       <input type="submit" value="Search" />
       <Toggle
@@ -15,16 +15,16 @@ const FormComponent = props => {
         type="search"
         text="Search by:"
         onChange={props.handleInput}
-        value={'Title' === props.toggled_filterValue}
+        value={'title' !== props.toggled_sortValue}
       />
     </form>
   );
 };
 
 FormComponent.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  searchMovie: PropTypes.func.isRequired,
   handleInput: PropTypes.func.isRequired,
-  toggled_filterValue: PropTypes.string.isRequired,
+  toggled_sortValue: PropTypes.string.isRequired,
 };
 
 export default FormComponent;

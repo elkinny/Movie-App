@@ -14,7 +14,7 @@ import data from 'data.json';
 
 export default class App extends Component {
   state = {
-    toggled_filterValue: 'rating',
+    toggled_sortValue: 'rating',
     toggled_searchValue: 'title',
     searchValue: '',
     movies: data.movies,
@@ -26,11 +26,26 @@ export default class App extends Component {
     });
   };
 
-  searchMovie = e => {
+  searchMovie = (e, data) => {
     e.preventDefault();
+    console.log(e.value);
+    this.setState({
+      [`${e.target.name}Value`]: data,
+    });
   };
 
   render() {
+    const { toggled_searchValue, toggled_sortValue, searchValue } = this.state;
+    let { movies } = data;
+    movies = [...movies].sort((a, b) => {
+      console.log(a, b, toggled_sortValue);
+      return b[toggled_sortValue] - a[toggled_sortValue];
+    });
+    if (searchValue !== '') {
+      movies = movies.filter(el => {
+        return el[toggled_searchValue].toLowerCase().indexOf(searchValue.toLowerCase()) == 0;
+      });
+    }
     return (
       <Router>
         <>
@@ -42,23 +57,23 @@ export default class App extends Component {
                 path="/"
                 render={() => (
                   <SearchForm
-                    movies={this.state.movies}
+                    movies={movies}
                     handleInput={this.handleInput}
                     searchMovie={this.searchMovie}
-                    toggled_searchValue={this.state.toggled_searchValue}
-                    toggled_filterValue={this.state.toggled_filterValue}
+                    toggled_searchValue={toggled_searchValue}
+                    toggled_sortValue={toggled_sortValue}
                   />
                 )}
               />
               <Route
                 exact
-                path="/about/:id"
+                path="/:id"
                 render={props => (
-                  <MovieDetails movie={this.state.movies[props.match.params.id - 1]} {...props} />
+                  <MovieDetails movie={data.movies[props.match.params.id - 1]} {...props} />
                 )}
               />
             </Switch>
-            <MoviesList movies={this.state.movies} />
+            <MoviesList movies={movies} />
           </main>
           <Footer />
         </>

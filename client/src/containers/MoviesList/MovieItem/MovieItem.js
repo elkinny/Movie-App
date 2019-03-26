@@ -19,7 +19,7 @@ export default class MovieItem extends Component {
           <img className={styles['movie-item__img']} src={picLink} height="400" />
           <span className={styles['movie-item__genre']}> {genre} </span>
           <p className={styles['movie-item__description']}>{description}</p>
-          <LinkButton to={`/about/${id}/#`} className={styles['movie-item__link']}>
+          <LinkButton to={`/${id}/#`} className={styles['movie-item__link']}>
             See more
           </LinkButton>
         </div>
