@@ -10,11 +10,11 @@
     "start": "cross-env NODE_ENV=development node_modules/.bin/webpack-dev-server",
     "build": "cross-env NODE_ENV=production node_modules/.bin/webpack",
     "deploy": "npm run build && gh-pages -d build",
-    "lint:js": "./node_modules/.bin/eslint **/*.js",
-    "lint:js:fix": "./node_modules/.bin/eslint **/*.js --fix",
-    "prettier:js": "prettier --write **/*.js",
-    "lint:styles": "stylelint **/*.scss",
-    "lint:styles:fix": "stylelint **/*.scss --fix"
+    "lint:js": "./node_modules/.bin/eslint '**/*.js'",
+    "lint:js:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
+    "prettier:js": "prettier --write '**/*.js'",
+    "lint:styles": "stylelint '**/*.scss'",
+    "lint:styles:fix": "stylelint '**/*.scss' --fix"
   },
   "keywords": [
     "react",
