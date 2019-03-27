@@ -1,20 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './fallback-component.scss';
+
 const FallbackComponent = props => {
   const { errorName, componentStack } = props;
+  const formattedComponentStack = (componentStack + '').trim().split('\n');
   return (
-    <div>
-      <p>
-        <strong>Oops! An error occured!</strong>
+    <div className={styles['error']}>
+      <h1 className={styles['error__title']}>Oops! An error occured!</h1>
+      <h2 className={styles['error__subtitle']}>Here’s what we know…</h2>
+      <p className={styles['error__name']}>
+        <span className={styles['error__label']}>Error:</span>
+        <span>{errorName}</span>
       </p>
-      <p>Here’s what we know…</p>
-      <p>
-        <strong>Error:</strong> {errorName}
-      </p>
-      <p>
-        <strong>Stacktrace:</strong> {componentStack}
-      </p>
+      <article className={styles['error__stacktrace']}>
+        <h3 className={styles['error__label']}>Stacktrace:</h3>
+        {formattedComponentStack.map((el, i) => (
+          <p key={'trace' + i} className={styles['error__stacktrace-item']}>
+            {el}
+          </p>
+        ))}
+      </article>
     </div>
   );
 };
