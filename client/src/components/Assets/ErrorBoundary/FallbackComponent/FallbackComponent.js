@@ -27,8 +27,8 @@ const FallbackComponent = props => {
 };
 
 FallbackComponent.propTypes = {
-  errorName: PropTypes.func.isRequired,
-  componentStack: PropTypes.string.isRequired,
+  errorName: PropTypes.string,
+  componentStack: PropTypes.string,
 };
 
 export default FallbackComponent;

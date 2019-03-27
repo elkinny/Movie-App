@@ -16,7 +16,6 @@ export default class SearchForm extends Component {
 
   handleSubmit = (e, data) => {
     e.preventDefault();
-    console.log(data);
     this.setState({ searchValue: data.searchValue, searchToggleValue: data.searchToggleValue });
   };
 
@@ -40,12 +39,18 @@ export default class SearchForm extends Component {
     return movies;
   };
 
+  formComponentRef = el => {
+    this.formComponent = el;
+  };
+
   render() {
     const { sortToggleValue, handleToggle } = this.props;
     const { searchToggleValue } = this.state;
+    window.scrollTo(0, this.formComponent);
     return (
       <>
         <FormComponent
+          ref={this.formComponentRef}
           handleSubmit={this.handleSubmit}
           handleToggle={this.handleSeachToggleChange}
           searchToggleValue={searchToggleValue}

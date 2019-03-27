@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import MovieCard from './MovieCard/MovieCard';
 import MoviesList from 'containers/MoviesList';
@@ -15,11 +14,16 @@ export default class MovieDetails extends Component {
     return moviesByGenre;
   };
 
+  movieCardRef = el => {
+    this.movieCard = el;
+  };
+
   render() {
     const currentMovie = data.movies[this.props.match.params.id - 1];
+    window.scrollTo(0, this.movieCard);
     return (
       <>
-        <MovieCard {...currentMovie} />
+        <MovieCard ref={this.movieCardRef} {...currentMovie} />
         <Navigation>
           <span>Films by {currentMovie.genre} genre</span>
         </Navigation>
@@ -28,7 +32,3 @@ export default class MovieDetails extends Component {
     );
   }
 }
-
-MovieDetails.propTypes = {
-  movie: PropTypes.object.isRequired,
-};
