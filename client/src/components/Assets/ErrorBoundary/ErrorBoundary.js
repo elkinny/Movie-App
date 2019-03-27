@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
+import FallbackComponent from './FallbackComponent/FallbackComponent';
 
 export default class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
+  state = { hasError: false };
 
   static getDerivedStateFromError() {
-    // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
-  componentDidCatch() {
-    // You can also log the error to an error reporting service
-    // logErrorToMyService(error, info);
+  componentDidCatch(error, info) {
+    this.setState({
+      errorName: error.toString(),
+      componentStack: info.componentStack,
+    });
   }
 
   render() {
+    const { errorName, componentStack } = this.state;
     if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return <h1>Something went wrong.</h1>;
+      return <FallbackComponent errorName={errorName} componentStack={componentStack} />;
     }
 
     return this.props.children;

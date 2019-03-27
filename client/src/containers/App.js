@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Header, Footer } from 'components/Common';
-
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ErrorBoundary from 'components/Assets/ErrorBoundary';
 
 import SearchForm from 'containers/SearchForm';
 import MovieDetails from 'containers/MovieDetails';
@@ -24,19 +24,21 @@ export default class App extends Component {
         <>
           <Header />
           <main className={styles.container}>
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => (
-                  <SearchForm
-                    sortToggleValue={this.state.sortToggleValue}
-                    handleToggle={this.handleInput}
-                  />
-                )}
-              />
-              <Route exact path="/:id" component={MovieDetails} />
-            </Switch>
+            <ErrorBoundary>
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <SearchForm
+                      sortToggleValue={this.state.sortToggleValue}
+                      handleToggle={this.handleInput}
+                    />
+                  )}
+                />
+                <Route exact path="/:id" component={MovieDetails} />
+              </Switch>
+            </ErrorBoundary>
           </main>
           <Footer />
         </>

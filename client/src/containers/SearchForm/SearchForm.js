@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import FormComponent from './FormComponent';
 import MoviesList from 'containers/MoviesList';
+
+import FormComponent from './FormComponent';
 import { Toggle, Navigation } from 'components/Common';
 
 import data from 'data.json';
