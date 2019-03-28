@@ -224,7 +224,8 @@
     color: #7488ab; }
 
 * {
-  font-size: 17px; }
+  font-size: 17px;
+  box-sizing: border-box; }
 
 body {
   background-color: #17181c;
