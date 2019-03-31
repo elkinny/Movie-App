@@ -17,6 +17,7 @@ export default class SearchMovieContainer extends Component {
 
   handleSubmit = (e, data) => {
     e.preventDefault();
+    window.scrollTo(0, this.formComponent);
     this.setState({ searchValue: data.searchValue, searchToggleValue: data.searchToggleValue });
   };
 
@@ -45,7 +46,6 @@ export default class SearchMovieContainer extends Component {
   };
 
   render() {
-    window.scrollTo(0, this.formComponent);
     return (
       <SearchMovieComponent
         handleSubmit={this.handleSubmit}
