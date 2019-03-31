@@ -16,8 +16,8 @@ export default class ErrorBoundary extends Component {
   }
 
   render() {
-    const { errorName, componentStack } = this.state;
-    if (this.state.hasError) {
+    const { errorName, componentStack, hasError } = this.state;
+    if (hasError) {
       return <ErrorBoundaryComponent errorName={errorName} componentStack={componentStack} />;
     }
 

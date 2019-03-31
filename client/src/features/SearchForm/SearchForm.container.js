@@ -19,11 +19,12 @@ export default class SearchFormContainer extends Component {
   };
 
   render() {
+    const { handleSubmit, searchToggleValue } = this.props;
     return (
       <SearchFormComponent
-        handleSubmit={this.props.handleSubmit}
+        handleSubmit={handleSubmit}
         handleInput={this.handleInput}
-        searchToggleValue={this.props.searchToggleValue}
+        searchToggleValue={searchToggleValue}
         state={this.state}
       />
     );

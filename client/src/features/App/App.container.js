@@ -12,8 +12,7 @@ export default class App extends Component {
   };
 
   render() {
-    return (
-      <AppComponent sortToggleValue={this.state.sortToggleValue} handleToggle={this.handleInput} />
-    );
+    const { sortToggleValue } = this.state;
+    return <AppComponent sortToggleValue={sortToggleValue} handleToggle={this.handleInput} />;
   }
 }

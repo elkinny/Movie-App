@@ -46,13 +46,14 @@ export default class SearchMovieContainer extends Component {
   };
 
   render() {
+    const { searchToggleValue } = this.state;
     return (
       <SearchMovieComponent
         handleSubmit={this.handleSubmit}
         handleToggle={this.handleSeachToggleChange}
         moviesCount={this.getMovies().length}
         movies={this.getMovies()}
-        searchToggleValue={this.state.searchToggleValue}
+        searchToggleValue={searchToggleValue}
         formComponentRef={this.formComponentRef}
         {...this.props}
       />
