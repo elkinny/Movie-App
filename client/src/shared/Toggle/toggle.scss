@@ -1,7 +1,6 @@
 .toggle {
   display: flex;
   align-items: center;
-  overflow: hidden;
   @media screen and (max-width: 800px) {
     flex-direction: column;
     margin: 20px 0;
@@ -27,6 +26,10 @@
       margin-right: 0;
       margin-bottom: 10px;
     }
+  }
+
+  &__body {
+    overflow: hidden;
   }
 
   &__item {
