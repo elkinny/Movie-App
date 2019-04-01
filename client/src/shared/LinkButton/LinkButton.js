@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 import styles from './link-button.scss';
 
 const LinkButton = props => {
+  const { to, cssClass, children } = props;
   return (
-    <Link to={props.to}>
-      <span className={styles.link}>{props.children}</span>
+    <Link to={to} className={cssClass}>
+      <span className={styles.link}>{children}</span>
     </Link>
   );
 };
@@ -16,4 +17,5 @@ export default LinkButton;
 
 LinkButton.propTypes = {
   to: PropTypes.string.isRequired,
+  cssClass: PropTypes.string,
 };
