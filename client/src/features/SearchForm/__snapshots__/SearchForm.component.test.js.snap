@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test:  SearchFormComponent to match snapshot 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    name="search"
+    onChange={[Function]}
+    placeholder="Search..."
+    type="text"
+  />
+  <Toggle
+    labels={
+      Array [
+        "Title",
+        "Genre",
+      ]
+    }
+    onChange={[Function]}
+    text="Search by:"
+    type="search"
+    value={true}
+  />
+  <input
+    type="submit"
+    value="Search"
+  />
+</form>
+`;

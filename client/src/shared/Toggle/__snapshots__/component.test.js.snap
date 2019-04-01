@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle:  Toggle to match snapshot 1`] = `
+<Toggle
+  labels={
+    Array [
+      "Rating",
+      "Year",
+    ]
+  }
+  onChange={[MockFunction]}
+  text="Sort by:"
+  type="sort"
+  value={true}
+>
+  <div
+    className="toggle"
+  >
+    <span
+      className="toggle__label"
+    >
+       
+      Sort by:
+       
+    </span>
+    <div
+      className="toggle__body"
+    >
+      <input
+        className="toggle__item--left"
+        defaultChecked={false}
+        id="toggle-Rating"
+        name="sortToggle"
+        onChange={[MockFunction]}
+        type="radio"
+        value="rating"
+      />
+      <label
+        className="btn"
+        htmlFor="toggle-Rating"
+      >
+        Rating
+      </label>
+      <input
+        className="toggle__item--right"
+        defaultChecked={true}
+        id="toggle-Year"
+        name="sortToggle"
+        onChange={[MockFunction]}
+        type="radio"
+        value="year"
+      />
+      <label
+        className="btn"
+        htmlFor="toggle-Year"
+      >
+        Year
+      </label>
+    </div>
+  </div>
+</Toggle>
+`;

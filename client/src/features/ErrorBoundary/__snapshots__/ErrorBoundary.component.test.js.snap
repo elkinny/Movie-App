@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test:  ErrorBoundaryComponent to mathc snapshot 1`] = `
+<ErrorBoundaryComponent
+  componentStack="componentStack"
+  errorName="errorName"
+>
+  <div
+    className="error"
+  >
+    <h1
+      className="error__title"
+    >
+      Oops! An error occured!
+    </h1>
+    <h2
+      className="error__subtitle"
+    >
+      Here’s what we know…
+    </h2>
+    <p
+      className="error__name"
+    >
+      <span
+        className="error__label"
+      >
+        Error:
+      </span>
+      <span>
+        errorName
+      </span>
+    </p>
+    <article
+      className="error__stacktrace"
+    >
+      <h3
+        className="error__label"
+      >
+        Stacktrace:
+      </h3>
+      <p
+        className="error__stacktrace-item"
+        key="trace0"
+      >
+        componentStack
+      </p>
+    </article>
+  </div>
+</ErrorBoundaryComponent>
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test:  MovieDetailsComponent to match snapshot 1`] = `
+<Fragment>
+  <MovieCardComponent
+    description="Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races."
+    duration="120min"
+    genre="Action"
+    link="https://www.youtube.com/watch?v=0LHxvxdRnYc"
+    picLink="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+    rating="4.0"
+    title="Captain Marvel"
+    year={2019}
+  />
+  <Navigation>
+    <span>
+      Films by 
+      Action
+       genre
+    </span>
+  </Navigation>
+  <MoviesListComponent
+    movies={Array []}
+  />
+</Fragment>
+`;

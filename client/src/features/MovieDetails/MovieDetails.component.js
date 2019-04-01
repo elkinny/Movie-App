@@ -6,21 +6,22 @@ import MoviesList from 'features/MoviesList';
 import { Navigation } from 'shared';
 
 const MovieDetailsComponent = props => {
+  const { movieCardRef, currentMovie, moviesByGenre } = props;
   return (
     <>
-      <MovieCard ref={props.movieCardRef} {...props.currentMovie} />
+      <MovieCard ref={movieCardRef} {...currentMovie} />
       <Navigation>
-        <span>Films by {props.currentMovie.genre} genre</span>
+        <span>Films by {currentMovie.genre} genre</span>
       </Navigation>
-      <MoviesList movies={props.getMoviesByGenre(props.currentMovie.genre)} />
+      <MoviesList movies={moviesByGenre} />
     </>
   );
 };
 
 MovieDetailsComponent.propTypes = {
   movieCardRef: PropTypes.func.isRequired,
-  currentMovie: PropTypes.array.isRequired,
-  getMoviesByGenre: PropTypes.func.isRequired,
+  currentMovie: PropTypes.object.isRequired,
+  moviesByGenre: PropTypes.array.isRequired,
 };
 
 export default MovieDetailsComponent;

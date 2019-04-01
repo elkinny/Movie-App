@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import MovieItem from 'features/MovieListItem';
+import MovieItem from 'features/MoviesListItem';
 
 import styles from './movies-list.scss';
 

@@ -38,7 +38,6 @@ const MovieCardComponent = props => {
 MovieCardComponent.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
   picLink: PropTypes.string.isRequired,
   year: PropTypes.number.isRequired,
   genre: PropTypes.string.isRequired,

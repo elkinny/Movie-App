@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test:  MoviesListItemComponent to match snapshot 1`] = `
+<div
+  className="movie-item"
+>
+  <div
+    className="movie-item__header"
+  >
+    <h2
+      className="movie-item__title"
+    >
+       
+      Captain Marvel
+       
+    </h2>
+    <span
+      className="movie-item__year"
+    >
+       
+      2019
+       
+    </span>
+  </div>
+  <div
+    className="movie-item__body"
+  >
+    <img
+      className="movie-item__img"
+      height="400"
+      src="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+    />
+    <span
+      className="movie-item__genre"
+    >
+       
+      Action
+       
+    </span>
+    <p
+      className="movie-item__description"
+    >
+      Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
+    </p>
+    <LinkButton
+      className="movie-item__link"
+      to="/1/#"
+    >
+      See more
+    </LinkButton>
+  </div>
+</div>
+`;

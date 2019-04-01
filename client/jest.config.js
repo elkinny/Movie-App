@@ -2,9 +2,9 @@
 
 module.exports = {
   testEnvironment: 'node',
-  testMatch: ['<rootDir>/src/**/*.spec.js'],
+  testMatch: ['<rootDir>/src/**/*.test.js'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.js', '!src/**/routes.js'],
+  collectCoverageFrom: ['src/**/*.js', '!src/index.js'],
   coveragePathIgnorePatterns: ['/node_modules/', '/config/'],
   coverageThreshold: {
     global: {
@@ -13,4 +13,10 @@ module.exports = {
       lines: 0, //-> 80
     },
   },
+  moduleNameMapper: {
+    '\\.(css|less|scss|sss|styl)$': '<rootDir>/node_modules/jest-css-modules',
+  },
+  setupFiles: ['./src/test/enzymeSetup.js'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  modulePaths: ['src'],
 };

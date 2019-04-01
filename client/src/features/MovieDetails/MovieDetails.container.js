@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import MovieDetailsComponent from './MovieDetails.component';
 
-import data from 'core/data.json';
+import mockedData from 'core/data.json';
 
 export default class MovieDetailsContainer extends Component {
-  getMoviesByGenre = genre => {
+  getMoviesByGenre = (data, genre) => {
     const moviesByGenre = [...data.movies].filter(el => {
       return el['genre'].toLowerCase().indexOf(genre.toLowerCase()) >= 0;
     });
@@ -17,13 +17,13 @@ export default class MovieDetailsContainer extends Component {
   };
 
   render() {
-    const currentMovie = data.movies[this.props.match.params.id - 1];
+    const currentMovie = mockedData.movies[this.props.match.params.id - 1];
     window.scrollTo(0, this.movieCard);
     return (
       <MovieDetailsComponent
         currentMovie={currentMovie}
         movieCardRef={this.movieCardRef}
-        getMoviesByGenre={this.getMoviesByGenre}
+        moviesByGenre={this.getMoviesByGenre(mockedData, currentMovie.genre)}
       />
     );
   }

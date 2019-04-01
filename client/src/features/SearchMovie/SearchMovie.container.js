@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import SearchMovieComponent from './SearchMovie.component';
 
-import data from 'core/data.json';
+import mockedData from 'core/data.json';
 
 export default class SearchMovieContainer extends Component {
   state = {
@@ -25,7 +25,7 @@ export default class SearchMovieContainer extends Component {
     this.setState({ searchToggleValue: e.target.value });
   };
 
-  getMovies = () => {
+  getMovies = data => {
     const { sortToggleValue } = this.props;
     const { searchToggleValue, searchValue } = this.state;
 
@@ -51,8 +51,8 @@ export default class SearchMovieContainer extends Component {
       <SearchMovieComponent
         handleSubmit={this.handleSubmit}
         handleToggle={this.handleSeachToggleChange}
-        moviesCount={this.getMovies().length}
-        movies={this.getMovies()}
+        moviesCount={this.getMovies(mockedData).length}
+        movies={this.getMovies(mockedData)}
         searchToggleValue={searchToggleValue}
         formComponentRef={this.formComponentRef}
         {...this.props}
