@@ -2,8 +2,8 @@ import MoviesListComponent from './MoviesList.component';
 import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('MoviesListComponent to match no films snapshot', () => {
+describe('MoviesListComponent: ', () => {
+  it('1. To match snapshot - no movies', () => {
     const props = {
       movies: [],
     };
@@ -11,7 +11,7 @@ describe('test: ', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('MoviesListComponent to match no films snapshot', () => {
+  it('2. To match snapshot - with movies', () => {
     const props = {
       movies: [
         {

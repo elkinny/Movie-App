@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test:  AppComponent to match no films snapshot 1`] = `
+exports[`AppComponent:  1. To match snapshot 1`] = `
 <AppComponent
   handleToggle={[Function]}
   sortToggleValue="sortToggleValue"

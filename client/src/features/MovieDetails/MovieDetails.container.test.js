@@ -3,19 +3,22 @@ import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 import data from './../../test/mocked-movies.json';
 
-describe('test: ', () => {
+describe('MovieDetailsContainer: ', () => {
   window.scrollTo = () => {};
+  let component;
+  let inst;
 
-  it('movieCardRef test', () => {
-    const component = shallow(<MovieDetailsContainer match={{ params: { id: 1 } }} />);
-    const inst = component.instance();
+  beforeEach(() => {
+    component = shallow(<MovieDetailsContainer match={{ params: { id: 1 } }} />);
+    inst = component.instance();
+  });
+
+  it('1. movieCardRef() to set movieCard to ref', () => {
     inst.movieCardRef('hi');
     expect(inst.movieCard).toBe('hi');
   });
 
-  it('getMoviesByGenre test', () => {
-    const component = shallow(<MovieDetailsContainer match={{ params: { id: 1 } }} />);
-    const inst = component.instance();
+  it('2. getMoviesByGenre() to filter movies by genre', () => {
     const filteredMovies = inst.getMoviesByGenre(data, 'cartoon');
     expect(filteredMovies.length).toBe(3);
   });

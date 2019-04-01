@@ -1,8 +1,8 @@
 import SearchFormComponent from './SearchForm.component';
 import React from 'react';
-import { shallow, mount } from './../../test/enzymeSetup.js';
+import { shallow } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
+describe('SearchFormComponent: ', () => {
   const handleSubmit = jest.fn();
   const props = {
     handleSubmit: handleSubmit,
@@ -11,13 +11,17 @@ describe('test: ', () => {
     state: {},
   };
 
-  it('SearchFormComponent to match snapshot', () => {
-    const component = shallow(<SearchFormComponent {...props} />);
+  let component;
+
+  beforeEach(() => {
+    component = shallow(<SearchFormComponent {...props} />);
+  });
+
+  it('1. To match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('SearchForm submit', () => {
-    const component = mount(<SearchFormComponent {...props} />);
+  it('2. To call handleSubmit on submit form', () => {
     component.find('form').simulate('submit');
     expect(handleSubmit).toHaveBeenCalled();
   });

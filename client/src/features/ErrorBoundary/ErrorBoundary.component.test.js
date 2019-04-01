@@ -2,8 +2,8 @@ import ErrorBoundaryComponent from './ErrorBoundary.component';
 import React from 'react';
 import { mount } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('ErrorBoundaryComponent to mathc snapshot', () => {
+describe('ErrorBoundaryComponent: ', () => {
+  it('1. To match snapshot', () => {
     const props = {
       errorName: 'errorName',
       componentStack: 'componentStack',

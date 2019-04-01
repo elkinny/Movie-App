@@ -2,8 +2,8 @@ import AppComponent from './App.component';
 import React from 'react';
 import { mount } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('AppComponent to match no films snapshot', () => {
+describe('AppComponent: ', () => {
+  it('1. To match snapshot', () => {
     const props = {
       sortToggleValue: 'sortToggleValue',
       handleToggle: () => {},

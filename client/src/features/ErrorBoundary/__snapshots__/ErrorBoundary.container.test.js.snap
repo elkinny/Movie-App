@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test:  Error in component test 1`] = `<ErrorBoundaryComponent />`;
+exports[`ErrorBoundaryContainer:  3. Render error message in component 1`] = `<ErrorBoundaryComponent />`;
 
-exports[`test:  No error in component test 1`] = `"Hi"`;
+exports[`ErrorBoundaryContainer:  4. Render children if no error 1`] = `"Hi"`;

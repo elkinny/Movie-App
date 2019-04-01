@@ -2,8 +2,8 @@ import AppContainer from './App.container';
 import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('componentDidCatch test', () => {
+describe('AppContainer: ', () => {
+  it('1. componentDidCatch() to call setState()', () => {
     const component = shallow(
       <AppContainer errorName="errorName" componentStack="componentStack" />,
     );

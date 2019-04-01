@@ -2,8 +2,8 @@ import MovieDetailsComponent from './MovieDetails.component';
 import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('MovieDetailsComponent to match snapshot', () => {
+describe('MovieDetailsComponent: ', () => {
+  it('1. To match snapshot', () => {
     const props = {
       currentMovie: {
         duration: '120min',

@@ -2,12 +2,12 @@ import ErrorBoundaryContainer from './ErrorBoundary.container';
 import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('getDerivedStateFromError test', () => {
+describe('ErrorBoundaryContainer: ', () => {
+  it('1. getDerivedStateFromError() to return { hasError: true }', () => {
     expect(ErrorBoundaryContainer.getDerivedStateFromError()).toEqual({ hasError: true });
   });
 
-  it('componentDidCatch test', () => {
+  it('2. componentDidCatch() to call setState()', () => {
     const component = shallow(
       <ErrorBoundaryContainer errorName="errorName" componentStack="componentStack" />,
     );
@@ -17,7 +17,7 @@ describe('test: ', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('Error in component test', () => {
+  it('3. Render error message in component', () => {
     const component = shallow(
       <ErrorBoundaryContainer errorName="errorName" componentStack="componentStack" />,
     );
@@ -25,7 +25,7 @@ describe('test: ', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('No error in component test', () => {
+  it('4. Render children if no error', () => {
     const component = shallow(
       <ErrorBoundaryContainer errorName="errorName" componentStack="componentStack">
         Hi

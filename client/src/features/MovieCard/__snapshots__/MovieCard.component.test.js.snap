@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test:  MovieCardComponent to match snapshot 1`] = `
+exports[`MovieCardComponent:  1. To match snapshot 1`] = `
 <Fragment>
   <div
     className="movie-card"

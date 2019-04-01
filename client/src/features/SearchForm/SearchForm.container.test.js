@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 
 describe('SearchFormContainer: ', () => {
-  it('handleInput test', () => {
+  it('1. handleInput() to call setState()', () => {
     const handleInput = jest.fn();
     const component = shallow(
       <SearchFormContainer

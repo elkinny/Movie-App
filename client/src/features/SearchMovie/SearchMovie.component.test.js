@@ -2,8 +2,8 @@ import SearchMovieComponent from './SearchMovie.component';
 import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('SearchMovieComponent to match snapshot', () => {
+describe('SearchMovieComponent: ', () => {
+  it('1. To match snapshot', () => {
     const props = {
       handleSubmit: () => {},
       handleToggle: () => {},

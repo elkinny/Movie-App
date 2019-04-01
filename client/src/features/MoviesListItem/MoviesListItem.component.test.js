@@ -2,8 +2,8 @@ import MoviesListItemComponent from './MoviesListItem.component';
 import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('MoviesListItemComponent to match snapshot', () => {
+describe('MoviesListItemComponent: ', () => {
+  it('1. To match snapshot', () => {
     const props = {
       id: '1',
       duration: '120min',

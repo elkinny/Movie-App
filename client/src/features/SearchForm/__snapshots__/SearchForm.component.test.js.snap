@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test:  SearchFormComponent to match snapshot 1`] = `
+exports[`SearchFormComponent:  1. To match snapshot 1`] = `
 <form
   className="form"
   onSubmit={[Function]}

@@ -2,8 +2,8 @@ import MovieCardComponent from './MovieCard.component';
 import React from 'react';
 import { shallow } from './../../test/enzymeSetup.js';
 
-describe('test: ', () => {
-  it('MovieCardComponent to match snapshot', () => {
+describe('MovieCardComponent: ', () => {
+  it('1. To match snapshot', () => {
     const props = {
       ref: () => {},
       duration: '120min',
