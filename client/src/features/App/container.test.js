@@ -1,4 +1,4 @@
-import AppContainer from './App.container';
+import AppContainer from './container';
 import React from 'react';
 import { shallow } from 'enzyme';
 

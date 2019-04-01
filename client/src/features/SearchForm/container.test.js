@@ -1,4 +1,4 @@
-import SearchFormContainer from './SearchForm.container';
+import SearchFormContainer from './container';
 import React from 'react';
 import { shallow } from 'enzyme';
 

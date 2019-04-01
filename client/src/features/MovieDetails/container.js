@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import MovieDetailsComponent from './MovieDetails.component';
+import MovieDetailsComponent from './component';
 
 import mockedData from 'core/data.json';
 

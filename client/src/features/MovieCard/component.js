@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { LinkButton } from 'shared';
 
-import styles from './movie-card.scss';
+import styles from './style.scss';
 
 const MovieCardComponent = props => {
   const { title, description, year, genre, picLink, rating, duration } = props;

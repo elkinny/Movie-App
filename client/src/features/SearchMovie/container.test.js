@@ -1,4 +1,4 @@
-import SearchMovieContainer from './SearchMovie.container';
+import SearchMovieContainer from './container';
 import React from 'react';
 import { shallow } from 'enzyme';
 import data from './../../test/mocked-movies.json';

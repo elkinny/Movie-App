@@ -1,4 +1,4 @@
-import SearchMovieComponent from './SearchMovie.component';
+import SearchMovieComponent from './component';
 import React from 'react';
 import { shallow } from 'enzyme';
 

@@ -1,4 +1,4 @@
-import SearchFormComponent from './SearchForm.component';
+import SearchFormComponent from './component';
 import React from 'react';
 import { shallow } from 'enzyme';
 

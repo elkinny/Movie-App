@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './error-boundary.scss';
+import styles from './style.scss';
 
 const ErrorBoundaryComponent = props => {
   const { errorName, componentStack } = props;

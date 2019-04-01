@@ -8,7 +8,7 @@ import { Header, Footer } from 'shared';
 import SearchMovie from 'features/SearchMovie';
 import MovieDetails from 'features/MovieDetails';
 
-import styles from './app.scss';
+import styles from './style.scss';
 
 const AppComponent = props => {
   return (

@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from './component';
 import React from 'react';
 import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';

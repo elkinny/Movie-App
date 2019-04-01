@@ -1,3 +1,3 @@
-import ErrorBoundary from './ErrorBoundary.container';
+import ErrorBoundary from './container';
 
 export default ErrorBoundary;

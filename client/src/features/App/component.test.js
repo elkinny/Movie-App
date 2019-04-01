@@ -1,4 +1,4 @@
-import AppComponent from './App.component';
+import AppComponent from './component';
 import React from 'react';
 import { mount } from 'enzyme';
 

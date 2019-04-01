@@ -1,11 +1,11 @@
-import MovieCardComponent from './MovieCard.component';
+import MoviesListItemComponent from './component';
 import React from 'react';
 import { shallow } from 'enzyme';
 
-describe('MovieCardComponent: ', () => {
+describe('MoviesListItemComponent: ', () => {
   it('1. To match snapshot', () => {
     const props = {
-      ref: () => {},
+      id: '1',
       duration: '120min',
       rating: '4.0',
       title: 'Captain Marvel',
@@ -17,7 +17,7 @@ describe('MovieCardComponent: ', () => {
       picLink:
         'https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg',
     };
-    const component = shallow(<MovieCardComponent {...props} />);
+    const component = shallow(<MoviesListItemComponent {...props} />);
     expect(component).toMatchSnapshot();
   });
 });

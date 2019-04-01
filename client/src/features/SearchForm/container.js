@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import SearchFormComponent from './SearchForm.component';
+import SearchFormComponent from './component';
 
 export default class SearchFormContainer extends Component {
   state = {

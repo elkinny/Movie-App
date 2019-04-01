@@ -1,4 +1,4 @@
-import ErrorBoundaryComponent from './ErrorBoundary.component';
+import ErrorBoundaryComponent from './component';
 import React from 'react';
 import { mount } from 'enzyme';
 

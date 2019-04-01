@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './toggle.scss';
+import styles from './style.scss';
 
 export default class Toggle extends Component {
   render() {

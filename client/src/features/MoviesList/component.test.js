@@ -1,4 +1,4 @@
-import MoviesListComponent from './MoviesList.component';
+import MoviesListComponent from './component';
 import React from 'react';
 import { shallow } from 'enzyme';
 

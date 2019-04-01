@@ -1,4 +1,4 @@
-import ErrorBoundaryContainer from './ErrorBoundary.container';
+import ErrorBoundaryContainer from './container';
 import React from 'react';
 import { shallow } from 'enzyme';
 

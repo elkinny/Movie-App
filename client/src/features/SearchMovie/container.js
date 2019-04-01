@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import SearchMovieComponent from './SearchMovie.component';
+import SearchMovieComponent from './component';
 
 import mockedData from 'core/data.json';
 

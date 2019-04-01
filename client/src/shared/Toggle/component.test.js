@@ -1,4 +1,4 @@
-import Toggle from './Toggle';
+import Toggle from './component';
 import React from 'react';
 import { mount } from 'enzyme';
 

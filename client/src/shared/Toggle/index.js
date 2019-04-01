@@ -1,3 +1,3 @@
-import Toggle from './Toggle';
+import Toggle from './component';
 
 export default Toggle;

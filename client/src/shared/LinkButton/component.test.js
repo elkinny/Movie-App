@@ -1,4 +1,4 @@
-import LinkButton from './LinkButton';
+import LinkButton from './component';
 import React from 'react';
 import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';

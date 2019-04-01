@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Toggle } from 'shared';
 
-import styles from './search-form.scss';
+import styles from './style.scss';
 
 const SearchFormComponent = props => {
   return (

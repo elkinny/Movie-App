@@ -1,4 +1,4 @@
-import MovieDetailsComponent from './MovieDetails.component';
+import MovieDetailsComponent from './component';
 import React from 'react';
 import { shallow } from 'enzyme';
 

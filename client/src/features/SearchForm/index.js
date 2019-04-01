@@ -1,3 +1,3 @@
-import SearchForm from './SearchForm.container';
+import SearchForm from './container';
 
 export default SearchForm;

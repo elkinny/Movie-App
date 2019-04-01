@@ -1,3 +1,3 @@
-import MoviesList from './MoviesList.component';
+import MoviesList from './component';
 
 export default MoviesList;
