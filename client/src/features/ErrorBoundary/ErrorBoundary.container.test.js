@@ -1,6 +1,6 @@
 import ErrorBoundaryContainer from './ErrorBoundary.container';
 import React from 'react';
-import { shallow } from './../../test/enzymeSetup.js';
+import { shallow } from 'enzyme';
 
 describe('ErrorBoundaryContainer: ', () => {
   it('1. getDerivedStateFromError() to return { hasError: true }', () => {

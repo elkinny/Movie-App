@@ -1,6 +1,6 @@
 import Toggle from './Toggle';
 import React from 'react';
-import { mount } from './../../test/enzymeSetup.js';
+import { mount } from 'enzyme';
 
 describe('Toggle: ', () => {
   it('Toggle to match snapshot', () => {

@@ -1,6 +1,6 @@
 import AppComponent from './App.component';
 import React from 'react';
-import { mount } from './../../test/enzymeSetup.js';
+import { mount } from 'enzyme';
 
 describe('AppComponent: ', () => {
   it('1. To match snapshot', () => {

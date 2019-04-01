@@ -1,6 +1,6 @@
 import AppContainer from './App.container';
 import React from 'react';
-import { shallow } from './../../test/enzymeSetup.js';
+import { shallow } from 'enzyme';
 
 describe('AppContainer: ', () => {
   it('1. componentDidCatch() to call setState()', () => {

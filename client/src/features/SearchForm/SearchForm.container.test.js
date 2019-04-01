@@ -1,6 +1,6 @@
 import SearchFormContainer from './SearchForm.container';
 import React from 'react';
-import { shallow } from './../../test/enzymeSetup.js';
+import { shallow } from 'enzyme';
 
 describe('SearchFormContainer: ', () => {
   it('1. handleInput() to call setState()', () => {

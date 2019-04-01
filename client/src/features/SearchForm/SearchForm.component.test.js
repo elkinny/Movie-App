@@ -1,6 +1,6 @@
 import SearchFormComponent from './SearchForm.component';
 import React from 'react';
-import { shallow } from './../../test/enzymeSetup.js';
+import { shallow } from 'enzyme';
 
 describe('SearchFormComponent: ', () => {
   const handleSubmit = jest.fn();

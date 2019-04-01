@@ -1,6 +1,6 @@
 import ErrorBoundaryComponent from './ErrorBoundary.component';
 import React from 'react';
-import { mount } from './../../test/enzymeSetup.js';
+import { mount } from 'enzyme';
 
 describe('ErrorBoundaryComponent: ', () => {
   it('1. To match snapshot', () => {

@@ -1,6 +1,6 @@
 import SearchMovieComponent from './SearchMovie.component';
 import React from 'react';
-import { shallow } from './../../test/enzymeSetup.js';
+import { shallow } from 'enzyme';
 
 describe('SearchMovieComponent: ', () => {
   it('1. To match snapshot', () => {

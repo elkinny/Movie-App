@@ -1,6 +1,6 @@
 import MovieDetailsContainer from './MovieDetails.container';
 import React from 'react';
-import { shallow } from './../../test/enzymeSetup.js';
+import { shallow } from 'enzyme';
 import data from './../../test/mocked-movies.json';
 
 describe('MovieDetailsContainer: ', () => {

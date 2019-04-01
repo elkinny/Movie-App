@@ -1,6 +1,6 @@
 import Footer from './Footer';
 import React from 'react';
-import { mount } from './../../test/enzymeSetup.js';
+import { mount } from 'enzyme';
 
 describe('Footer: ', () => {
   it('Footer to match snapshot', () => {

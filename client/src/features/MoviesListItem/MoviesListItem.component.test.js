@@ -1,6 +1,6 @@
 import MoviesListItemComponent from './MoviesListItem.component';
 import React from 'react';
-import { shallow } from './../../test/enzymeSetup.js';
+import { shallow } from 'enzyme';
 
 describe('MoviesListItemComponent: ', () => {
   it('1. To match snapshot', () => {

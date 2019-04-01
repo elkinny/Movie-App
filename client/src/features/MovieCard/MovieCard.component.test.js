@@ -1,6 +1,6 @@
 import MovieCardComponent from './MovieCard.component';
 import React from 'react';
-import { shallow } from './../../test/enzymeSetup.js';
+import { shallow } from 'enzyme';
 
 describe('MovieCardComponent: ', () => {
   it('1. To match snapshot', () => {
