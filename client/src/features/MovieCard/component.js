@@ -26,10 +26,7 @@ const MovieCardComponent = props => {
             <span className={styles['movie-card__duration']}> {duration} </span>
           </div>
           <p className={styles['movie-card__description']}>{description}</p>
-          <LinkButton
-            to="/"
-            cssClass={(styles['movie-card__link-back'] || '') + ' movie-card__link-back--cy'}
-          >
+          <LinkButton to="/" cssClass="movie-card__link-back--cy">
             Back
           </LinkButton>
         </div>

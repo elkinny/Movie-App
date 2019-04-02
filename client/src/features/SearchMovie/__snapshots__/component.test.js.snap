@@ -7,7 +7,7 @@ exports[`SearchMovieComponent:  1. To match snapshot 1`] = `
     handleToggle={[Function]}
     searchToggleValue="searchToggleValue"
   />
-  <Navigation>
+  <SubHeader>
     <span>
       1 films are found
     </span>
@@ -23,7 +23,7 @@ exports[`SearchMovieComponent:  1. To match snapshot 1`] = `
       type="sort"
       value={true}
     />
-  </Navigation>
+  </SubHeader>
   <MoviesListComponent
     movies={Array []}
   />

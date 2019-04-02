@@ -8,7 +8,7 @@ describe('SearchFormComponent: ', () => {
     handleSubmit: handleSubmit,
     handleInput: () => {},
     searchToggleValue: 'searchToggleValue',
-    state: {},
+    searchValue: 'searchValue',
   };
 
   let component;

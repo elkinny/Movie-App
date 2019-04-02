@@ -28,21 +28,11 @@ exports[`Header:  Header to match snapshot 1`] = `
       <header
         className="header"
       >
-        <Link
-          replace={false}
-          to="/"
+        <span
+          className="title"
         >
-          <a
-            href="/"
-            onClick={[Function]}
-          >
-            <span
-              className="title"
-            >
-              Movie app
-            </span>
-          </a>
-        </Link>
+          Movie app
+        </span>
       </header>
     </Header>
   </Router>

@@ -2,7 +2,7 @@
 
 exports[`MoviesListItemComponent:  1. To match snapshot 1`] = `
 <div
-  className="movie-item"
+  className="movie-item movie-item--cy"
 >
   <div
     className="movie-item__header"
@@ -43,7 +43,7 @@ exports[`MoviesListItemComponent:  1. To match snapshot 1`] = `
       Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
     </p>
     <LinkButton
-      className="movie-item__link"
+      cssClass="movie-item__link--cy"
       to="/1/#"
     >
       See more

@@ -32,12 +32,12 @@ describe('SearchMovieContainer: ', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('3. handleSeachToggleChange() to call setState()', () => {
+  it('3. handleInput() to call setState()', () => {
     component.setState = jest.fn();
     const inst = component.instance();
     const spy = jest.spyOn(inst, 'setState');
 
-    inst.handleSeachToggleChange({ target: { value: 'value' } });
+    inst.handleInput({ target: { value: 'value' } });
     expect(spy).toHaveBeenCalled();
   });
 

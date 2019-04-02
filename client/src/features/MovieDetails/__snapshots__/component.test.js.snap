@@ -12,13 +12,13 @@ exports[`MovieDetailsComponent:  1. To match snapshot 1`] = `
     title="Captain Marvel"
     year={2019}
   />
-  <Navigation>
+  <SubHeader>
     <span>
       Films by 
       Action
        genre
     </span>
-  </Navigation>
+  </SubHeader>
   <MoviesListComponent
     movies={Array []}
   />

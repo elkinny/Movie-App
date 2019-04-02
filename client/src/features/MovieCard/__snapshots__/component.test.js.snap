@@ -64,7 +64,7 @@ exports[`MovieCardComponent:  1. To match snapshot 1`] = `
         Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
       </p>
       <LinkButton
-        className="movie-card__link-back"
+        cssClass="movie-card__link-back--cy"
         to="/"
       >
         Back

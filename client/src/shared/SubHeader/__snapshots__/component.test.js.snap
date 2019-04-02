@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation:  Navigation to match snapshot 1`] = `
-<Navigation>
+exports[`SubHeader:  SubHeader to match snapshot 1`] = `
+<SubHeader>
   <div
-    className="navigation"
+    className="subheader"
   >
     Hi
   </div>
-</Navigation>
+</SubHeader>
 `;

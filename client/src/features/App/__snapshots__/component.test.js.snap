@@ -5,56 +5,47 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
   handleToggle={[Function]}
   sortToggleValue="sortToggleValue"
 >
-  <BrowserRouter>
-    <Router
-      history={
-        Object {
-          "action": "POP",
-          "block": [Function],
-          "createHref": [Function],
-          "go": [Function],
-          "goBack": [Function],
-          "goForward": [Function],
-          "length": 1,
-          "listen": [Function],
-          "location": Object {
-            "hash": "",
-            "pathname": "/",
-            "search": "",
-            "state": undefined,
-          },
-          "push": [Function],
-          "replace": [Function],
-        }
-      }
+  <Header>
+    <header
+      className="header"
     >
-      <Header>
-        <header
-          className="header"
-        >
-          <Link
-            replace={false}
-            to="/"
-          >
-            <a
-              href="/"
-              onClick={[Function]}
-            >
-              <span
-                className="title"
-              >
-                Movie app
-              </span>
-            </a>
-          </Link>
-        </header>
-      </Header>
-      <main
-        className="container"
+      <span
+        className="title"
       >
-        <ErrorBoundary>
+        Movie app
+      </span>
+    </header>
+  </Header>
+  <main
+    className="container"
+  >
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Router
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+        >
           <Switch>
             <Route
+              component={[Function]}
               computedMatch={
                 Object {
                   "isExact": true,
@@ -73,27 +64,59 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                 }
               }
               path="/"
-              render={[Function]}
             >
               <SearchMovieContainer
-                handleToggle={[Function]}
-                sortToggleValue="sortToggleValue"
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "createHref": [Function],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
               >
                 <SearchMovieComponent
-                  setFormComponentRef={[Function]}
                   handleSubmit={[Function]}
                   handleToggle={[Function]}
                   movies={
                     Array [
                       Object {
-                        "description": "Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+                        "description": "A war-hardened Crusader and his Moorish commander mount an audacious revolt against the corrupt English crown.",
                         "duration": "120min",
                         "genre": "Action",
-                        "id": "1",
-                        "link": "https://www.youtube.com/watch?v=0LHxvxdRnYc",
-                        "picLink": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
-                        "rating": "4.0",
-                        "title": "Captain Marvel",
+                        "id": "9",
+                        "link": "https://www.youtube.com/watch?v=zwPn9ZnbCo0",
+                        "picLink": "https://m.media-amazon.com/images/M/MV5BOGQzZDM0NGUtZGE1NS00ZjQwLTk0N2EtMWI0NTgxYTkwYWQ4XkEyXkFqcGdeQXVyNDMzMzI5MjM@._V1_SY1000_CR0,0,648,1000_AL_.jpg",
+                        "rating": "5.0",
+                        "title": "Robin Hood",
                         "year": 2019,
                       },
                       Object {
@@ -108,17 +131,6 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         "year": 2019,
                       },
                       Object {
-                        "description": "Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge.",
-                        "duration": "120min",
-                        "genre": "Action",
-                        "id": "3",
-                        "link": "https://www.youtube.com/watch?v=dt5g5_1cKVk",
-                        "picLink": "https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg",
-                        "rating": "3.5",
-                        "title": "Hellboy",
-                        "year": 2019,
-                      },
-                      Object {
                         "description": "CGI re-imagining of the 1994 Disney classic.",
                         "duration": "120min",
                         "genre": "Cartoon",
@@ -130,14 +142,25 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         "year": 2019,
                       },
                       Object {
-                        "description": "A deactivated female cyborg is revived, but cannot remember anything of her past life and goes on a quest to find out who she is.",
+                        "description": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
                         "duration": "120min",
-                        "genre": "Cartoon",
-                        "id": "5",
-                        "link": "https://www.youtube.com/watch?v=U3D2vmWD88w",
-                        "picLink": "https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg",
-                        "rating": "1.5",
-                        "title": "Alita: Battle Angel",
+                        "genre": "Action",
+                        "id": "8",
+                        "link": "https://www.youtube.com/watch?v=6ZfuNTqbHE8",
+                        "picLink": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+                        "rating": "4.5",
+                        "title": "Avengers: Infinity War",
+                        "year": 2018,
+                      },
+                      Object {
+                        "description": "In a post-apocalyptic world where cities ride on wheels and consume each other to survive, two people meet in London and try to stop a conspiracy.",
+                        "duration": "120min",
+                        "genre": "Action",
+                        "id": "10",
+                        "link": "https://www.youtube.com/watch?v=IRsFc2gguEg",
+                        "picLink": "https://m.media-amazon.com/images/M/MV5BNzY1MDA2OTQ0N15BMl5BanBnXkFtZTgwMTkzNjU2NTM@._V1_SY1000_CR0,0,631,1000_AL_.jpg",
+                        "rating": "4.5",
+                        "title": "Mortal Engines",
                         "year": 2019,
                       },
                       Object {
@@ -152,6 +175,28 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         "year": 2019,
                       },
                       Object {
+                        "description": "Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+                        "duration": "120min",
+                        "genre": "Action",
+                        "id": "1",
+                        "link": "https://www.youtube.com/watch?v=0LHxvxdRnYc",
+                        "picLink": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
+                        "rating": "4.0",
+                        "title": "Captain Marvel",
+                        "year": 2019,
+                      },
+                      Object {
+                        "description": "Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge.",
+                        "duration": "120min",
+                        "genre": "Action",
+                        "id": "3",
+                        "link": "https://www.youtube.com/watch?v=dt5g5_1cKVk",
+                        "picLink": "https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg",
+                        "rating": "3.5",
+                        "title": "Hellboy",
+                        "year": 2019,
+                      },
+                      Object {
                         "description": "Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land.",
                         "duration": "120min",
                         "genre": "Action",
@@ -163,43 +208,22 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         "year": 2018,
                       },
                       Object {
-                        "description": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+                        "description": "A deactivated female cyborg is revived, but cannot remember anything of her past life and goes on a quest to find out who she is.",
                         "duration": "120min",
-                        "genre": "Action",
-                        "id": "8",
-                        "link": "https://www.youtube.com/watch?v=6ZfuNTqbHE8",
-                        "picLink": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
-                        "rating": "4.5",
-                        "title": "Avengers: Infinity War",
-                        "year": 2018,
-                      },
-                      Object {
-                        "description": "A war-hardened Crusader and his Moorish commander mount an audacious revolt against the corrupt English crown.",
-                        "duration": "120min",
-                        "genre": "Action",
-                        "id": "9",
-                        "link": "https://www.youtube.com/watch?v=zwPn9ZnbCo0",
-                        "picLink": "https://m.media-amazon.com/images/M/MV5BOGQzZDM0NGUtZGE1NS00ZjQwLTk0N2EtMWI0NTgxYTkwYWQ4XkEyXkFqcGdeQXVyNDMzMzI5MjM@._V1_SY1000_CR0,0,648,1000_AL_.jpg",
-                        "rating": "5.0",
-                        "title": "Robin Hood",
-                        "year": 2019,
-                      },
-                      Object {
-                        "description": "In a post-apocalyptic world where cities ride on wheels and consume each other to survive, two people meet in London and try to stop a conspiracy.",
-                        "duration": "120min",
-                        "genre": "Action",
-                        "id": "10",
-                        "link": "https://www.youtube.com/watch?v=IRsFc2gguEg",
-                        "picLink": "https://m.media-amazon.com/images/M/MV5BNzY1MDA2OTQ0N15BMl5BanBnXkFtZTgwMTkzNjU2NTM@._V1_SY1000_CR0,0,631,1000_AL_.jpg",
-                        "rating": "4.5",
-                        "title": "Mortal Engines",
+                        "genre": "Cartoon",
+                        "id": "5",
+                        "link": "https://www.youtube.com/watch?v=U3D2vmWD88w",
+                        "picLink": "https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg",
+                        "rating": "1.5",
+                        "title": "Alita: Battle Angel",
                         "year": 2019,
                       },
                     ]
                   }
                   moviesCount={10}
                   searchToggleValue="title"
-                  sortToggleValue="sortToggleValue"
+                  setFormComponentRef={[Function]}
+                  sortToggleValue="rating"
                 >
                   <SearchFormContainer
                     handleSubmit={[Function]}
@@ -210,12 +234,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                       handleInput={[Function]}
                       handleSubmit={[Function]}
                       searchToggleValue="title"
-                      state={
-                        Object {
-                          "searchToggleValue": "title",
-                          "searchValue": "",
-                        }
-                      }
+                      searchValue=""
                     >
                       <form
                         className="form"
@@ -292,9 +311,9 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                       </form>
                     </SearchFormComponent>
                   </SearchFormContainer>
-                  <Navigation>
+                  <SubHeader>
                     <div
-                      className="navigation"
+                      className="subheader"
                     >
                       <span>
                         10 films are found
@@ -309,7 +328,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         onChange={[Function]}
                         text="Sort by:"
                         type="sort"
-                        value={true}
+                        value={false}
                       >
                         <div
                           className="toggle"
@@ -326,7 +345,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                           >
                             <input
                               className="toggle__item--left"
-                              defaultChecked={false}
+                              defaultChecked={true}
                               id="toggle-Rating"
                               name="sortToggle"
                               onChange={[Function]}
@@ -341,7 +360,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                             </label>
                             <input
                               className="toggle__item--right"
-                              defaultChecked={true}
+                              defaultChecked={false}
                               id="toggle-Year"
                               name="sortToggle"
                               onChange={[Function]}
@@ -358,19 +377,19 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         </div>
                       </Toggle>
                     </div>
-                  </Navigation>
+                  </SubHeader>
                   <MoviesListComponent
                     movies={
                       Array [
                         Object {
-                          "description": "Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+                          "description": "A war-hardened Crusader and his Moorish commander mount an audacious revolt against the corrupt English crown.",
                           "duration": "120min",
                           "genre": "Action",
-                          "id": "1",
-                          "link": "https://www.youtube.com/watch?v=0LHxvxdRnYc",
-                          "picLink": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
-                          "rating": "4.0",
-                          "title": "Captain Marvel",
+                          "id": "9",
+                          "link": "https://www.youtube.com/watch?v=zwPn9ZnbCo0",
+                          "picLink": "https://m.media-amazon.com/images/M/MV5BOGQzZDM0NGUtZGE1NS00ZjQwLTk0N2EtMWI0NTgxYTkwYWQ4XkEyXkFqcGdeQXVyNDMzMzI5MjM@._V1_SY1000_CR0,0,648,1000_AL_.jpg",
+                          "rating": "5.0",
+                          "title": "Robin Hood",
                           "year": 2019,
                         },
                         Object {
@@ -385,17 +404,6 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                           "year": 2019,
                         },
                         Object {
-                          "description": "Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge.",
-                          "duration": "120min",
-                          "genre": "Action",
-                          "id": "3",
-                          "link": "https://www.youtube.com/watch?v=dt5g5_1cKVk",
-                          "picLink": "https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg",
-                          "rating": "3.5",
-                          "title": "Hellboy",
-                          "year": 2019,
-                        },
-                        Object {
                           "description": "CGI re-imagining of the 1994 Disney classic.",
                           "duration": "120min",
                           "genre": "Cartoon",
@@ -407,14 +415,25 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                           "year": 2019,
                         },
                         Object {
-                          "description": "A deactivated female cyborg is revived, but cannot remember anything of her past life and goes on a quest to find out who she is.",
+                          "description": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
                           "duration": "120min",
-                          "genre": "Cartoon",
-                          "id": "5",
-                          "link": "https://www.youtube.com/watch?v=U3D2vmWD88w",
-                          "picLink": "https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg",
-                          "rating": "1.5",
-                          "title": "Alita: Battle Angel",
+                          "genre": "Action",
+                          "id": "8",
+                          "link": "https://www.youtube.com/watch?v=6ZfuNTqbHE8",
+                          "picLink": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+                          "rating": "4.5",
+                          "title": "Avengers: Infinity War",
+                          "year": 2018,
+                        },
+                        Object {
+                          "description": "In a post-apocalyptic world where cities ride on wheels and consume each other to survive, two people meet in London and try to stop a conspiracy.",
+                          "duration": "120min",
+                          "genre": "Action",
+                          "id": "10",
+                          "link": "https://www.youtube.com/watch?v=IRsFc2gguEg",
+                          "picLink": "https://m.media-amazon.com/images/M/MV5BNzY1MDA2OTQ0N15BMl5BanBnXkFtZTgwMTkzNjU2NTM@._V1_SY1000_CR0,0,631,1000_AL_.jpg",
+                          "rating": "4.5",
+                          "title": "Mortal Engines",
                           "year": 2019,
                         },
                         Object {
@@ -429,6 +448,28 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                           "year": 2019,
                         },
                         Object {
+                          "description": "Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+                          "duration": "120min",
+                          "genre": "Action",
+                          "id": "1",
+                          "link": "https://www.youtube.com/watch?v=0LHxvxdRnYc",
+                          "picLink": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
+                          "rating": "4.0",
+                          "title": "Captain Marvel",
+                          "year": 2019,
+                        },
+                        Object {
+                          "description": "Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge.",
+                          "duration": "120min",
+                          "genre": "Action",
+                          "id": "3",
+                          "link": "https://www.youtube.com/watch?v=dt5g5_1cKVk",
+                          "picLink": "https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg",
+                          "rating": "3.5",
+                          "title": "Hellboy",
+                          "year": 2019,
+                        },
+                        Object {
                           "description": "Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land.",
                           "duration": "120min",
                           "genre": "Action",
@@ -440,36 +481,14 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                           "year": 2018,
                         },
                         Object {
-                          "description": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+                          "description": "A deactivated female cyborg is revived, but cannot remember anything of her past life and goes on a quest to find out who she is.",
                           "duration": "120min",
-                          "genre": "Action",
-                          "id": "8",
-                          "link": "https://www.youtube.com/watch?v=6ZfuNTqbHE8",
-                          "picLink": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
-                          "rating": "4.5",
-                          "title": "Avengers: Infinity War",
-                          "year": 2018,
-                        },
-                        Object {
-                          "description": "A war-hardened Crusader and his Moorish commander mount an audacious revolt against the corrupt English crown.",
-                          "duration": "120min",
-                          "genre": "Action",
-                          "id": "9",
-                          "link": "https://www.youtube.com/watch?v=zwPn9ZnbCo0",
-                          "picLink": "https://m.media-amazon.com/images/M/MV5BOGQzZDM0NGUtZGE1NS00ZjQwLTk0N2EtMWI0NTgxYTkwYWQ4XkEyXkFqcGdeQXVyNDMzMzI5MjM@._V1_SY1000_CR0,0,648,1000_AL_.jpg",
-                          "rating": "5.0",
-                          "title": "Robin Hood",
-                          "year": 2019,
-                        },
-                        Object {
-                          "description": "In a post-apocalyptic world where cities ride on wheels and consume each other to survive, two people meet in London and try to stop a conspiracy.",
-                          "duration": "120min",
-                          "genre": "Action",
-                          "id": "10",
-                          "link": "https://www.youtube.com/watch?v=IRsFc2gguEg",
-                          "picLink": "https://m.media-amazon.com/images/M/MV5BNzY1MDA2OTQ0N15BMl5BanBnXkFtZTgwMTkzNjU2NTM@._V1_SY1000_CR0,0,631,1000_AL_.jpg",
-                          "rating": "4.5",
-                          "title": "Mortal Engines",
+                          "genre": "Cartoon",
+                          "id": "5",
+                          "link": "https://www.youtube.com/watch?v=U3D2vmWD88w",
+                          "picLink": "https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg",
+                          "rating": "1.5",
+                          "title": "Alita: Battle Angel",
                           "year": 2019,
                         },
                       ]
@@ -479,619 +498,11 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                       className="movie-list"
                     >
                       <MoviesListItemComponent
-                        description="Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races."
-                        duration="120min"
-                        genre="Action"
-                        id="1"
-                        key="Captain Marvel_0"
-                        link="https://www.youtube.com/watch?v=0LHxvxdRnYc"
-                        picLink="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
-                        rating="4.0"
-                        title="Captain Marvel"
-                        year={2019}
-                      >
-                        <div
-                          className="movie-item"
-                        >
-                          <div
-                            className="movie-item__header"
-                          >
-                            <h2
-                              className="movie-item__title"
-                            >
-                               
-                              Captain Marvel
-                               
-                            </h2>
-                            <span
-                              className="movie-item__year"
-                            >
-                               
-                              2019
-                               
-                            </span>
-                          </div>
-                          <div
-                            className="movie-item__body"
-                          >
-                            <img
-                              className="movie-item__img"
-                              height="400"
-                              src="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
-                            />
-                            <span
-                              className="movie-item__genre"
-                            >
-                               
-                              Action
-                               
-                            </span>
-                            <p
-                              className="movie-item__description"
-                            >
-                              Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
-                            </p>
-                            <LinkButton
-                              className="movie-item__link"
-                              to="/1/#"
-                            >
-                              <Link
-                                replace={false}
-                                to="/1/#"
-                              >
-                                <a
-                                  href="/1/"
-                                  onClick={[Function]}
-                                >
-                                  <span
-                                    className="link"
-                                  >
-                                    See more
-                                  </span>
-                                </a>
-                              </Link>
-                            </LinkButton>
-                          </div>
-                        </div>
-                      </MoviesListItemComponent>
-                      <MoviesListItemComponent
-                        description="Jean Grey begins to develop incredible powers that corrupt and turn her into a Dark Phoenix. Now the X-Men will have to decide if the life of a team member is worth more than all the people living in the world."
-                        duration="120min"
-                        genre="Action"
-                        id="2"
-                        key="Dark Phoenix_1"
-                        link="https://www.youtube.com/watch?v=1-q8C_c-nlM"
-                        picLink="https://m.media-amazon.com/images/M/MV5BMjAwNDgxNTI0M15BMl5BanBnXkFtZTgwNTY4MDI1NzM@._V1_SY1000_CR0,0,631,1000_AL_.jpg"
-                        rating="4.5"
-                        title="Dark Phoenix"
-                        year={2019}
-                      >
-                        <div
-                          className="movie-item"
-                        >
-                          <div
-                            className="movie-item__header"
-                          >
-                            <h2
-                              className="movie-item__title"
-                            >
-                               
-                              Dark Phoenix
-                               
-                            </h2>
-                            <span
-                              className="movie-item__year"
-                            >
-                               
-                              2019
-                               
-                            </span>
-                          </div>
-                          <div
-                            className="movie-item__body"
-                          >
-                            <img
-                              className="movie-item__img"
-                              height="400"
-                              src="https://m.media-amazon.com/images/M/MV5BMjAwNDgxNTI0M15BMl5BanBnXkFtZTgwNTY4MDI1NzM@._V1_SY1000_CR0,0,631,1000_AL_.jpg"
-                            />
-                            <span
-                              className="movie-item__genre"
-                            >
-                               
-                              Action
-                               
-                            </span>
-                            <p
-                              className="movie-item__description"
-                            >
-                              Jean Grey begins to develop incredible powers that corrupt and turn her into a Dark Phoenix. Now the X-Men will have to decide if the life of a team member is worth more than all the people living in the world.
-                            </p>
-                            <LinkButton
-                              className="movie-item__link"
-                              to="/2/#"
-                            >
-                              <Link
-                                replace={false}
-                                to="/2/#"
-                              >
-                                <a
-                                  href="/2/"
-                                  onClick={[Function]}
-                                >
-                                  <span
-                                    className="link"
-                                  >
-                                    See more
-                                  </span>
-                                </a>
-                              </Link>
-                            </LinkButton>
-                          </div>
-                        </div>
-                      </MoviesListItemComponent>
-                      <MoviesListItemComponent
-                        description="Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge."
-                        duration="120min"
-                        genre="Action"
-                        id="3"
-                        key="Hellboy_2"
-                        link="https://www.youtube.com/watch?v=dt5g5_1cKVk"
-                        picLink="https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg"
-                        rating="3.5"
-                        title="Hellboy"
-                        year={2019}
-                      >
-                        <div
-                          className="movie-item"
-                        >
-                          <div
-                            className="movie-item__header"
-                          >
-                            <h2
-                              className="movie-item__title"
-                            >
-                               
-                              Hellboy
-                               
-                            </h2>
-                            <span
-                              className="movie-item__year"
-                            >
-                               
-                              2019
-                               
-                            </span>
-                          </div>
-                          <div
-                            className="movie-item__body"
-                          >
-                            <img
-                              className="movie-item__img"
-                              height="400"
-                              src="https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg"
-                            />
-                            <span
-                              className="movie-item__genre"
-                            >
-                               
-                              Action
-                               
-                            </span>
-                            <p
-                              className="movie-item__description"
-                            >
-                              Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge.
-                            </p>
-                            <LinkButton
-                              className="movie-item__link"
-                              to="/3/#"
-                            >
-                              <Link
-                                replace={false}
-                                to="/3/#"
-                              >
-                                <a
-                                  href="/3/"
-                                  onClick={[Function]}
-                                >
-                                  <span
-                                    className="link"
-                                  >
-                                    See more
-                                  </span>
-                                </a>
-                              </Link>
-                            </LinkButton>
-                          </div>
-                        </div>
-                      </MoviesListItemComponent>
-                      <MoviesListItemComponent
-                        description="CGI re-imagining of the 1994 Disney classic."
-                        duration="120min"
-                        genre="Cartoon"
-                        id="4"
-                        key="The Lion King_3"
-                        link="https://www.youtube.com/watch?v=4CbLXeGSDxg"
-                        picLink="https://m.media-amazon.com/images/M/MV5BMjIwMjE1Nzc4NV5BMl5BanBnXkFtZTgwNDg4OTA1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
-                        rating="4.5"
-                        title="The Lion King"
-                        year={2019}
-                      >
-                        <div
-                          className="movie-item"
-                        >
-                          <div
-                            className="movie-item__header"
-                          >
-                            <h2
-                              className="movie-item__title"
-                            >
-                               
-                              The Lion King
-                               
-                            </h2>
-                            <span
-                              className="movie-item__year"
-                            >
-                               
-                              2019
-                               
-                            </span>
-                          </div>
-                          <div
-                            className="movie-item__body"
-                          >
-                            <img
-                              className="movie-item__img"
-                              height="400"
-                              src="https://m.media-amazon.com/images/M/MV5BMjIwMjE1Nzc4NV5BMl5BanBnXkFtZTgwNDg4OTA1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
-                            />
-                            <span
-                              className="movie-item__genre"
-                            >
-                               
-                              Cartoon
-                               
-                            </span>
-                            <p
-                              className="movie-item__description"
-                            >
-                              CGI re-imagining of the 1994 Disney classic.
-                            </p>
-                            <LinkButton
-                              className="movie-item__link"
-                              to="/4/#"
-                            >
-                              <Link
-                                replace={false}
-                                to="/4/#"
-                              >
-                                <a
-                                  href="/4/"
-                                  onClick={[Function]}
-                                >
-                                  <span
-                                    className="link"
-                                  >
-                                    See more
-                                  </span>
-                                </a>
-                              </Link>
-                            </LinkButton>
-                          </div>
-                        </div>
-                      </MoviesListItemComponent>
-                      <MoviesListItemComponent
-                        description="A deactivated female cyborg is revived, but cannot remember anything of her past life and goes on a quest to find out who she is."
-                        duration="120min"
-                        genre="Cartoon"
-                        id="5"
-                        key="Alita: Battle Angel_4"
-                        link="https://www.youtube.com/watch?v=U3D2vmWD88w"
-                        picLink="https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg"
-                        rating="1.5"
-                        title="Alita: Battle Angel"
-                        year={2019}
-                      >
-                        <div
-                          className="movie-item"
-                        >
-                          <div
-                            className="movie-item__header"
-                          >
-                            <h2
-                              className="movie-item__title"
-                            >
-                               
-                              Alita: Battle Angel
-                               
-                            </h2>
-                            <span
-                              className="movie-item__year"
-                            >
-                               
-                              2019
-                               
-                            </span>
-                          </div>
-                          <div
-                            className="movie-item__body"
-                          >
-                            <img
-                              className="movie-item__img"
-                              height="400"
-                              src="https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg"
-                            />
-                            <span
-                              className="movie-item__genre"
-                            >
-                               
-                              Cartoon
-                               
-                            </span>
-                            <p
-                              className="movie-item__description"
-                            >
-                              A deactivated female cyborg is revived, but cannot remember anything of her past life and goes on a quest to find out who she is.
-                            </p>
-                            <LinkButton
-                              className="movie-item__link"
-                              to="/5/#"
-                            >
-                              <Link
-                                replace={false}
-                                to="/5/#"
-                              >
-                                <a
-                                  href="/5/"
-                                  onClick={[Function]}
-                                >
-                                  <span
-                                    className="link"
-                                  >
-                                    See more
-                                  </span>
-                                </a>
-                              </Link>
-                            </LinkButton>
-                          </div>
-                        </div>
-                      </MoviesListItemComponent>
-                      <MoviesListItemComponent
-                        description="In a world where people collect Pokémon to do battle, a boy comes across an intelligent talking Pikachu who seeks to be a detective."
-                        duration="120min"
-                        genre="Cartoon"
-                        id="6"
-                        key="Pokémon Detective_5"
-                        link="https://www.youtube.com/watch?v=1roy4o4tqQM"
-                        picLink="https://m.media-amazon.com/images/M/MV5BNDU4Mzc3NzE5NV5BMl5BanBnXkFtZTgwMzE1NzI1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
-                        rating="4.4"
-                        title="Pokémon Detective"
-                        year={2019}
-                      >
-                        <div
-                          className="movie-item"
-                        >
-                          <div
-                            className="movie-item__header"
-                          >
-                            <h2
-                              className="movie-item__title"
-                            >
-                               
-                              Pokémon Detective
-                               
-                            </h2>
-                            <span
-                              className="movie-item__year"
-                            >
-                               
-                              2019
-                               
-                            </span>
-                          </div>
-                          <div
-                            className="movie-item__body"
-                          >
-                            <img
-                              className="movie-item__img"
-                              height="400"
-                              src="https://m.media-amazon.com/images/M/MV5BNDU4Mzc3NzE5NV5BMl5BanBnXkFtZTgwMzE1NzI1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
-                            />
-                            <span
-                              className="movie-item__genre"
-                            >
-                               
-                              Cartoon
-                               
-                            </span>
-                            <p
-                              className="movie-item__description"
-                            >
-                              In a world where people collect Pokémon to do battle, a boy comes across an intelligent talking Pikachu who seeks to be a detective.
-                            </p>
-                            <LinkButton
-                              className="movie-item__link"
-                              to="/6/#"
-                            >
-                              <Link
-                                replace={false}
-                                to="/6/#"
-                              >
-                                <a
-                                  href="/6/"
-                                  onClick={[Function]}
-                                >
-                                  <span
-                                    className="link"
-                                  >
-                                    See more
-                                  </span>
-                                </a>
-                              </Link>
-                            </LinkButton>
-                          </div>
-                        </div>
-                      </MoviesListItemComponent>
-                      <MoviesListItemComponent
-                        description="Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land."
-                        duration="120min"
-                        genre="Action"
-                        id="7"
-                        key="Aquaman_6"
-                        link="https://www.youtube.com/watch?v=WDkg3h8PCVU"
-                        picLink="https://m.media-amazon.com/images/M/MV5BOTk5ODg0OTU5M15BMl5BanBnXkFtZTgwMDQ3MDY3NjM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
-                        rating="3.2"
-                        title="Aquaman"
-                        year={2018}
-                      >
-                        <div
-                          className="movie-item"
-                        >
-                          <div
-                            className="movie-item__header"
-                          >
-                            <h2
-                              className="movie-item__title"
-                            >
-                               
-                              Aquaman
-                               
-                            </h2>
-                            <span
-                              className="movie-item__year"
-                            >
-                               
-                              2018
-                               
-                            </span>
-                          </div>
-                          <div
-                            className="movie-item__body"
-                          >
-                            <img
-                              className="movie-item__img"
-                              height="400"
-                              src="https://m.media-amazon.com/images/M/MV5BOTk5ODg0OTU5M15BMl5BanBnXkFtZTgwMDQ3MDY3NjM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
-                            />
-                            <span
-                              className="movie-item__genre"
-                            >
-                               
-                              Action
-                               
-                            </span>
-                            <p
-                              className="movie-item__description"
-                            >
-                              Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land.
-                            </p>
-                            <LinkButton
-                              className="movie-item__link"
-                              to="/7/#"
-                            >
-                              <Link
-                                replace={false}
-                                to="/7/#"
-                              >
-                                <a
-                                  href="/7/"
-                                  onClick={[Function]}
-                                >
-                                  <span
-                                    className="link"
-                                  >
-                                    See more
-                                  </span>
-                                </a>
-                              </Link>
-                            </LinkButton>
-                          </div>
-                        </div>
-                      </MoviesListItemComponent>
-                      <MoviesListItemComponent
-                        description="The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
-                        duration="120min"
-                        genre="Action"
-                        id="8"
-                        key="Avengers: Infinity War_7"
-                        link="https://www.youtube.com/watch?v=6ZfuNTqbHE8"
-                        picLink="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
-                        rating="4.5"
-                        title="Avengers: Infinity War"
-                        year={2018}
-                      >
-                        <div
-                          className="movie-item"
-                        >
-                          <div
-                            className="movie-item__header"
-                          >
-                            <h2
-                              className="movie-item__title"
-                            >
-                               
-                              Avengers: Infinity War
-                               
-                            </h2>
-                            <span
-                              className="movie-item__year"
-                            >
-                               
-                              2018
-                               
-                            </span>
-                          </div>
-                          <div
-                            className="movie-item__body"
-                          >
-                            <img
-                              className="movie-item__img"
-                              height="400"
-                              src="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
-                            />
-                            <span
-                              className="movie-item__genre"
-                            >
-                               
-                              Action
-                               
-                            </span>
-                            <p
-                              className="movie-item__description"
-                            >
-                              The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
-                            </p>
-                            <LinkButton
-                              className="movie-item__link"
-                              to="/8/#"
-                            >
-                              <Link
-                                replace={false}
-                                to="/8/#"
-                              >
-                                <a
-                                  href="/8/"
-                                  onClick={[Function]}
-                                >
-                                  <span
-                                    className="link"
-                                  >
-                                    See more
-                                  </span>
-                                </a>
-                              </Link>
-                            </LinkButton>
-                          </div>
-                        </div>
-                      </MoviesListItemComponent>
-                      <MoviesListItemComponent
                         description="A war-hardened Crusader and his Moorish commander mount an audacious revolt against the corrupt English crown."
                         duration="120min"
                         genre="Action"
                         id="9"
-                        key="Robin Hood_8"
+                        key="Robin Hood_0"
                         link="https://www.youtube.com/watch?v=zwPn9ZnbCo0"
                         picLink="https://m.media-amazon.com/images/M/MV5BOGQzZDM0NGUtZGE1NS00ZjQwLTk0N2EtMWI0NTgxYTkwYWQ4XkEyXkFqcGdeQXVyNDMzMzI5MjM@._V1_SY1000_CR0,0,648,1000_AL_.jpg"
                         rating="5.0"
@@ -1099,7 +510,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         year={2019}
                       >
                         <div
-                          className="movie-item"
+                          className="movie-item movie-item--cy"
                         >
                           <div
                             className="movie-item__header"
@@ -1140,15 +551,251 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                               A war-hardened Crusader and his Moorish commander mount an audacious revolt against the corrupt English crown.
                             </p>
                             <LinkButton
-                              className="movie-item__link"
+                              cssClass="movie-item__link--cy"
                               to="/9/#"
                             >
                               <Link
+                                className="movie-item__link--cy"
                                 replace={false}
                                 to="/9/#"
                               >
                                 <a
+                                  className="movie-item__link--cy"
                                   href="/9/"
+                                  onClick={[Function]}
+                                >
+                                  <span
+                                    className="link"
+                                  >
+                                    See more
+                                  </span>
+                                </a>
+                              </Link>
+                            </LinkButton>
+                          </div>
+                        </div>
+                      </MoviesListItemComponent>
+                      <MoviesListItemComponent
+                        description="Jean Grey begins to develop incredible powers that corrupt and turn her into a Dark Phoenix. Now the X-Men will have to decide if the life of a team member is worth more than all the people living in the world."
+                        duration="120min"
+                        genre="Action"
+                        id="2"
+                        key="Dark Phoenix_1"
+                        link="https://www.youtube.com/watch?v=1-q8C_c-nlM"
+                        picLink="https://m.media-amazon.com/images/M/MV5BMjAwNDgxNTI0M15BMl5BanBnXkFtZTgwNTY4MDI1NzM@._V1_SY1000_CR0,0,631,1000_AL_.jpg"
+                        rating="4.5"
+                        title="Dark Phoenix"
+                        year={2019}
+                      >
+                        <div
+                          className="movie-item movie-item--cy"
+                        >
+                          <div
+                            className="movie-item__header"
+                          >
+                            <h2
+                              className="movie-item__title"
+                            >
+                               
+                              Dark Phoenix
+                               
+                            </h2>
+                            <span
+                              className="movie-item__year"
+                            >
+                               
+                              2019
+                               
+                            </span>
+                          </div>
+                          <div
+                            className="movie-item__body"
+                          >
+                            <img
+                              className="movie-item__img"
+                              height="400"
+                              src="https://m.media-amazon.com/images/M/MV5BMjAwNDgxNTI0M15BMl5BanBnXkFtZTgwNTY4MDI1NzM@._V1_SY1000_CR0,0,631,1000_AL_.jpg"
+                            />
+                            <span
+                              className="movie-item__genre"
+                            >
+                               
+                              Action
+                               
+                            </span>
+                            <p
+                              className="movie-item__description"
+                            >
+                              Jean Grey begins to develop incredible powers that corrupt and turn her into a Dark Phoenix. Now the X-Men will have to decide if the life of a team member is worth more than all the people living in the world.
+                            </p>
+                            <LinkButton
+                              cssClass="movie-item__link--cy"
+                              to="/2/#"
+                            >
+                              <Link
+                                className="movie-item__link--cy"
+                                replace={false}
+                                to="/2/#"
+                              >
+                                <a
+                                  className="movie-item__link--cy"
+                                  href="/2/"
+                                  onClick={[Function]}
+                                >
+                                  <span
+                                    className="link"
+                                  >
+                                    See more
+                                  </span>
+                                </a>
+                              </Link>
+                            </LinkButton>
+                          </div>
+                        </div>
+                      </MoviesListItemComponent>
+                      <MoviesListItemComponent
+                        description="CGI re-imagining of the 1994 Disney classic."
+                        duration="120min"
+                        genre="Cartoon"
+                        id="4"
+                        key="The Lion King_2"
+                        link="https://www.youtube.com/watch?v=4CbLXeGSDxg"
+                        picLink="https://m.media-amazon.com/images/M/MV5BMjIwMjE1Nzc4NV5BMl5BanBnXkFtZTgwNDg4OTA1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+                        rating="4.5"
+                        title="The Lion King"
+                        year={2019}
+                      >
+                        <div
+                          className="movie-item movie-item--cy"
+                        >
+                          <div
+                            className="movie-item__header"
+                          >
+                            <h2
+                              className="movie-item__title"
+                            >
+                               
+                              The Lion King
+                               
+                            </h2>
+                            <span
+                              className="movie-item__year"
+                            >
+                               
+                              2019
+                               
+                            </span>
+                          </div>
+                          <div
+                            className="movie-item__body"
+                          >
+                            <img
+                              className="movie-item__img"
+                              height="400"
+                              src="https://m.media-amazon.com/images/M/MV5BMjIwMjE1Nzc4NV5BMl5BanBnXkFtZTgwNDg4OTA1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+                            />
+                            <span
+                              className="movie-item__genre"
+                            >
+                               
+                              Cartoon
+                               
+                            </span>
+                            <p
+                              className="movie-item__description"
+                            >
+                              CGI re-imagining of the 1994 Disney classic.
+                            </p>
+                            <LinkButton
+                              cssClass="movie-item__link--cy"
+                              to="/4/#"
+                            >
+                              <Link
+                                className="movie-item__link--cy"
+                                replace={false}
+                                to="/4/#"
+                              >
+                                <a
+                                  className="movie-item__link--cy"
+                                  href="/4/"
+                                  onClick={[Function]}
+                                >
+                                  <span
+                                    className="link"
+                                  >
+                                    See more
+                                  </span>
+                                </a>
+                              </Link>
+                            </LinkButton>
+                          </div>
+                        </div>
+                      </MoviesListItemComponent>
+                      <MoviesListItemComponent
+                        description="The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
+                        duration="120min"
+                        genre="Action"
+                        id="8"
+                        key="Avengers: Infinity War_3"
+                        link="https://www.youtube.com/watch?v=6ZfuNTqbHE8"
+                        picLink="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+                        rating="4.5"
+                        title="Avengers: Infinity War"
+                        year={2018}
+                      >
+                        <div
+                          className="movie-item movie-item--cy"
+                        >
+                          <div
+                            className="movie-item__header"
+                          >
+                            <h2
+                              className="movie-item__title"
+                            >
+                               
+                              Avengers: Infinity War
+                               
+                            </h2>
+                            <span
+                              className="movie-item__year"
+                            >
+                               
+                              2018
+                               
+                            </span>
+                          </div>
+                          <div
+                            className="movie-item__body"
+                          >
+                            <img
+                              className="movie-item__img"
+                              height="400"
+                              src="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+                            />
+                            <span
+                              className="movie-item__genre"
+                            >
+                               
+                              Action
+                               
+                            </span>
+                            <p
+                              className="movie-item__description"
+                            >
+                              The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
+                            </p>
+                            <LinkButton
+                              cssClass="movie-item__link--cy"
+                              to="/8/#"
+                            >
+                              <Link
+                                className="movie-item__link--cy"
+                                replace={false}
+                                to="/8/#"
+                              >
+                                <a
+                                  className="movie-item__link--cy"
+                                  href="/8/"
                                   onClick={[Function]}
                                 >
                                   <span
@@ -1167,7 +814,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         duration="120min"
                         genre="Action"
                         id="10"
-                        key="Mortal Engines_9"
+                        key="Mortal Engines_4"
                         link="https://www.youtube.com/watch?v=IRsFc2gguEg"
                         picLink="https://m.media-amazon.com/images/M/MV5BNzY1MDA2OTQ0N15BMl5BanBnXkFtZTgwMTkzNjU2NTM@._V1_SY1000_CR0,0,631,1000_AL_.jpg"
                         rating="4.5"
@@ -1175,7 +822,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                         year={2019}
                       >
                         <div
-                          className="movie-item"
+                          className="movie-item movie-item--cy"
                         >
                           <div
                             className="movie-item__header"
@@ -1216,15 +863,407 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                               In a post-apocalyptic world where cities ride on wheels and consume each other to survive, two people meet in London and try to stop a conspiracy.
                             </p>
                             <LinkButton
-                              className="movie-item__link"
+                              cssClass="movie-item__link--cy"
                               to="/10/#"
                             >
                               <Link
+                                className="movie-item__link--cy"
                                 replace={false}
                                 to="/10/#"
                               >
                                 <a
+                                  className="movie-item__link--cy"
                                   href="/10/"
+                                  onClick={[Function]}
+                                >
+                                  <span
+                                    className="link"
+                                  >
+                                    See more
+                                  </span>
+                                </a>
+                              </Link>
+                            </LinkButton>
+                          </div>
+                        </div>
+                      </MoviesListItemComponent>
+                      <MoviesListItemComponent
+                        description="In a world where people collect Pokémon to do battle, a boy comes across an intelligent talking Pikachu who seeks to be a detective."
+                        duration="120min"
+                        genre="Cartoon"
+                        id="6"
+                        key="Pokémon Detective_5"
+                        link="https://www.youtube.com/watch?v=1roy4o4tqQM"
+                        picLink="https://m.media-amazon.com/images/M/MV5BNDU4Mzc3NzE5NV5BMl5BanBnXkFtZTgwMzE1NzI1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+                        rating="4.4"
+                        title="Pokémon Detective"
+                        year={2019}
+                      >
+                        <div
+                          className="movie-item movie-item--cy"
+                        >
+                          <div
+                            className="movie-item__header"
+                          >
+                            <h2
+                              className="movie-item__title"
+                            >
+                               
+                              Pokémon Detective
+                               
+                            </h2>
+                            <span
+                              className="movie-item__year"
+                            >
+                               
+                              2019
+                               
+                            </span>
+                          </div>
+                          <div
+                            className="movie-item__body"
+                          >
+                            <img
+                              className="movie-item__img"
+                              height="400"
+                              src="https://m.media-amazon.com/images/M/MV5BNDU4Mzc3NzE5NV5BMl5BanBnXkFtZTgwMzE1NzI1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+                            />
+                            <span
+                              className="movie-item__genre"
+                            >
+                               
+                              Cartoon
+                               
+                            </span>
+                            <p
+                              className="movie-item__description"
+                            >
+                              In a world where people collect Pokémon to do battle, a boy comes across an intelligent talking Pikachu who seeks to be a detective.
+                            </p>
+                            <LinkButton
+                              cssClass="movie-item__link--cy"
+                              to="/6/#"
+                            >
+                              <Link
+                                className="movie-item__link--cy"
+                                replace={false}
+                                to="/6/#"
+                              >
+                                <a
+                                  className="movie-item__link--cy"
+                                  href="/6/"
+                                  onClick={[Function]}
+                                >
+                                  <span
+                                    className="link"
+                                  >
+                                    See more
+                                  </span>
+                                </a>
+                              </Link>
+                            </LinkButton>
+                          </div>
+                        </div>
+                      </MoviesListItemComponent>
+                      <MoviesListItemComponent
+                        description="Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races."
+                        duration="120min"
+                        genre="Action"
+                        id="1"
+                        key="Captain Marvel_6"
+                        link="https://www.youtube.com/watch?v=0LHxvxdRnYc"
+                        picLink="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+                        rating="4.0"
+                        title="Captain Marvel"
+                        year={2019}
+                      >
+                        <div
+                          className="movie-item movie-item--cy"
+                        >
+                          <div
+                            className="movie-item__header"
+                          >
+                            <h2
+                              className="movie-item__title"
+                            >
+                               
+                              Captain Marvel
+                               
+                            </h2>
+                            <span
+                              className="movie-item__year"
+                            >
+                               
+                              2019
+                               
+                            </span>
+                          </div>
+                          <div
+                            className="movie-item__body"
+                          >
+                            <img
+                              className="movie-item__img"
+                              height="400"
+                              src="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+                            />
+                            <span
+                              className="movie-item__genre"
+                            >
+                               
+                              Action
+                               
+                            </span>
+                            <p
+                              className="movie-item__description"
+                            >
+                              Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
+                            </p>
+                            <LinkButton
+                              cssClass="movie-item__link--cy"
+                              to="/1/#"
+                            >
+                              <Link
+                                className="movie-item__link--cy"
+                                replace={false}
+                                to="/1/#"
+                              >
+                                <a
+                                  className="movie-item__link--cy"
+                                  href="/1/"
+                                  onClick={[Function]}
+                                >
+                                  <span
+                                    className="link"
+                                  >
+                                    See more
+                                  </span>
+                                </a>
+                              </Link>
+                            </LinkButton>
+                          </div>
+                        </div>
+                      </MoviesListItemComponent>
+                      <MoviesListItemComponent
+                        description="Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge."
+                        duration="120min"
+                        genre="Action"
+                        id="3"
+                        key="Hellboy_7"
+                        link="https://www.youtube.com/watch?v=dt5g5_1cKVk"
+                        picLink="https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg"
+                        rating="3.5"
+                        title="Hellboy"
+                        year={2019}
+                      >
+                        <div
+                          className="movie-item movie-item--cy"
+                        >
+                          <div
+                            className="movie-item__header"
+                          >
+                            <h2
+                              className="movie-item__title"
+                            >
+                               
+                              Hellboy
+                               
+                            </h2>
+                            <span
+                              className="movie-item__year"
+                            >
+                               
+                              2019
+                               
+                            </span>
+                          </div>
+                          <div
+                            className="movie-item__body"
+                          >
+                            <img
+                              className="movie-item__img"
+                              height="400"
+                              src="https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg"
+                            />
+                            <span
+                              className="movie-item__genre"
+                            >
+                               
+                              Action
+                               
+                            </span>
+                            <p
+                              className="movie-item__description"
+                            >
+                              Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge.
+                            </p>
+                            <LinkButton
+                              cssClass="movie-item__link--cy"
+                              to="/3/#"
+                            >
+                              <Link
+                                className="movie-item__link--cy"
+                                replace={false}
+                                to="/3/#"
+                              >
+                                <a
+                                  className="movie-item__link--cy"
+                                  href="/3/"
+                                  onClick={[Function]}
+                                >
+                                  <span
+                                    className="link"
+                                  >
+                                    See more
+                                  </span>
+                                </a>
+                              </Link>
+                            </LinkButton>
+                          </div>
+                        </div>
+                      </MoviesListItemComponent>
+                      <MoviesListItemComponent
+                        description="Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land."
+                        duration="120min"
+                        genre="Action"
+                        id="7"
+                        key="Aquaman_8"
+                        link="https://www.youtube.com/watch?v=WDkg3h8PCVU"
+                        picLink="https://m.media-amazon.com/images/M/MV5BOTk5ODg0OTU5M15BMl5BanBnXkFtZTgwMDQ3MDY3NjM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+                        rating="3.2"
+                        title="Aquaman"
+                        year={2018}
+                      >
+                        <div
+                          className="movie-item movie-item--cy"
+                        >
+                          <div
+                            className="movie-item__header"
+                          >
+                            <h2
+                              className="movie-item__title"
+                            >
+                               
+                              Aquaman
+                               
+                            </h2>
+                            <span
+                              className="movie-item__year"
+                            >
+                               
+                              2018
+                               
+                            </span>
+                          </div>
+                          <div
+                            className="movie-item__body"
+                          >
+                            <img
+                              className="movie-item__img"
+                              height="400"
+                              src="https://m.media-amazon.com/images/M/MV5BOTk5ODg0OTU5M15BMl5BanBnXkFtZTgwMDQ3MDY3NjM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+                            />
+                            <span
+                              className="movie-item__genre"
+                            >
+                               
+                              Action
+                               
+                            </span>
+                            <p
+                              className="movie-item__description"
+                            >
+                              Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land.
+                            </p>
+                            <LinkButton
+                              cssClass="movie-item__link--cy"
+                              to="/7/#"
+                            >
+                              <Link
+                                className="movie-item__link--cy"
+                                replace={false}
+                                to="/7/#"
+                              >
+                                <a
+                                  className="movie-item__link--cy"
+                                  href="/7/"
+                                  onClick={[Function]}
+                                >
+                                  <span
+                                    className="link"
+                                  >
+                                    See more
+                                  </span>
+                                </a>
+                              </Link>
+                            </LinkButton>
+                          </div>
+                        </div>
+                      </MoviesListItemComponent>
+                      <MoviesListItemComponent
+                        description="A deactivated female cyborg is revived, but cannot remember anything of her past life and goes on a quest to find out who she is."
+                        duration="120min"
+                        genre="Cartoon"
+                        id="5"
+                        key="Alita: Battle Angel_9"
+                        link="https://www.youtube.com/watch?v=U3D2vmWD88w"
+                        picLink="https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg"
+                        rating="1.5"
+                        title="Alita: Battle Angel"
+                        year={2019}
+                      >
+                        <div
+                          className="movie-item movie-item--cy"
+                        >
+                          <div
+                            className="movie-item__header"
+                          >
+                            <h2
+                              className="movie-item__title"
+                            >
+                               
+                              Alita: Battle Angel
+                               
+                            </h2>
+                            <span
+                              className="movie-item__year"
+                            >
+                               
+                              2019
+                               
+                            </span>
+                          </div>
+                          <div
+                            className="movie-item__body"
+                          >
+                            <img
+                              className="movie-item__img"
+                              height="400"
+                              src="https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg"
+                            />
+                            <span
+                              className="movie-item__genre"
+                            >
+                               
+                              Cartoon
+                               
+                            </span>
+                            <p
+                              className="movie-item__description"
+                            >
+                              A deactivated female cyborg is revived, but cannot remember anything of her past life and goes on a quest to find out who she is.
+                            </p>
+                            <LinkButton
+                              cssClass="movie-item__link--cy"
+                              to="/5/#"
+                            >
+                              <Link
+                                className="movie-item__link--cy"
+                                replace={false}
+                                to="/5/#"
+                              >
+                                <a
+                                  className="movie-item__link--cy"
+                                  href="/5/"
                                   onClick={[Function]}
                                 >
                                   <span
@@ -1244,20 +1283,20 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
               </SearchMovieContainer>
             </Route>
           </Switch>
-        </ErrorBoundary>
-      </main>
-      <Footer>
-        <footer
-          className="footer"
-        >
-          <span
-            className="footer__text"
-          >
-            Copyright elkin (c) 2019
-          </span>
-        </footer>
-      </Footer>
-    </Router>
-  </BrowserRouter>
+        </Router>
+      </BrowserRouter>
+    </ErrorBoundary>
+  </main>
+  <Footer>
+    <footer
+      className="footer"
+    >
+      <span
+        className="footer__text"
+      >
+        Copyright elkin (c) 2019
+      </span>
+    </footer>
+  </Footer>
 </AppComponent>
 `;

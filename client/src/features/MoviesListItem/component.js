@@ -18,10 +18,7 @@ const MoviesListItemComponent = props => {
         <img className={styles['movie-item__img']} src={picLink} height="400" />
         <span className={styles['movie-item__genre']}> {genre} </span>
         <p className={styles['movie-item__description']}>{description}</p>
-        <LinkButton
-          to={`/${id}/#`}
-          cssClass={(styles['movie-item__link'] || '') + 'movie-item__link--cy'}
-        >
+        <LinkButton to={`/${id}/#`} cssClass="movie-item__link--cy">
           See more
         </LinkButton>
       </div>
