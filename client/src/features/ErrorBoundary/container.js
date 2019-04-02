@@ -4,12 +4,9 @@ import ErrorBoundaryComponent from './component';
 class ErrorBoundary extends Component {
   state = { hasError: false };
 
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
   componentDidCatch(error, info) {
     this.setState({
+      hasError: true,
       errorName: error.toString(),
       componentStack: info.componentStack,
     });
@@ -17,11 +14,12 @@ class ErrorBoundary extends Component {
 
   render() {
     const { errorName, componentStack, hasError } = this.state;
-    if (hasError) {
-      return <ErrorBoundaryComponent errorName={errorName} componentStack={componentStack} />;
-    }
 
-    return this.props.children;
+    return hasError ? (
+      <ErrorBoundaryComponent errorName={errorName} componentStack={componentStack} />
+    ) : (
+      this.props.children
+    );
   }
 }
 
