@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import SearchMovieComponent from './component';
 
-import mockedData from 'core/data.json';
+import { getMovies } from './utils.js';
 
 class SearchMovieContainer extends Component {
   state = {
@@ -21,33 +21,19 @@ class SearchMovieContainer extends Component {
     this.setState({ [`${e.target.name}Value`]: e.target.value });
   };
 
-  getMovies = data => {
-    const { searchToggleValue, sortToggleValue, searchValue } = this.state;
-
-    let { movies } = data;
-    movies = [...movies].sort((a, b) => {
-      return b[sortToggleValue] - a[sortToggleValue];
-    });
-    if (searchValue !== '') {
-      movies = movies.filter(el => {
-        return el[searchToggleValue].toLowerCase().indexOf(searchValue.toLowerCase()) >= 0;
-      });
-    }
-    return movies;
-  };
-
   setFormComponentRef = el => {
     this.formComponent = el;
   };
 
   render() {
-    const { searchToggleValue, sortToggleValue } = this.state;
+    const { searchToggleValue, sortToggleValue, searchValue } = this.state;
+    const allMovies = getMovies(searchToggleValue, sortToggleValue, searchValue);
     return (
       <SearchMovieComponent
         handleSubmit={this.handleSubmit}
         handleToggle={this.handleInput}
-        moviesCount={this.getMovies(mockedData).length}
-        movies={this.getMovies(mockedData)}
+        moviesCount={allMovies.length}
+        movies={allMovies}
         searchToggleValue={searchToggleValue}
         setFormComponentRef={this.setFormComponentRef}
         sortToggleValue={sortToggleValue}

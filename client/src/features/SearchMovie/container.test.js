@@ -1,7 +1,6 @@
 import SearchMovieContainer from './container';
 import React from 'react';
 import { shallow } from 'enzyme';
-import data from './../../test/mocked-movies.json';
 
 describe('SearchMovieContainer: ', () => {
   window.scrollTo = () => {};
@@ -39,19 +38,5 @@ describe('SearchMovieContainer: ', () => {
 
     inst.handleInput({ target: { value: 'value' } });
     expect(spy).toHaveBeenCalled();
-  });
-
-  it('4. getMovies() to return all moives', () => {
-    component.setState({ searchValue: '' });
-    const inst = component.instance();
-    const filteredMovies = inst.getMovies(data);
-    expect(filteredMovies.length).toBe(10);
-  });
-
-  it('5. getMovies() to return filtered moives', () => {
-    component.setState({ searchValue: 'a', searchToggleValue: 'title' });
-    const inst = component.instance();
-    const filteredMovies = inst.getMovies(data);
-    expect(filteredMovies.length).toBe(6);
   });
 });
