@@ -222,7 +222,6 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                   }
                   moviesCount={10}
                   searchToggleValue="title"
-                  setFormComponentRef={[Function]}
                   sortToggleValue="rating"
                 >
                   <SearchFormContainer

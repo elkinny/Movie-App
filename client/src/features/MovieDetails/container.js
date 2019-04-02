@@ -5,17 +5,18 @@ import MovieDetailsComponent from './component';
 import { getMoviesByGenre, getCurentMovie } from './utils.js';
 
 class MovieDetailsContainer extends Component {
-  setMovieCardRef = el => {
-    this.movieCard = el;
-  };
+  state = {};
+
+  static getDerivedStateFromProps(props, state) {
+    window.scrollTo(0, 0);
+    return state;
+  }
 
   render() {
     const currentMovie = getCurentMovie(this.props.match.params.id - 1);
-    window.scrollTo(0, this.movieCard);
     return (
       <MovieDetailsComponent
         currentMovie={currentMovie}
-        setMovieCardRef={this.setMovieCardRef}
         moviesByGenre={getMoviesByGenre(currentMovie.genre)}
       />
     );

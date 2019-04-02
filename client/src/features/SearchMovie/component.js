@@ -13,14 +13,12 @@ const SearchMovieComponent = props => {
     searchToggleValue,
     handleSubmit,
     handleToggle,
-    setFormComponentRef,
     movies,
   } = props;
 
   return (
     <>
       <SearchForm
-        ref={setFormComponentRef}
         handleSubmit={handleSubmit}
         handleToggle={handleToggle}
         searchToggleValue={searchToggleValue}
@@ -43,7 +41,6 @@ const SearchMovieComponent = props => {
 SearchMovieComponent.propTypes = {
   handleToggle: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  setFormComponentRef: PropTypes.func.isRequired,
   sortToggleValue: PropTypes.string.isRequired,
   moviesCount: PropTypes.number.isRequired,
   searchToggleValue: PropTypes.string.isRequired,

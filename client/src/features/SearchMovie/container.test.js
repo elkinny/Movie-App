@@ -10,14 +10,7 @@ describe('SearchMovieContainer: ', () => {
     component = shallow(<SearchMovieContainer sortToggleValue="sortToggleValue" />);
   });
 
-  it('1. setFormComponentRef() to set formComponent to ref', () => {
-    const inst = component.instance();
-
-    inst.setFormComponentRef('hi');
-    expect(inst.formComponent).toBe('hi');
-  });
-
-  it('2. handleSubmit() to call setState()', () => {
+  it('1. handleSubmit() to call setState()', () => {
     component.setState = jest.fn();
     const inst = component.instance();
     const spy = jest.spyOn(inst, 'setState');
@@ -31,7 +24,7 @@ describe('SearchMovieContainer: ', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('3. handleInput() to call setState()', () => {
+  it('2. handleInput() to call setState()', () => {
     component.setState = jest.fn();
     const inst = component.instance();
     const spy = jest.spyOn(inst, 'setState');

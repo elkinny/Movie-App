@@ -5,7 +5,6 @@ import { shallow } from 'enzyme';
 describe('MovieCardComponent: ', () => {
   it('1. To match snapshot', () => {
     const props = {
-      ref: () => {},
       duration: '120min',
       rating: '4.0',
       title: 'Captain Marvel',

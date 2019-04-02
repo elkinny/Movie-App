@@ -13,16 +13,12 @@ class SearchMovieContainer extends Component {
 
   handleSubmit = (e, searchValue, searchToggleValue) => {
     e.preventDefault();
-    window.scrollTo(0, this.formComponent);
+    window.scrollTo(0, 0);
     this.setState({ searchValue: searchValue, searchToggleValue: searchToggleValue });
   };
 
   handleInput = e => {
     this.setState({ [`${e.target.name}Value`]: e.target.value });
-  };
-
-  setFormComponentRef = el => {
-    this.formComponent = el;
   };
 
   render() {
@@ -35,7 +31,6 @@ class SearchMovieContainer extends Component {
         moviesCount={allMovies.length}
         movies={allMovies}
         searchToggleValue={searchToggleValue}
-        setFormComponentRef={this.setFormComponentRef}
         sortToggleValue={sortToggleValue}
       />
     );
