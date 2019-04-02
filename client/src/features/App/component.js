@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import ErrorBoundary from 'features/ErrorBoundary';
 
@@ -10,37 +9,23 @@ import MovieDetails from 'features/MovieDetails';
 
 import styles from './style.scss';
 
-const AppComponent = props => {
+const AppComponent = () => {
   return (
-    <Router>
-      <>
-        <Header />
-        <main className={styles.container}>
-          <ErrorBoundary>
+    <>
+      <Header />
+      <main className={styles.container}>
+        <ErrorBoundary>
+          <Router>
             <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => (
-                  <SearchMovie
-                    sortToggleValue={props.sortToggleValue}
-                    handleToggle={props.handleToggle}
-                  />
-                )}
-              />
+              <Route exact path="/" component={SearchMovie} />
               <Route exact path="/:id" component={MovieDetails} />
             </Switch>
-          </ErrorBoundary>
-        </main>
-        <Footer />
-      </>
-    </Router>
+          </Router>
+        </ErrorBoundary>
+      </main>
+      <Footer />
+    </>
   );
-};
-
-AppComponent.propTypes = {
-  sortToggleValue: PropTypes.string.isRequired,
-  handleToggle: PropTypes.func.isRequired,
 };
 
 export default AppComponent;

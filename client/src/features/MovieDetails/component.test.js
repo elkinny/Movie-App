@@ -17,7 +17,7 @@ describe('MovieDetailsComponent: ', () => {
         picLink:
           'https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg',
       },
-      movieCardRef: () => {},
+      setMovieCardRef: () => {},
       moviesByGenre: [],
     };
     const component = shallow(<MovieDetailsComponent {...props} />);

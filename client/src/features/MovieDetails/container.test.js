@@ -13,8 +13,8 @@ describe('MovieDetailsContainer: ', () => {
     inst = component.instance();
   });
 
-  it('1. movieCardRef() to set movieCard to ref', () => {
-    inst.movieCardRef('hi');
+  it('1. setMovieCardRef() to set movieCard to ref', () => {
+    inst.setMovieCardRef('hi');
     expect(inst.movieCard).toBe('hi');
   });
 

@@ -1,3 +1,1 @@
-import MovieCard from './component';
-
-export default MovieCard;
+export { default } from './component';

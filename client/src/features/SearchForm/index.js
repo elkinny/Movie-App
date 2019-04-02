@@ -1,3 +1,1 @@
-import SearchForm from './container';
-
-export default SearchForm;
+export { default } from './container';

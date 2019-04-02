@@ -1,3 +1,1 @@
-import Toggle from './component';
-
-export default Toggle;
+export { default } from './component';

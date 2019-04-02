@@ -1,7 +1,7 @@
 import Header from './Header';
-import Navigation from './Navigation';
+import SubHeader from './SubHeader';
 import Footer from './Footer';
 import Toggle from './Toggle';
 import LinkButton from './LinkButton';
 
-export { Header, Navigation, Footer, Toggle, LinkButton };
+export { Header, SubHeader, Footer, Toggle, LinkButton };

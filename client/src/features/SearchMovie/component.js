@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import MoviesList from 'features/MoviesList';
 
 import SearchForm from 'features/SearchForm';
-import { Navigation, Toggle } from 'shared';
+import { SubHeader, Toggle } from 'shared';
 
 const SearchMovieComponent = props => {
   const {
@@ -13,19 +13,19 @@ const SearchMovieComponent = props => {
     searchToggleValue,
     handleSubmit,
     handleToggle,
-    formComponentRef,
+    setFormComponentRef,
     movies,
   } = props;
 
   return (
     <>
       <SearchForm
-        ref={formComponentRef}
+        ref={setFormComponentRef}
         handleSubmit={handleSubmit}
         handleToggle={handleToggle}
         searchToggleValue={searchToggleValue}
       />
-      <Navigation>
+      <SubHeader>
         <span>{moviesCount + ' films are found'}</span>
         <Toggle
           labels={['Rating', 'Year']}
@@ -34,7 +34,7 @@ const SearchMovieComponent = props => {
           onChange={handleToggle}
           value={'rating' !== sortToggleValue}
         />
-      </Navigation>
+      </SubHeader>
       <MoviesList movies={movies} />
     </>
   );
@@ -43,7 +43,7 @@ const SearchMovieComponent = props => {
 SearchMovieComponent.propTypes = {
   handleToggle: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  formComponentRef: PropTypes.func.isRequired,
+  setFormComponentRef: PropTypes.func.isRequired,
   sortToggleValue: PropTypes.string.isRequired,
   moviesCount: PropTypes.number.isRequired,
   searchToggleValue: PropTypes.string.isRequired,

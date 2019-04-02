@@ -1,3 +1,1 @@
-import SearchMovie from './container';
-
-export default SearchMovie;
+export { default } from './container';

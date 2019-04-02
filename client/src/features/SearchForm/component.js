@@ -7,7 +7,10 @@ import styles from './style.scss';
 
 const SearchFormComponent = props => {
   return (
-    <form className={styles.form} onSubmit={e => props.handleSubmit(e, props.state)}>
+    <form
+      className={styles.form}
+      onSubmit={e => props.handleSubmit(e, props.searchValue, props.searchToggleValue)}
+    >
       <input type="text" name="search" placeholder="Search..." onChange={props.handleInput} />
       <Toggle
         labels={['Title', 'Genre']}
@@ -25,7 +28,7 @@ SearchFormComponent.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleInput: PropTypes.func.isRequired,
   searchToggleValue: PropTypes.string.isRequired,
-  state: PropTypes.object.isRequired,
+  searchValue: PropTypes.string.isRequired,
 };
 
 export default SearchFormComponent;

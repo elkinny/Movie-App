@@ -11,7 +11,7 @@ describe('SearchMovieComponent: ', () => {
       movies: [],
       searchToggleValue: 'searchToggleValue',
       sortToggleValue: 'sortToggleValue',
-      formComponentRef: () => {},
+      setFormComponentRef: () => {},
     };
     const component = shallow(<SearchMovieComponent {...props} />);
     expect(component).toMatchSnapshot();

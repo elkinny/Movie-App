@@ -4,7 +4,7 @@ import MovieDetailsComponent from './component';
 
 import mockedData from 'core/data.json';
 
-export default class MovieDetailsContainer extends Component {
+class MovieDetailsContainer extends Component {
   getMoviesByGenre = (data, genre) => {
     const moviesByGenre = [...data.movies].filter(el => {
       return el['genre'].toLowerCase().indexOf(genre.toLowerCase()) >= 0;
@@ -12,19 +12,25 @@ export default class MovieDetailsContainer extends Component {
     return moviesByGenre;
   };
 
-  movieCardRef = el => {
+  setMovieCardRef = el => {
     this.movieCard = el;
   };
 
+  getCurentMovie() {
+    return mockedData.movies[this.props.match.params.id - 1];
+  }
+
   render() {
-    const currentMovie = mockedData.movies[this.props.match.params.id - 1];
+    const currentMovie = this.getCurentMovie();
     window.scrollTo(0, this.movieCard);
     return (
       <MovieDetailsComponent
         currentMovie={currentMovie}
-        movieCardRef={this.movieCardRef}
+        setMovieCardRef={this.setMovieCardRef}
         moviesByGenre={this.getMoviesByGenre(mockedData, currentMovie.genre)}
       />
     );
   }
 }
+
+export default MovieDetailsContainer;

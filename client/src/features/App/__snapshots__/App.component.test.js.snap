@@ -80,7 +80,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                 sortToggleValue="sortToggleValue"
               >
                 <SearchMovieComponent
-                  formComponentRef={[Function]}
+                  setFormComponentRef={[Function]}
                   handleSubmit={[Function]}
                   handleToggle={[Function]}
                   movies={

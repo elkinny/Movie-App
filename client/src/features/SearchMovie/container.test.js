@@ -11,10 +11,10 @@ describe('SearchMovieContainer: ', () => {
     component = shallow(<SearchMovieContainer sortToggleValue="sortToggleValue" />);
   });
 
-  it('1. formComponentRef() to set formComponent to ref', () => {
+  it('1. setFormComponentRef() to set formComponent to ref', () => {
     const inst = component.instance();
 
-    inst.formComponentRef('hi');
+    inst.setFormComponentRef('hi');
     expect(inst.formComponent).toBe('hi');
   });
 

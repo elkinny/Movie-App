@@ -1,33 +1,28 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import SearchMovieComponent from './component';
 
 import mockedData from 'core/data.json';
 
-export default class SearchMovieContainer extends Component {
+class SearchMovieContainer extends Component {
   state = {
     searchValue: '',
     searchToggleValue: 'title',
+    sortToggleValue: 'rating',
   };
 
-  static propTypes = {
-    sortToggleValue: PropTypes.string.isRequired,
-  };
-
-  handleSubmit = (e, data) => {
+  handleSubmit = (e, searchValue, searchToggleValue) => {
     e.preventDefault();
     window.scrollTo(0, this.formComponent);
-    this.setState({ searchValue: data.searchValue, searchToggleValue: data.searchToggleValue });
+    this.setState({ searchValue: searchValue, searchToggleValue: searchToggleValue });
   };
 
-  handleSeachToggleChange = e => {
-    this.setState({ searchToggleValue: e.target.value });
+  handleInput = e => {
+    this.setState({ [`${e.target.name}Value`]: e.target.value });
   };
 
   getMovies = data => {
-    const { sortToggleValue } = this.props;
-    const { searchToggleValue, searchValue } = this.state;
+    const { searchToggleValue, sortToggleValue, searchValue } = this.state;
 
     let { movies } = data;
     movies = [...movies].sort((a, b) => {
@@ -41,22 +36,24 @@ export default class SearchMovieContainer extends Component {
     return movies;
   };
 
-  formComponentRef = el => {
+  setFormComponentRef = el => {
     this.formComponent = el;
   };
 
   render() {
-    const { searchToggleValue } = this.state;
+    const { searchToggleValue, sortToggleValue } = this.state;
     return (
       <SearchMovieComponent
         handleSubmit={this.handleSubmit}
-        handleToggle={this.handleSeachToggleChange}
+        handleToggle={this.handleInput}
         moviesCount={this.getMovies(mockedData).length}
         movies={this.getMovies(mockedData)}
         searchToggleValue={searchToggleValue}
-        formComponentRef={this.formComponentRef}
-        {...this.props}
+        setFormComponentRef={this.setFormComponentRef}
+        sortToggleValue={sortToggleValue}
       />
     );
   }
 }
+
+export default SearchMovieContainer;

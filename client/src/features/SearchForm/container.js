@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import SearchFormComponent from './component';
 
-export default class SearchFormContainer extends Component {
+class SearchFormContainer extends Component {
   state = {
     searchValue: '',
     searchToggleValue: this.props.searchToggleValue,
@@ -19,14 +19,17 @@ export default class SearchFormContainer extends Component {
   };
 
   render() {
-    const { handleSubmit, searchToggleValue } = this.props;
+    const { handleSubmit } = this.props;
+    const { searchValue, searchToggleValue } = this.state;
     return (
       <SearchFormComponent
         handleSubmit={handleSubmit}
         handleInput={this.handleInput}
         searchToggleValue={searchToggleValue}
-        state={this.state}
+        searchValue={searchValue}
       />
     );
   }
 }
+
+export default SearchFormContainer;
