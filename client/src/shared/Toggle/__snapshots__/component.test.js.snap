@@ -4,8 +4,8 @@ exports[`Toggle:  Toggle to match snapshot 1`] = `
 <Toggle
   labels={
     Array [
-      "Rating",
-      "Year",
+      "vote_average",
+      "release_date",
     ]
   }
   onChange={[MockFunction]}
@@ -29,32 +29,32 @@ exports[`Toggle:  Toggle to match snapshot 1`] = `
       <input
         className="toggle__item--left"
         defaultChecked={false}
-        id="toggle-Rating"
+        id="toggle-vote_average"
         name="sortToggle"
         onChange={[MockFunction]}
         type="radio"
-        value="rating"
+        value="vote_average"
       />
       <label
         className="btn"
-        htmlFor="toggle-Rating"
+        htmlFor="toggle-vote_average"
       >
-        Rating
+        vote_average
       </label>
       <input
         className="toggle__item--right"
         defaultChecked={true}
-        id="toggle-Year"
+        id="toggle-release_date"
         name="sortToggle"
         onChange={[MockFunction]}
         type="radio"
-        value="year"
+        value="release_date"
       />
       <label
         className="btn"
-        htmlFor="toggle-Year"
+        htmlFor="toggle-release_date"
       >
-        Year
+        release_date
       </label>
     </div>
   </div>

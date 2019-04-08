@@ -12,7 +12,7 @@ describe('SearchMovie utils: ', () => {
   });
 
   it('3. getMovies() to return only moives with "ac" in a  title', () => {
-    const filteredMovies = getMovies('genre', 'date', 'ac');
+    const filteredMovies = getMovies('genres', 'date', 'ac');
     expect(filteredMovies.length).toBe(7);
   });
 });

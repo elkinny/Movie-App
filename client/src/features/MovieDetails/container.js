@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import MovieDetailsComponent from './component';
 
-import { getMoviesByGenre, getCurentMovie } from './utils.js';
+import { getmoviesByGenres, getCurentMovie } from './utils.js';
 
 class MovieDetailsContainer extends Component {
   state = {};
@@ -13,12 +13,8 @@ class MovieDetailsContainer extends Component {
   }
 
   render() {
-    const currentMovie = getCurentMovie(this.props.match.params.id - 1);
     return (
-      <MovieDetailsComponent
-        currentMovie={currentMovie}
-        moviesByGenre={getMoviesByGenre(currentMovie.genre)}
-      />
+      <MovieDetailsComponent currentMovie={getCurentMovie()} moviesByGenres={getmoviesByGenres()} />
     );
   }
 }

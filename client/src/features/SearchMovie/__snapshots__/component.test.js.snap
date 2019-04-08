@@ -14,8 +14,8 @@ exports[`SearchMovieComponent:  1. To match snapshot 1`] = `
     <Toggle
       labels={
         Array [
-          "Rating",
-          "Year",
+          "vote_average",
+          "release_date",
         ]
       }
       onChange={[Function]}

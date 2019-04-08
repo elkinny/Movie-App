@@ -15,7 +15,7 @@ exports[`SearchFormComponent:  1. To match snapshot 1`] = `
     labels={
       Array [
         "Title",
-        "Genre",
+        "genres",
       ]
     }
     onChange={[Function]}

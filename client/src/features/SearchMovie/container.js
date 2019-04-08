@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+import { getMovies } from './actions';
 
 import SearchMovieComponent from './component';
 
-import { getMovies } from './utils.js';
+// import { getMovies } from './utils.js';
 
 class SearchMovieContainer extends Component {
   state = {
     searchValue: '',
     searchToggleValue: 'title',
-    sortToggleValue: 'rating',
+    sortToggleValue: 'vote_average',
+  };
+
+  componentDidMount = () => {
+    this.props.getMovies();
   };
 
   handleSubmit = (e, searchValue, searchToggleValue) => {
@@ -22,8 +30,9 @@ class SearchMovieContainer extends Component {
   };
 
   render() {
-    const { searchToggleValue, sortToggleValue, searchValue } = this.state;
-    const allMovies = getMovies(searchToggleValue, sortToggleValue, searchValue);
+    const { searchToggleValue, sortToggleValue } = this.state;
+    //const allMovies = getMovies(searchToggleValue, sortToggleValue, searchValue);
+    const allMovies = this.props.movies;
     return (
       <SearchMovieComponent
         handleSubmit={this.handleSubmit}
@@ -37,4 +46,12 @@ class SearchMovieContainer extends Component {
   }
 }
 
-export default SearchMovieContainer;
+SearchMovieContainer.propTypes = {
+  getMovies: PropTypes.func.isRequired,
+  movies: PropTypes.array.isRequired,
+};
+
+export default connect(
+  state => ({ movies: state.movies.movies }),
+  { getMovies },
+)(SearchMovieContainer);

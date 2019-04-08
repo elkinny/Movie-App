@@ -1,9 +1,9 @@
-import { getMoviesByGenre, getCurentMovie } from './utils.js';
+import { getmoviesByGenres, getCurentMovie } from './utils.js';
 import mockedData from 'core/data.json';
 
 describe('MovieDetails utils: ', () => {
-  it('1. getMoviesByGenre() to filter movies by genre', () => {
-    const filteredMovies = getMoviesByGenre('cartoon');
+  it('1. getmoviesByGenres() to filter movies by genres', () => {
+    const filteredMovies = getmoviesByGenres('cartoon');
     expect(filteredMovies.length).toEqual(3);
   });
 

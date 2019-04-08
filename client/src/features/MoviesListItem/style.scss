@@ -14,8 +14,8 @@
     margin-bottom: 0;
   }
 
-  &__year,
-  &__genre {
+  &__release_date,
+  &__genres {
     color: #7488ab;
   }
 
@@ -35,11 +35,11 @@
     }
   }
 
-  &__genre {
+  &__genres {
     align-self: flex-start;
   }
 
-  &__description {
+  &__overview {
     text-align: justify;
   }
 }

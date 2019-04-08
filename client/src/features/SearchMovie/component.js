@@ -26,11 +26,11 @@ const SearchMovieComponent = props => {
       <SubHeader>
         <span>{moviesCount + ' films are found'}</span>
         <Toggle
-          labels={['Rating', 'Year']}
+          labels={['Rate', 'Date']}
           type="sort"
           text="Sort by:"
           onChange={handleToggle}
-          value={'rating' !== sortToggleValue}
+          value={'vote_average' !== sortToggleValue}
         />
       </SubHeader>
       <MoviesList movies={movies} />

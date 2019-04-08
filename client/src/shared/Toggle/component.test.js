@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 describe('Toggle: ', () => {
   it('Toggle to match snapshot', () => {
     const props = {
-      labels: ['Rating', 'Year'],
+      labels: ['vote_average', 'release_date'],
       type: 'sort',
       text: 'Sort by:',
       onChange: jest.fn(),
