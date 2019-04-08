@@ -9,16 +9,16 @@ const SearchFormComponent = props => {
   return (
     <form
       className={styles.form}
-      onSubmit={e => props.handleSubmit(e, props.searchValue, props.searchToggleValue)}
+      onSubmit={e => props.handleSubmit(e, props.searchValue, props.searchType)}
     >
-      <input type="text" name="search" placeholder="Search..." onChange={props.handleInput} />
+      <input type="text" name="searchValue" placeholder="Search..." onChange={props.handleInput} />
       <Toggle
         labels={['Title', 'Genre']}
         values={['title', 'genres']}
-        type="search"
+        name="searchType"
         text="Search by:"
         onChange={props.handleInput}
-        defaultValue={'title' !== props.searchToggleValue}
+        defaultValue={'title' !== props.searchType}
       />
       <input type="submit" value="Search" />
     </form>
@@ -28,7 +28,7 @@ const SearchFormComponent = props => {
 SearchFormComponent.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleInput: PropTypes.func.isRequired,
-  searchToggleValue: PropTypes.string.isRequired,
+  searchType: PropTypes.string.isRequired,
   searchValue: PropTypes.string.isRequired,
 };
 

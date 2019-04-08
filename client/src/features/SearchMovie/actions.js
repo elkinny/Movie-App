@@ -7,12 +7,12 @@ import {
 } from 'core/store/constants.js';
 import axios from 'axios';
 
-export const getMovies = sortBy => dispatch => {
+export const getMovies = () => (dispatch, getState) => {
   axios
     .get('https://reactjs-cdp.herokuapp.com/movies', {
       params: {
-        sortBy,
-        sortOrder: 'desc',
+        sortBy: getState().movieList.sortBy.sortValue,
+        sortOrder: getState().movieList.sortBy.sortType,
       },
     })
     .then(response =>
@@ -26,14 +26,14 @@ export const getMovies = sortBy => dispatch => {
     });
 };
 
-export const searchMovies = (search, searchBy, sortBy) => dispatch => {
+export const searchMovies = (search, searchBy) => (dispatch, getState) => {
   axios
     .get('https://reactjs-cdp.herokuapp.com/movies', {
       params: {
         search,
         searchBy,
-        sortBy,
-        sortOrder: 'desc',
+        sortBy: getState().movieList.sortBy.sortValue,
+        sortOrder: getState().movieList.sortBy.sortType,
       },
     })
     .then(response =>

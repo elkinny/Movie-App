@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
+
 import SearchFormComponent from './component';
 
 class SearchFormContainer extends Component {
-  state = {
-    searchValue: '',
-    searchToggleValue: this.props.searchToggleValue,
-  };
+  state = { ...this.props.searchBy };
 
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
-    searchToggleValue: PropTypes.string.isRequired,
+    searchBy: PropTypes.object.isRequired,
   };
 
   handleInput = e => {
-    this.setState({ [`${e.target.name}Value`]: e.target.value });
+    this.setState({ [`${e.target.name}`]: e.target.value });
   };
 
   render() {
     const { handleSubmit } = this.props;
-    const { searchValue, searchToggleValue } = this.state;
+    const { searchValue, searchType } = this.state;
     return (
       <SearchFormComponent
         handleSubmit={handleSubmit}
         handleInput={this.handleInput}
-        searchToggleValue={searchToggleValue}
+        searchType={searchType}
         searchValue={searchValue}
       />
     );
   }
 }
 
-export default SearchFormContainer;
+export default connect(state => ({
+  searchBy: state.movieList.searchBy,
+}))(SearchFormContainer);

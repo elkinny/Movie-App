@@ -9,7 +9,7 @@ describe('SearchFormContainer: ', () => {
       <SearchFormContainer
         handleSubmit={() => {}}
         handleInput={handleInput}
-        searchToggleValue={'searchToggleValue'}
+        searchType={'searchType'}
         state={{}}
       />,
     );

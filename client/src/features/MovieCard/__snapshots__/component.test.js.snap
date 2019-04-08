@@ -28,7 +28,7 @@ exports[`MovieCardComponent:  1. To match snapshot 1`] = `
             className="movie-card__vote_average"
           >
              
-            4.0
+            4
              
           </span>
         </h2>
@@ -39,9 +39,7 @@ exports[`MovieCardComponent:  1. To match snapshot 1`] = `
         <span
           className="movie-card__genres"
         >
-           
           Action
-           
         </span>
         <span
           className="movie-card__release_date"
@@ -54,8 +52,8 @@ exports[`MovieCardComponent:  1. To match snapshot 1`] = `
           className="movie-card__runtime"
         >
            
-          120min
-           
+          120
+          min 
         </span>
       </div>
       <p

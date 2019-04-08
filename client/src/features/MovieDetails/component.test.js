@@ -6,11 +6,11 @@ describe('MovieDetailsComponent: ', () => {
   it('1. To match snapshot', () => {
     const props = {
       currentMovie: {
-        runtime: '120min',
-        vote_average: '4.0',
+        runtime: 120,
+        vote_average: 4,
         title: 'Captain Marvel',
-        genres: 'Action',
-        release_date: 2019,
+        genres: ['Action'],
+        release_date: '2019',
         overview:
           'Carol Danvers becomes one of the universe`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.',
         link: 'https://www.youtube.com/watch?v=0LHxvxdRnYc',

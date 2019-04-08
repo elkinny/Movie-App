@@ -9,6 +9,13 @@ import { getMovie, getMoviesByGenre } from './actions';
 class MovieDetailsContainer extends Component {
   state = {};
 
+  static propTypes = {
+    getMoviesByGenre: PropTypes.func.isRequired,
+    getMovie: PropTypes.func.isRequired,
+    movie: PropTypes.object.isRequired,
+    moviesByGenre: PropTypes.array.isRequired,
+  };
+
   static getDerivedStateFromProps(props, state) {
     window.scrollTo(0, 0);
     return state;
@@ -25,13 +32,6 @@ class MovieDetailsContainer extends Component {
     return <MovieDetailsComponent currentMovie={movie} moviesByGenres={moviesByGenre} />;
   }
 }
-
-MovieDetailsContainer.propTypes = {
-  getMoviesByGenre: PropTypes.func.isRequired,
-  getMovie: PropTypes.func.isRequired,
-  movie: PropTypes.object.isRequired,
-  moviesByGenre: PropTypes.array.isRequired,
-};
 
 export default connect(
   state => ({

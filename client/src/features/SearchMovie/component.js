@@ -7,21 +7,17 @@ import SearchForm from 'features/SearchForm';
 import { SubHeader, Toggle } from 'shared';
 
 const SearchMovieComponent = props => {
-  const { sortBy, moviesCount, searchToggleValue, handleSubmit, handleToggle, movies } = props;
+  const { sortBy, moviesCount, handleSubmit, handleToggle, movies } = props;
 
   return (
     <>
-      <SearchForm
-        handleSubmit={handleSubmit}
-        handleToggle={handleToggle}
-        searchToggleValue={searchToggleValue}
-      />
+      <SearchForm handleSubmit={handleSubmit} handleToggle={handleToggle} />
       <SubHeader>
         <span>{moviesCount + ' films are found'}</span>
         <Toggle
           labels={['Rate', 'Date']}
           values={['vote_average', 'release_date']}
-          type="sort"
+          name="sortValue"
           text="Sort by:"
           onChange={handleToggle}
           defaultValue={'vote_average' !== sortBy}
@@ -37,7 +33,6 @@ SearchMovieComponent.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   sortBy: PropTypes.string.isRequired,
   moviesCount: PropTypes.number.isRequired,
-  searchToggleValue: PropTypes.string.isRequired,
   movies: PropTypes.array.isRequired,
 };
 

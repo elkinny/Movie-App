@@ -12,16 +12,22 @@ exports[`SearchFormComponent:  1. To match snapshot 1`] = `
     type="text"
   />
   <Toggle
+    defaultValue={true}
     labels={
       Array [
         "Title",
-        "genres",
+        "Genre",
       ]
     }
     onChange={[Function]}
     text="Search by:"
     type="search"
-    value={true}
+    values={
+      Array [
+        "title",
+        "genres",
+      ]
+    }
   />
   <input
     type="submit"

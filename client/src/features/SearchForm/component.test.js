@@ -7,7 +7,7 @@ describe('SearchFormComponent: ', () => {
   const props = {
     handleSubmit: handleSubmit,
     handleInput: () => {},
-    searchToggleValue: 'searchToggleValue',
+    searchType: 'searchType',
     searchValue: 'searchValue',
   };
 

@@ -15,12 +15,12 @@ describe('MoviesListComponent: ', () => {
     const props = {
       movies: [
         {
-          id: '1',
+          id: 1,
           runtime: '120min',
           vote_average: '4.0',
           title: 'Captain Marvel',
-          genres: 'Action',
-          release_date: 2019,
+          genres: ['Action'],
+          release_date: '2019',
           overview:
             'Carol Danvers becomes one of the universe`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.',
           link: 'https://www.youtube.com/watch?v=0LHxvxdRnYc',
@@ -28,12 +28,12 @@ describe('MoviesListComponent: ', () => {
             'https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg',
         },
         {
-          id: '2',
-          runtime: '120min',
-          vote_average: '4.0',
+          id: 2,
+          runtime: 120,
+          vote_average: 5,
           title: 'Captain Marvel',
-          genres: 'Action',
-          release_date: 2019,
+          genres: ['Action'],
+          release_date: '2019',
           overview:
             'Carol Danvers becomes one of the universe`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.',
           link: 'https://www.youtube.com/watch?v=0LHxvxdRnYc',
