@@ -6,8 +6,6 @@ import { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy } from './a
 
 import SearchMovieComponent from './component';
 
-// import { getMovies } from './utils.js';
-
 class SearchMovieContainer extends Component {
   componentDidMount = () => {
     this.props.getMovies(this.props.sortBy);

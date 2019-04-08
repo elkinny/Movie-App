@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import MovieDetailsComponent from './component';
 
-import { getmoviesByGenres, getCurentMovie } from './utils.js';
+import { connect } from 'react-redux';
+import { getMovie, getMoviesByGenre } from './actions';
 
 class MovieDetailsContainer extends Component {
   state = {};
@@ -12,11 +14,29 @@ class MovieDetailsContainer extends Component {
     return state;
   }
 
+  componentDidMount() {
+    const { getMovie, getMoviesByGenre, match, movie } = this.props;
+    getMovie(match.params.id);
+    getMoviesByGenre(movie.genres[0]);
+  }
+
   render() {
-    return (
-      <MovieDetailsComponent currentMovie={getCurentMovie()} moviesByGenres={getmoviesByGenres()} />
-    );
+    const { movie, moviesByGenre } = this.props;
+    return <MovieDetailsComponent currentMovie={movie} moviesByGenres={moviesByGenre} />;
   }
 }
 
-export default MovieDetailsContainer;
+MovieDetailsContainer.propTypes = {
+  getMoviesByGenre: PropTypes.func.isRequired,
+  getMovie: PropTypes.func.isRequired,
+  movie: PropTypes.object.isRequired,
+  moviesByGenre: PropTypes.array.isRequired,
+};
+
+export default connect(
+  state => ({
+    movie: state.currentMovie.movie,
+    moviesByGenre: state.currentMovie.moviesByGenre,
+  }),
+  { getMovie, getMoviesByGenre },
+)(MovieDetailsContainer);

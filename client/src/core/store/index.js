@@ -14,6 +14,18 @@ const initialState = {
       searchType: 'title',
     },
   },
+  currentMovie: {
+    movie: {
+      title: '',
+      overview: '',
+      poster_path: '',
+      release_date: '',
+      genres: [],
+      vote_average: 0,
+      runtime: 0,
+    },
+    moviesByGenre: [],
+  },
 };
 const middleware = [thunk];
 

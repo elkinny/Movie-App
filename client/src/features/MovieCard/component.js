@@ -21,9 +21,9 @@ const MovieCardComponent = props => {
             </h2>
           </div>
           <div className={styles['movie-card__subline']}>
-            <span className={styles['movie-card__genres']}> {genres} </span>
+            <span className={styles['movie-card__genres']}>{genres.join(', ')}</span>
             <span className={styles['movie-card__release_date']}> {release_date} </span>
-            {runtime && <span className={styles['movie-card__runtime']}> {runtime} </span>}
+            {runtime && <span className={styles['movie-card__runtime']}> {runtime}min </span>}
           </div>
           <p className={styles['movie-card__overview']}>{overview}</p>
           <LinkButton to="/" cssClass="movie-card__link-back--cy">
@@ -42,7 +42,7 @@ MovieCardComponent.propTypes = {
   release_date: PropTypes.string.isRequired,
   genres: PropTypes.array.isRequired,
   vote_average: PropTypes.number.isRequired,
-  runtime: PropTypes.string,
+  runtime: PropTypes.number,
 };
 
 export default MovieCardComponent;
