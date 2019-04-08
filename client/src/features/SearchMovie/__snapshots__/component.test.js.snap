@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchMovieComponent:  1. To match snapshot 1`] = `
+<Fragment>
+  <SearchFormContainer
+    handleSubmit={[Function]}
+    handleToggle={[Function]}
+    searchToggleValue="searchToggleValue"
+  />
+  <SubHeader>
+    <span>
+      1 films are found
+    </span>
+    <Toggle
+      labels={
+        Array [
+          "Rating",
+          "Year",
+        ]
+      }
+      onChange={[Function]}
+      text="Sort by:"
+      type="sort"
+      value={true}
+    />
+  </SubHeader>
+  <MoviesListComponent
+    movies={Array []}
+  />
+</Fragment>
+`;

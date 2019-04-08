@@ -5,3 +5,4 @@ jest.config.js
 node_modules
 build
 dev
+cypress

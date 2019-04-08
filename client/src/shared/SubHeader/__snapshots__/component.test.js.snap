@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubHeader:  SubHeader to match snapshot 1`] = `
+<SubHeader>
+  <div
+    className="subheader"
+  >
+    Hi
+  </div>
+</SubHeader>
+`;

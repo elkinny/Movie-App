@@ -1,9 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
+import { render } from 'react-dom';
 
-import App from './containers/App';
+import App from 'features/App';
 
-const e = React.createElement;
-
-ReactDOM.render(e(App), document.getElementById('root'));
+render(<App />, document.getElementById('root'));

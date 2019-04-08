@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCardComponent:  1. To match snapshot 1`] = `
+<Fragment>
+  <div
+    className="movie-card"
+  >
+    <div
+      className="movie-card__header"
+    >
+      <img
+        className="movie-card__img"
+        height="400"
+        src="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+      />
+    </div>
+    <div
+      className="movie-card__body"
+    >
+      <div
+        className="movie-card__line"
+      >
+        <h2
+          className="movie-card__title"
+        >
+          Captain Marvel
+          <span
+            className="movie-card__rating"
+          >
+             
+            4.0
+             
+          </span>
+        </h2>
+      </div>
+      <div
+        className="movie-card__subline"
+      >
+        <span
+          className="movie-card__genre"
+        >
+           
+          Action
+           
+        </span>
+        <span
+          className="movie-card__year"
+        >
+           
+          2019
+           
+        </span>
+        <span
+          className="movie-card__duration"
+        >
+           
+          120min
+           
+        </span>
+      </div>
+      <p
+        className="movie-card__description"
+      >
+        Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
+      </p>
+      <LinkButton
+        cssClass="movie-card__link-back--cy"
+        to="/"
+      >
+        Back
+      </LinkButton>
+    </div>
+  </div>
+</Fragment>
+`;
