@@ -2,45 +2,39 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { getMovies } from './actions';
+import { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy } from './actions';
 
 import SearchMovieComponent from './component';
 
 // import { getMovies } from './utils.js';
 
 class SearchMovieContainer extends Component {
-  state = {
-    searchValue: '',
-    searchToggleValue: 'title',
-    sortToggleValue: 'vote_average',
-  };
-
   componentDidMount = () => {
-    this.props.getMovies();
+    this.props.getMovies(this.props.sortBy);
   };
 
-  handleSubmit = (e, searchValue, searchToggleValue) => {
+  handleSubmit = (e, searchValue, searchType) => {
     e.preventDefault();
     window.scrollTo(0, 0);
-    this.setState({ searchValue: searchValue, searchToggleValue: searchToggleValue });
+    this.props.setSearchBy({ searchType, searchValue });
+    this.props.searchMovies(searchValue, searchType, this.props.sortBy);
   };
 
   handleInput = e => {
-    this.setState({ [`${e.target.name}Value`]: e.target.value });
+    this.props.setSortBy(e.target.value);
+    this.props.sortMovies(e.target.value);
   };
 
   render() {
-    const { searchToggleValue, sortToggleValue } = this.state;
-    //const allMovies = getMovies(searchToggleValue, sortToggleValue, searchValue);
-    const allMovies = this.props.movies;
+    const { movies, sortBy, searchBy } = this.props;
     return (
       <SearchMovieComponent
         handleSubmit={this.handleSubmit}
         handleToggle={this.handleInput}
-        moviesCount={allMovies.length}
-        movies={allMovies}
-        searchToggleValue={searchToggleValue}
-        sortToggleValue={sortToggleValue}
+        moviesCount={movies.length}
+        movies={movies}
+        searchToggleValue={searchBy.searchType}
+        sortBy={sortBy}
       />
     );
   }
@@ -48,10 +42,20 @@ class SearchMovieContainer extends Component {
 
 SearchMovieContainer.propTypes = {
   getMovies: PropTypes.func.isRequired,
+  searchMovies: PropTypes.func.isRequired,
+  sortMovies: PropTypes.func.isRequired,
+  setSortBy: PropTypes.func.isRequired,
+  setSearchBy: PropTypes.func.isRequired,
   movies: PropTypes.array.isRequired,
+  sortBy: PropTypes.string.isRequired,
+  searchBy: PropTypes.object.isRequired,
 };
 
 export default connect(
-  state => ({ movies: state.movies.movies }),
-  { getMovies },
+  state => ({
+    movies: state.movieList.movies,
+    sortBy: state.movieList.sortBy.sortValue,
+    searchBy: state.movieList.searchBy,
+  }),
+  { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy },
 )(SearchMovieContainer);

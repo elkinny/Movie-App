@@ -14,10 +14,11 @@ const SearchFormComponent = props => {
       <input type="text" name="search" placeholder="Search..." onChange={props.handleInput} />
       <Toggle
         labels={['Title', 'Genre']}
+        values={['title', 'genres']}
         type="search"
         text="Search by:"
         onChange={props.handleInput}
-        value={'title' !== props.searchToggleValue}
+        defaultValue={'title' !== props.searchToggleValue}
       />
       <input type="submit" value="Search" />
     </form>
