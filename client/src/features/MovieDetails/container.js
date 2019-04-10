@@ -7,7 +7,10 @@ import { connect } from 'react-redux';
 import { getMovie, getMoviesByGenre } from './actions';
 
 class MovieDetailsContainer extends Component {
-  state = {};
+  state = {
+    id: 0,
+    genre: '',
+  };
 
   static propTypes = {
     getMoviesByGenre: PropTypes.func.isRequired,
@@ -17,14 +20,21 @@ class MovieDetailsContainer extends Component {
   };
 
   static getDerivedStateFromProps(props, state) {
-    window.scrollTo(0, 0);
+    const { getMovie, getMoviesByGenre, match, movie } = props;
+    if (match.params.id !== state.id) {
+      getMovie(match.params.id);
+      window.scrollTo(0, 0);
+      return {
+        id: match.params.id,
+      };
+    }
+    if (movie.genres[0] !== state.genre) {
+      getMoviesByGenre(movie.genres[0]);
+      return {
+        genre: movie.genres[0],
+      };
+    }
     return state;
-  }
-
-  componentDidMount() {
-    const { getMovie, getMoviesByGenre, match, movie } = this.props;
-    getMovie(match.params.id);
-    getMoviesByGenre(movie.genres[0]);
   }
 
   render() {

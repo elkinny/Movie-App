@@ -11,7 +11,7 @@ const MovieDetailsComponent = props => {
     <>
       <MovieCard {...currentMovie} />
       <SubHeader>
-        <span>Films by {currentMovie.genres.join(', ')} genres</span>
+        <span>Films by {currentMovie.genres[0]} genres</span>
       </SubHeader>
       <MoviesList movies={moviesByGenres} />
     </>

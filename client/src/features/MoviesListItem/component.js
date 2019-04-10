@@ -18,7 +18,7 @@ const MoviesListItemComponent = props => {
         <img className={styles['movie-item__img']} src={poster_path} height="400" />
         <span className={styles['movie-item__genres']}> {genres.join(', ')} </span>
         <p className={styles['movie-item__overview']}>{overview}</p>
-        <LinkButton to={`/${id}/#`} cssClass="movie-item__link--cy">
+        <LinkButton to={`/${id}`} cssClass="movie-item__link--cy">
           See more
         </LinkButton>
       </div>

@@ -16,7 +16,7 @@ export const getMovie = id => dispatch => {
 };
 
 export const getMoviesByGenre = searchValue => dispatch => {
-  console.log(searchValue);
+  // console.log(searchValue);
   axios
     .get('https://reactjs-cdp.herokuapp.com/movies', {
       params: {
