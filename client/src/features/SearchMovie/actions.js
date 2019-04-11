@@ -7,12 +7,14 @@ import {
 } from 'core/store/constants.js';
 import axios from 'axios';
 
+import { sortTypeSelector, sortValueSelector, allMoviesSelector } from 'core/store/selectors';
+
 export const getMovies = () => (dispatch, getState) => {
   axios
     .get('https://reactjs-cdp.herokuapp.com/movies', {
       params: {
-        sortBy: getState().movieList.sortBy.sortValue,
-        sortOrder: getState().movieList.sortBy.sortType,
+        sortBy: sortValueSelector(getState()),
+        sortOrder: sortTypeSelector(getState()),
       },
     })
     .then(response =>
@@ -32,8 +34,8 @@ export const searchMovies = (search, searchBy) => (dispatch, getState) => {
       params: {
         search,
         searchBy,
-        sortBy: getState().movieList.sortBy.sortValue,
-        sortOrder: getState().movieList.sortBy.sortType,
+        sortBy: sortValueSelector(getState()),
+        sortOrder: sortTypeSelector(getState()),
       },
     })
     .then(response =>
@@ -48,7 +50,7 @@ export const searchMovies = (search, searchBy) => (dispatch, getState) => {
 };
 
 export const sortMovies = sortBy => (dispatch, getState) => {
-  let movies = getState().movieList.movies;
+  let movies = allMoviesSelector(getState());
   if (sortBy === 'release_date') {
     movies = [...movies].sort((a, b) => {
       if (new Date(b[sortBy]) < new Date(a[sortBy])) return -1;

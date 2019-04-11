@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { connect } from 'react-redux';
-import { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy } from './actions';
 
+import { allMoviesSelector, sortValueSelector } from 'core/store/selectors';
+
+import { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy } from './actions';
 import SearchMovieComponent from './component';
 
 class SearchMovieContainer extends Component {
@@ -53,8 +54,8 @@ class SearchMovieContainer extends Component {
 
 export default connect(
   state => ({
-    movies: state.movieList.movies,
-    sortBy: state.movieList.sortBy.sortValue,
+    movies: allMoviesSelector(state),
+    sortBy: sortValueSelector(state),
   }),
   { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy },
 )(SearchMovieContainer);

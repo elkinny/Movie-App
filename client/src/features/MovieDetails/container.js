@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import MovieDetailsComponent from './component';
+import { movieSelector, moviesByGenreSelector } from 'core/store/selectors';
 
-import { connect } from 'react-redux';
+import MovieDetailsComponent from './component';
 import { getMovie, getMoviesByGenre } from './actions';
 
 class MovieDetailsContainer extends Component {
@@ -45,8 +46,8 @@ class MovieDetailsContainer extends Component {
 
 export default connect(
   state => ({
-    movie: state.currentMovie.movie,
-    moviesByGenre: state.currentMovie.moviesByGenre,
+    movie: movieSelector(state),
+    moviesByGenre: moviesByGenreSelector(state),
   }),
   { getMovie, getMoviesByGenre },
 )(MovieDetailsContainer);
