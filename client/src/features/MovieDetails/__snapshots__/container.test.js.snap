@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetailsContainer:  4. To match snapshot 1`] = `
+<MovieDetailsComponent
+  currentMovie={
+    Object {
+      "genres": Array [
+        "",
+      ],
+    }
+  }
+  moviesByGenres={Array []}
+/>
+`;

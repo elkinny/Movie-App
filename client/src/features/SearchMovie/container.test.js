@@ -4,54 +4,61 @@ import { shallow } from 'enzyme';
 
 describe('SearchMovieContainer: ', () => {
   window.scrollTo = () => {};
-  let component;
+  const props = {
+    getMovies: () => {},
+    searchMovies: () => {},
+    sortMovies: () => {},
+    setSortBy: () => {},
+    setSearchBy: () => {},
+    movies: [],
+    sortBy: 'vote_average',
+    searchBy: {
+      searchValue: 'name',
+      searchType: 'title',
+    },
+  };
 
-  beforeEach(() => {
-    const props = {
-      getMovies: () => {},
-      searchMovies: () => {},
-      sortMovies: () => {},
-      setSortBy: () => {},
-      setSearchBy: () => {},
-      movies: [],
-      sortBy: 'vote_average',
-      searchBy: {
-        searchValue: 'name',
-        searchType: 'title',
-      },
-    };
-    component = shallow(<SearchMovieContainer {...props} />);
-  });
-
-  it('1. handleSubmit() to call setState()', () => {
-    component.setState = jest.fn();
-    const inst = component.instance();
-    const spy = jest.spyOn(inst, 'setState');
-
-    inst.handleSubmit(
-      { preventDefault: jest.fn() },
-      {
-        data: { searchValue: 'searchValue', searchType: 'searchType' },
-      },
-    );
-    expect(spy).toHaveBeenCalled();
-  });
-
-  it('2. handleInput() to call setSortBy()', () => {
+  it('1. handleInput() to call setSortBy()', () => {
     const setSortBy = jest.fn();
+    props.setSortBy = setSortBy;
+    const component = shallow(<SearchMovieContainer {...props} />);
     const inst = component.instance();
-    component.props.setSortBy = setSortBy;
+    const e = { target: { value: 'value' } };
 
-    inst.handleInput({ target: { value: 'value' } });
+    inst.handleInput(e);
     expect(setSortBy).toHaveBeenCalled();
   });
 
-  it('3. handleInput() to call sortMovies()', () => {
+  it('2. handleInput() to call sortMovies()', () => {
     const sortMovies = jest.fn();
+    props.sortMovies = sortMovies;
+    const component = shallow(<SearchMovieContainer {...props} />);
     const inst = component.instance();
-    component.props.sortMovies = sortMovies;
+    const e = { target: { value: 'value' } };
 
-    inst.handleInput({ target: { value: 'value' } });
+    inst.handleInput(e);
     expect(sortMovies).toHaveBeenCalled();
+  });
+
+  it('3. handleSubmit() to call setSearchBy()', () => {
+    const setSearchBy = jest.fn();
+    props.setSearchBy = setSearchBy;
+    const component = shallow(<SearchMovieContainer {...props} />);
+    const inst = component.instance();
+    const e = { preventDefault: jest.fn() };
+
+    inst.handleSubmit(e, 'searchValue', 'searchType');
+    expect(setSearchBy).toHaveBeenCalled();
+  });
+
+  it('4. handleSubmit() to call searchMovies()', () => {
+    const searchMovies = jest.fn();
+    props.searchMovies = searchMovies;
+    const component = shallow(<SearchMovieContainer {...props} />);
+    const inst = component.instance();
+    const e = { preventDefault: jest.fn() };
+
+    inst.handleSubmit(e, 'searchValue', 'searchType');
+    expect(searchMovies).toHaveBeenCalled();
   });
 });
