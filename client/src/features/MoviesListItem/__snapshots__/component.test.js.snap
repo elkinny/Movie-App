@@ -44,7 +44,7 @@ exports[`MoviesListItemComponent:  1. To match snapshot 1`] = `
     </p>
     <LinkButton
       cssClass="movie-item__link--cy"
-      to="/1/#"
+      to="/1"
     >
       See more
     </LinkButton>

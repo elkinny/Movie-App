@@ -153,12 +153,6 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                       }
                     }
                     movies={Array []}
-                    searchBy={
-                      Object {
-                        "searchType": "title",
-                        "searchValue": "",
-                      }
-                    }
                     searchMovies={[Function]}
                     setSearchBy={[Function]}
                     setSortBy={[Function]}
@@ -170,101 +164,111 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                       handleToggle={[Function]}
                       movies={Array []}
                       moviesCount={0}
-                      searchType="title"
                       sortBy="vote_average"
                     >
-                      <SearchFormContainer
+                      <Connect(SearchFormContainer)
                         handleSubmit={[Function]}
                         handleToggle={[Function]}
-                        searchType="title"
                       >
-                        <SearchFormComponent
-                          handleInput={[Function]}
+                        <SearchFormContainer
+                          dispatch={[Function]}
                           handleSubmit={[Function]}
-                          searchType="title"
-                          searchValue=""
+                          handleToggle={[Function]}
+                          searchBy={
+                            Object {
+                              "searchType": "title",
+                              "searchValue": "",
+                            }
+                          }
                         >
-                          <form
-                            className="form"
-                            onSubmit={[Function]}
+                          <SearchFormComponent
+                            handleInput={[Function]}
+                            handleSubmit={[Function]}
+                            searchType="title"
+                            searchValue=""
                           >
-                            <input
-                              name="search"
-                              onChange={[Function]}
-                              placeholder="Search..."
-                              type="text"
-                            />
-                            <Toggle
-                              defaultValue={false}
-                              labels={
-                                Array [
-                                  "Title",
-                                  "Genre",
-                                ]
-                              }
-                              onChange={[Function]}
-                              text="Search by:"
-                              type="search"
-                              values={
-                                Array [
-                                  "title",
-                                  "genres",
-                                ]
-                              }
+                            <form
+                              className="form"
+                              onSubmit={[Function]}
                             >
-                              <div
-                                className="toggle"
+                              <input
+                                name="searchValue"
+                                onChange={[Function]}
+                                placeholder="Search..."
+                                type="text"
+                              />
+                              <Toggle
+                                defaultValue={false}
+                                labels={
+                                  Array [
+                                    "Title",
+                                    "Genre",
+                                  ]
+                                }
+                                name="searchType"
+                                onChange={[Function]}
+                                text="Search by:"
+                                values={
+                                  Array [
+                                    "title",
+                                    "genres",
+                                  ]
+                                }
                               >
-                                <span
-                                  className="toggle__label"
-                                >
-                                   
-                                  Search by:
-                                   
-                                </span>
                                 <div
-                                  className="toggle__body"
+                                  className="toggle"
                                 >
-                                  <input
-                                    className="toggle__item--left"
-                                    defaultChecked={true}
-                                    id="toggle-Title"
-                                    name="searchToggle"
-                                    onChange={[Function]}
-                                    type="radio"
-                                    value="title"
-                                  />
-                                  <label
-                                    className="btn"
-                                    htmlFor="toggle-Title"
+                                  <span
+                                    className="toggle__label"
                                   >
-                                    Title
-                                  </label>
-                                  <input
-                                    className="toggle__item--right"
-                                    defaultChecked={false}
-                                    id="toggle-Genre"
-                                    name="searchToggle"
-                                    onChange={[Function]}
-                                    type="radio"
-                                    value="genres"
-                                  />
-                                  <label
-                                    className="btn"
-                                    htmlFor="toggle-Genre"
+                                     
+                                    Search by:
+                                     
+                                  </span>
+                                  <div
+                                    className="toggle__body"
                                   >
-                                    Genre
-                                  </label>
+                                    <input
+                                      className="toggle__item--left"
+                                      defaultChecked={true}
+                                      id="toggle-Title"
+                                      name="searchType"
+                                      onChange={[Function]}
+                                      type="radio"
+                                      value="title"
+                                    />
+                                    <label
+                                      className="btn"
+                                      htmlFor="toggle-Title"
+                                    >
+                                      Title
+                                    </label>
+                                    <input
+                                      className="toggle__item--right"
+                                      defaultChecked={false}
+                                      id="toggle-Genre"
+                                      name="searchType"
+                                      onChange={[Function]}
+                                      type="radio"
+                                      value="genres"
+                                    />
+                                    <label
+                                      className="btn"
+                                      htmlFor="toggle-Genre"
+                                    >
+                                      Genre
+                                    </label>
+                                  </div>
                                 </div>
-                              </div>
-                            </Toggle>
-                            <input
-                              type="submit"
-                              value="Search"
-                            />
-                          </form>
-                        </SearchFormComponent>
-                      </SearchFormContainer>
+                              </Toggle>
+                              <input
+                                type="submit"
+                                value="Search"
+                              />
+                            </form>
+                          </SearchFormComponent>
+                        </SearchFormContainer>
+                      </Connect(SearchFormContainer)>
                       <SubHeader>
                         <div
                           className="subheader"
@@ -280,9 +284,9 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                                 "Date",
                               ]
                             }
+                            name="sortValue"
                             onChange={[Function]}
                             text="Sort by:"
-                            type="sort"
                             values={
                               Array [
                                 "vote_average",
@@ -307,7 +311,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                                   className="toggle__item--left"
                                   defaultChecked={true}
                                   id="toggle-Rate"
-                                  name="sortToggle"
+                                  name="sortValue"
                                   onChange={[Function]}
                                   type="radio"
                                   value="vote_average"
@@ -322,7 +326,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                                   className="toggle__item--right"
                                   defaultChecked={false}
                                   id="toggle-Date"
-                                  name="sortToggle"
+                                  name="sortValue"
                                   onChange={[Function]}
                                   type="radio"
                                   value="release_date"

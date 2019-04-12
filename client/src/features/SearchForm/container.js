@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-import { searchBySelector } from 'core/store/selectors';
 
 import SearchFormComponent from './component';
 
@@ -32,6 +29,4 @@ class SearchFormContainer extends Component {
   }
 }
 
-export default connect(state => ({
-  searchBy: searchBySelector(state),
-}))(SearchFormContainer);
+export default SearchFormContainer;

@@ -2,10 +2,9 @@
 
 exports[`SearchMovieComponent:  1. To match snapshot 1`] = `
 <Fragment>
-  <SearchFormContainer
+  <Connect(SearchFormContainer)
     handleSubmit={[Function]}
     handleToggle={[Function]}
-    searchType="searchType"
   />
   <SubHeader>
     <span>
@@ -19,9 +18,9 @@ exports[`SearchMovieComponent:  1. To match snapshot 1`] = `
           "Date",
         ]
       }
+      name="sortValue"
       onChange={[Function]}
       text="Sort by:"
-      type="sort"
       values={
         Array [
           "vote_average",

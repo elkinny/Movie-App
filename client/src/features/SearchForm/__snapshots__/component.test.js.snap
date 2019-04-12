@@ -6,7 +6,7 @@ exports[`SearchFormComponent:  1. To match snapshot 1`] = `
   onSubmit={[Function]}
 >
   <input
-    name="search"
+    name="searchValue"
     onChange={[Function]}
     placeholder="Search..."
     type="text"
@@ -19,9 +19,9 @@ exports[`SearchFormComponent:  1. To match snapshot 1`] = `
         "Genre",
       ]
     }
+    name="searchType"
     onChange={[Function]}
     text="Search by:"
-    type="search"
     values={
       Array [
         "title",

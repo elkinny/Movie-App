@@ -9,9 +9,9 @@ exports[`Toggle:  Toggle to match snapshot 1`] = `
       "Date",
     ]
   }
+  name="sort"
   onChange={[MockFunction]}
   text="Sort by:"
-  type="sort"
   values={
     Array [
       "vote_average",
@@ -36,7 +36,7 @@ exports[`Toggle:  Toggle to match snapshot 1`] = `
         className="toggle__item--left"
         defaultChecked={false}
         id="toggle-Rate"
-        name="sortToggle"
+        name="sort"
         onChange={[MockFunction]}
         type="radio"
         value="vote_average"
@@ -51,7 +51,7 @@ exports[`Toggle:  Toggle to match snapshot 1`] = `
         className="toggle__item--right"
         defaultChecked={true}
         id="toggle-Date"
-        name="sortToggle"
+        name="sort"
         onChange={[MockFunction]}
         type="radio"
         value="release_date"
