@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './rootReducer.js';
+import { loadState, saveState } from './localStorageLoader';
 
 const initialState = {
   movieList: {
@@ -27,6 +28,7 @@ const initialState = {
     moviesByGenre: [],
   },
 };
+const persistedState = loadState();
 const middleware = [thunk];
 
 const composeEnhancers =
@@ -36,6 +38,10 @@ const composeEnhancers =
 
 const enhancer = composeEnhancers(applyMiddleware(...middleware));
 
-const store = createStore(rootReducer, initialState, enhancer);
+const store = createStore(rootReducer, persistedState || initialState, enhancer);
+
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 export default store;

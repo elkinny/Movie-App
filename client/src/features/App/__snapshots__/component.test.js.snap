@@ -196,6 +196,7 @@ exports[`AppComponent:  1. To match snapshot 1`] = `
                                 onChange={[Function]}
                                 placeholder="Search..."
                                 type="text"
+                                value=""
                               />
                               <Toggle
                                 defaultValue={false}

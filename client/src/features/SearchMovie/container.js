@@ -22,7 +22,7 @@ class SearchMovieContainer extends Component {
 
   handleSubmit = (e, searchValue, searchType) => {
     e.preventDefault();
-    if (searchValue.length > 3) {
+    if (searchValue.length > 3 || searchValue === '') {
       window.scrollTo(0, 0);
       this.props.setSearchBy({ searchType, searchValue });
       this.props.searchMovies(searchValue, searchType);

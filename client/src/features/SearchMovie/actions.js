@@ -7,12 +7,20 @@ import {
 } from 'core/store/constants.js';
 import axios from 'axios';
 
-import { sortTypeSelector, sortValueSelector, allMoviesSelector } from 'core/store/selectors';
+import {
+  sortTypeSelector,
+  sortValueSelector,
+  allMoviesSelector,
+  searchValueSelector,
+  searchTypeSelector,
+} from 'core/store/selectors';
 
 export const getMovies = () => (dispatch, getState) =>
   axios
     .get('https://reactjs-cdp.herokuapp.com/movies', {
       params: {
+        search: searchValueSelector(getState()),
+        searchBy: searchTypeSelector(getState()),
         sortBy: sortValueSelector(getState()),
         sortOrder: sortTypeSelector(getState()),
       },

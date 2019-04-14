@@ -10,6 +10,7 @@ exports[`SearchFormComponent:  1. To match snapshot 1`] = `
     onChange={[Function]}
     placeholder="Search..."
     type="text"
+    value="searchValue"
   />
   <Toggle
     defaultValue={true}

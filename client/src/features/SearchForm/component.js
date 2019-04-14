@@ -11,7 +11,13 @@ const SearchFormComponent = props => {
       className={styles.form}
       onSubmit={e => props.handleSubmit(e, props.searchValue, props.searchType)}
     >
-      <input type="text" name="searchValue" placeholder="Search..." onChange={props.handleInput} />
+      <input
+        type="text"
+        name="searchValue"
+        placeholder="Search..."
+        onChange={props.handleInput}
+        value={props.searchValue || ''}
+      />
       <Toggle
         labels={['Title', 'Genre']}
         values={['title', 'genres']}
