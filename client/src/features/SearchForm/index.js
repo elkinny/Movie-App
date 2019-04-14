@@ -1,1 +1,1 @@
-export { default } from './container.connected';
+export { default } from './container.enhanced';

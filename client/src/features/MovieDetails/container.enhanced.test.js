@@ -1,6 +1,6 @@
-import { mapStateToProps } from './container.connected';
+import { mapStateToProps } from './container.enhanced';
 
-describe('MovieDetailsComponent_connected: ', () => {
+describe('MovieDetailsComponent_enhanced: ', () => {
   it('1. mapStateToProps() to return proper object', () => {
     const state = {
       currentMovie: {
