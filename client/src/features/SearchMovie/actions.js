@@ -9,7 +9,7 @@ import axios from 'axios';
 
 import { sortTypeSelector, sortValueSelector, allMoviesSelector } from 'core/store/selectors';
 
-export const getMovies = () => (dispatch, getState) => {
+export const getMovies = () => (dispatch, getState) =>
   axios
     .get('https://reactjs-cdp.herokuapp.com/movies', {
       params: {
@@ -22,13 +22,9 @@ export const getMovies = () => (dispatch, getState) => {
         type: GET_MOVIES,
         payload: response.data.data,
       }),
-    )
-    .catch(function(error) {
-      console.log(error);
-    });
-};
+    );
 
-export const searchMovies = (search, searchBy) => (dispatch, getState) => {
+export const searchMovies = (search, searchBy) => (dispatch, getState) =>
   axios
     .get('https://reactjs-cdp.herokuapp.com/movies', {
       params: {
@@ -43,11 +39,7 @@ export const searchMovies = (search, searchBy) => (dispatch, getState) => {
         type: SEARCH_MOVIES,
         payload: response.data.data,
       }),
-    )
-    .catch(function(error) {
-      console.log(error);
-    });
-};
+    );
 
 export const sortMovies = sortBy => (dispatch, getState) => {
   let movies = allMoviesSelector(getState());

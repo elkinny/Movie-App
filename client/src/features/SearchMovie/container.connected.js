@@ -5,10 +5,14 @@ import { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy } from './a
 
 import { allMoviesSelector, sortValueSelector } from 'core/store/selectors';
 
+export const mapStateToProps = state => ({
+  movies: allMoviesSelector(state),
+  sortBy: sortValueSelector(state),
+});
+
+const mapDispatchToProps = { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy };
+
 export default connect(
-  state => ({
-    movies: allMoviesSelector(state),
-    sortBy: sortValueSelector(state),
-  }),
-  { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy },
+  mapStateToProps,
+  mapDispatchToProps,
 )(SearchMovieContainer);

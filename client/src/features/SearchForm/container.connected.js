@@ -4,6 +4,8 @@ import SearchFormContainer from './container';
 
 import { searchBySelector } from 'core/store/selectors';
 
-export default connect(state => ({
+export const mapStateToProps = state => ({
   searchBy: searchBySelector(state),
-}))(SearchFormContainer);
+});
+
+export default connect(mapStateToProps)(SearchFormContainer);

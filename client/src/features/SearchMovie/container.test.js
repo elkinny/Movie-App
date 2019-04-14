@@ -61,4 +61,13 @@ describe('SearchMovieContainer: ', () => {
     inst.handleSubmit(e, 'searchValue', 'searchType');
     expect(searchMovies).toHaveBeenCalled();
   });
+
+  it('4. handleSubmit() to do nothing', () => {
+    const component = shallow(<SearchMovieContainer {...props} />);
+    const inst = component.instance();
+    const e = { preventDefault: jest.fn() };
+
+    const value = inst.handleSubmit(e, 'se', 'searchType');
+    expect(value).toBe(undefined);
+  });
 });
