@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import MovieDetailsContainer from './container';
+import MovieCardContainer from './container';
 
 import { getMovie } from './actions';
 import { movieSelector } from 'core/store/selectors';
@@ -14,4 +14,4 @@ const mapDispatchToProps = { getMovie };
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MovieDetailsContainer);
+)(MovieCardContainer);

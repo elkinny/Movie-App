@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import MovieDetailsComponent from './component';
+import MovieCardComponent from './component';
 
-class MovieDetailsContainer extends Component {
+class MovieCardContainer extends Component {
+  state = {
+    loading: true,
+  };
+
   static propTypes = {
     getMovie: PropTypes.func.isRequired,
     movie: PropTypes.object.isRequired,
@@ -27,8 +31,8 @@ class MovieDetailsContainer extends Component {
 
   render() {
     const { movie } = this.props;
-    return <MovieDetailsComponent currentMovie={movie} />;
+    return <MovieCardComponent {...movie} />;
   }
 }
 
-export default MovieDetailsContainer;
+export default MovieCardContainer;
