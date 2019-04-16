@@ -6,21 +6,20 @@ import MoviesList from 'features/MoviesList';
 import { SubHeader } from 'shared';
 
 const MovieDetailsComponent = props => {
-  const { currentMovie, moviesByGenres } = props;
+  const { currentMovie } = props;
   return (
     <>
       <MovieCard {...currentMovie} />
       <SubHeader>
         <span>Films by {currentMovie.genres[0]} genres</span>
       </SubHeader>
-      <MoviesList movies={moviesByGenres} />
+      <MoviesList />
     </>
   );
 };
 
 MovieDetailsComponent.propTypes = {
   currentMovie: PropTypes.object.isRequired,
-  moviesByGenres: PropTypes.array.isRequired,
 };
 
 export default MovieDetailsComponent;

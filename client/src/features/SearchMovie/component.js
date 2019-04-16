@@ -7,11 +7,11 @@ import SearchForm from 'features/SearchForm';
 import { SubHeader, Toggle } from 'shared';
 
 const SearchMovieComponent = props => {
-  const { sortBy, moviesCount, handleSubmit, handleToggle, movies } = props;
+  const { sortBy, moviesCount, handleToggle } = props;
 
   return (
     <>
-      <SearchForm handleSubmit={handleSubmit} handleToggle={handleToggle} />
+      <SearchForm />
       <SubHeader>
         <span>{moviesCount + ' films are found'}</span>
         <Toggle
@@ -23,17 +23,15 @@ const SearchMovieComponent = props => {
           defaultValue={'vote_average' !== sortBy}
         />
       </SubHeader>
-      <MoviesList movies={movies} />
+      <MoviesList />
     </>
   );
 };
 
 SearchMovieComponent.propTypes = {
   handleToggle: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
   sortBy: PropTypes.string.isRequired,
   moviesCount: PropTypes.number.isRequired,
-  movies: PropTypes.array.isRequired,
 };
 
 export default SearchMovieComponent;

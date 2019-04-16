@@ -1,17 +1,18 @@
 /* eslint-disable indent */
-import { SET_SORT_BY } from 'core/store/constants';
+import { GET_MOVIES, SORT_MOVIES } from 'core/store/constants';
 
 const initialState = {
-  sortValue: 'vote_average',
-  sortType: 'desc',
+  movies: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_SORT_BY:
+    case GET_MOVIES:
+    case SORT_MOVIES:
       return {
         ...state,
-        sortValue: action.payload,
+        movies: action.payload,
+        length: action.payload.length,
       };
     default:
       return state;

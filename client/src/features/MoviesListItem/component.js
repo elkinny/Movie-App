@@ -12,7 +12,7 @@ const MoviesListItemComponent = props => {
     <div className={styles['movie-item'] + ' movie-item--cy'}>
       <div className={styles['movie-item__header']}>
         <h2 className={styles['movie-item__title']}> {title} </h2>
-        <span className={styles['movie-item__release_date']}> {release_date} </span>
+        <span className={styles['movie-item__release-date']}> {release_date} </span>
       </div>
       <div className={styles['movie-item__body']}>
         <img className={styles['movie-item__img']} src={poster_path} height="400" />

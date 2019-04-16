@@ -1,4 +1,4 @@
-import { GET_MOVIE, GET_MOVIES_BY_GENRE } from 'core/store/constants.js';
+import { GET_MOVIE } from 'core/store/constants.js';
 import axios from 'axios';
 
 export const getMovie = id => dispatch =>
@@ -8,18 +8,3 @@ export const getMovie = id => dispatch =>
       payload: response.data,
     }),
   );
-
-export const getMoviesByGenre = searchValue => dispatch =>
-  axios
-    .get('https://reactjs-cdp.herokuapp.com/movies', {
-      params: {
-        search: searchValue,
-        searchBy: 'genres',
-      },
-    })
-    .then(response =>
-      dispatch({
-        type: GET_MOVIES_BY_GENRE,
-        payload: response.data.data,
-      }),
-    );

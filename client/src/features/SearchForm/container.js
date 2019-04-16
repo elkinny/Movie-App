@@ -7,8 +7,16 @@ class SearchFormContainer extends Component {
   state = { ...this.props.searchBy };
 
   static propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
+    setSearchBy: PropTypes.func.isRequired,
     searchBy: PropTypes.object.isRequired,
+  };
+
+  handleSubmit = (e, searchValue, searchType) => {
+    e.preventDefault();
+    if (searchValue.length > 3 || searchValue === '') {
+      window.scrollTo(0, 0);
+      this.props.setSearchBy({ searchType, searchValue });
+    }
   };
 
   handleInput = e => {
@@ -16,11 +24,10 @@ class SearchFormContainer extends Component {
   };
 
   render() {
-    const { handleSubmit } = this.props;
     const { searchValue, searchType } = this.state;
     return (
       <SearchFormComponent
-        handleSubmit={handleSubmit}
+        handleSubmit={this.handleSubmit}
         handleInput={this.handleInput}
         searchType={searchType}
         searchValue={searchValue}

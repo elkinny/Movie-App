@@ -1,17 +1,24 @@
 /* eslint-disable indent */
-import { GET_MOVIE, GET_MOVIES_BY_GENRE } from 'core/store/constants.js';
+import { GET_MOVIE } from 'core/store/constants.js';
 
-export default (state = [], action) => {
+const initialState = {
+  movie: {
+    title: '',
+    overview: '',
+    poster_path: '',
+    release_date: '',
+    genres: [],
+    vote_average: 0,
+    runtime: 0,
+  },
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case GET_MOVIE:
       return {
         ...state,
         movie: action.payload,
-      };
-    case GET_MOVIES_BY_GENRE:
-      return {
-        ...state,
-        moviesByGenre: action.payload,
       };
     default:
       return state;

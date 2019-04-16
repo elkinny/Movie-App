@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 
 import SearchMovieContainer from './container';
-import { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy } from './actions';
+import { setSortBy, setSearchBy } from './actions';
 
-import { allMoviesSelector, sortValueSelector } from 'core/store/selectors';
+import { moviesLengthSelector, sortValueSelector } from 'core/store/selectors';
 
 export const mapStateToProps = state => ({
-  movies: allMoviesSelector(state),
   sortBy: sortValueSelector(state),
+  moviesLength: moviesLengthSelector(state),
 });
 
-const mapDispatchToProps = { getMovies, searchMovies, sortMovies, setSortBy, setSearchBy };
+const mapDispatchToProps = { setSortBy, setSearchBy };
 
 export default connect(
   mapStateToProps,
