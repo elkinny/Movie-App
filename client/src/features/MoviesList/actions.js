@@ -7,6 +7,7 @@ import {
   sortValueSelector,
   searchValueSelector,
   searchTypeSelector,
+  currentMovieGenreSelector,
 } from 'core/store/selectors';
 
 export const getMovies = () => (dispatch, getState) =>
@@ -15,6 +16,23 @@ export const getMovies = () => (dispatch, getState) =>
       params: {
         search: searchValueSelector(getState()),
         searchBy: searchTypeSelector(getState()),
+        sortBy: sortValueSelector(getState()),
+        sortOrder: sortTypeSelector(getState()),
+      },
+    })
+    .then(response =>
+      dispatch({
+        type: GET_MOVIES,
+        payload: response.data.data,
+      }),
+    );
+
+export const getMoviesByGenre = () => (dispatch, getState) =>
+  axios
+    .get('https://reactjs-cdp.herokuapp.com/movies', {
+      params: {
+        search: currentMovieGenreSelector(getState()),
+        searchBy: 'genres',
         sortBy: sortValueSelector(getState()),
         sortOrder: sortTypeSelector(getState()),
       },

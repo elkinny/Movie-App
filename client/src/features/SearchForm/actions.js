@@ -1,11 +1,4 @@
-import { SET_SORT_BY, SET_SEARCH_BY } from 'core/store/constants.js';
-
-export const setSortBy = sortBy => dispatch => {
-  return dispatch({
-    type: SET_SORT_BY,
-    payload: sortBy,
-  });
-};
+import { SET_SEARCH_BY } from 'core/store/constants.js';
 
 export const setSearchBy = searchBy => dispatch => {
   return dispatch({
