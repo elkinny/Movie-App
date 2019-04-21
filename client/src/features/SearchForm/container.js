@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import SearchFormComponent from './component';
 
+import { formatedQuery as _formatedQuery } from './utils';
 class SearchFormContainer extends Component {
-  state = { ...this.props.searchBy };
-
-  static propTypes = {
-    setSearchBy: PropTypes.func.isRequired,
-    searchBy: PropTypes.object.isRequired,
-  };
-
-  handleSubmit = (e, searchValue, searchType) => {
-    e.preventDefault();
-    if (searchValue.length > 3 || searchValue === '') {
-      window.scrollTo(0, 0);
-      this.props.setSearchBy({ searchType, searchValue });
-    }
-  };
+  constructor(props) {
+    super();
+    const formatedQuery = _formatedQuery(props.match.params.query) || { value: '', type: 'title' };
+    this.state = {
+      searchValue: formatedQuery.value,
+      searchType: formatedQuery.type,
+    };
+  }
 
   handleInput = e => {
     this.setState({ [`${e.target.name}`]: e.target.value });
@@ -27,7 +21,6 @@ class SearchFormContainer extends Component {
     const { searchValue, searchType } = this.state;
     return (
       <SearchFormComponent
-        handleSubmit={this.handleSubmit}
         handleInput={this.handleInput}
         searchType={searchType}
         searchValue={searchValue}

@@ -6,9 +6,12 @@ import SearchMovieComponent from './component';
 class SearchMovieContainer extends Component {
   static propTypes = {
     setSortBy: PropTypes.func.isRequired,
-    setSearchBy: PropTypes.func.isRequired,
     moviesLength: PropTypes.number.isRequired,
     sortBy: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    moviesLength: 0,
   };
 
   handleToggle = e => {
@@ -20,7 +23,7 @@ class SearchMovieContainer extends Component {
     return (
       <SearchMovieComponent
         handleToggle={this.handleToggle}
-        moviesCount={moviesLength}
+        moviesCount={moviesLength || 0}
         sortBy={sortBy}
       />
     );

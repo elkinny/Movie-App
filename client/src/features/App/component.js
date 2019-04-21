@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import ErrorBoundary from 'features/ErrorBoundary';
+import { Provider } from 'react-redux';
 
 import { Header, Footer } from 'shared';
 import SearchMovie from 'features/SearchMovie';
 import MovieDetails from 'features/MovieDetails';
+import NotFound from 'features/NotFound';
+import ErrorBoundary from 'features/ErrorBoundary';
 
-import { Provider } from 'react-redux';
 import store from 'core/store';
 
 import styles from './style.scss';
@@ -18,10 +18,12 @@ const AppComponent = () => {
       <Header />
       <main className={styles.container}>
         <ErrorBoundary>
-          <Router>
+          <Router basename={process.env.NODE_ENV === 'production' ? '/Movie-app' : ''}>
             <Switch>
               <Route exact path="/" component={SearchMovie} />
-              <Route exact path="/:id" component={MovieDetails} />
+              <Route path="/search/:query" component={SearchMovie} />
+              <Route path="/film/:id" component={MovieDetails} />
+              <Route path="*" component={NotFound} />
             </Switch>
           </Router>
         </ErrorBoundary>
