@@ -10,6 +10,7 @@ const SearchFormComponent = props => {
     <form className={styles.form}>
       <input
         type="text"
+        minLength="3"
         name="searchValue"
         placeholder="Search..."
         onChange={props.handleInput}
