@@ -93,7 +93,7 @@
         left: 0; }
 
 ._1xiwxvSwRWQiWrXw2DJxgs {
-  margin-top: 10px;
+  margin: 10px auto;
   color: #7488ab;
   text-decoration: none;
   padding: 7px 15px;
@@ -204,34 +204,41 @@
   ._15OhLZnCnpS3ONeR1YgB4, .w31DseeloG8mWCTfiqqTC {
     color: #7488ab; }
 
-.REj4pDoiqoXDde1tEOEay {
-  width: 300px;
-  margin: 0 20px 60px; }
-  .d9HgJ-JKo9PATXMH3JmEY {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 20px; }
-  .Bk7EXKTDKGDIxKSksw8tU {
-    text-align: center;
-    margin-bottom: 0;
-    text-overflow: ellipsis; }
-  ._356CvO7FN4uzMNW1-pKmar, ._142n7XR8ZAXzWB1_QC4VXA {
-    color: #7488ab; }
-  ._2Yj0Cp47e8awPdYPLsgjXa {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-  ._2KQEfTQHZsCWUewJ33quH5 {
-    margin: 0 auto 20px;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.6);
-    transition-duration: .5s; }
-    ._2KQEfTQHZsCWUewJ33quH5:hover {
-      transform: scale(1.06); }
-  ._142n7XR8ZAXzWB1_QC4VXA {
-    align-self: flex-start; }
-  ._3-s7vaR6jeV4etC5rex6Go {
-    text-align: justify; }
+.rZQPnBfxi4xQ7U7cWF944 {
+  font-size: 14.5em; }
+  ._2v_jxHlFvdHbk1kbnP0pMF {
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: _3jMvu0mlMkKvxT2tSlThjP 5.5s infinite linear; }
+    ._2v_jxHlFvdHbk1kbnP0pMF:nth-child(1) {
+      stroke: #0f349b;
+      animation-delay: -1; }
+    ._2v_jxHlFvdHbk1kbnP0pMF:nth-child(2) {
+      stroke: #3d72d4;
+      animation-delay: -2s; }
+    ._2v_jxHlFvdHbk1kbnP0pMF:nth-child(3) {
+      stroke: #00b7bd;
+      animation-delay: -3s; }
+    ._2v_jxHlFvdHbk1kbnP0pMF:nth-child(4) {
+      stroke: #8bcfb8;
+      animation-delay: -4s; }
+    ._2v_jxHlFvdHbk1kbnP0pMF:nth-child(5) {
+      stroke: #6cd8d8;
+      animation-delay: -5s; }
+
+._1nYKrMfwPcHgj4Zcm4W5iF {
+  display: block;
+  font: 14.5em sans-serif;
+  width: 960px;
+  height: 300px;
+  margin: 0 auto; }
+
+@keyframes _3jMvu0mlMkKvxT2tSlThjP {
+  100% {
+    stroke-dashoffset: -35%; } }
 
 ._125Gizq6wjyhIPS8OZhlNV {
   background-color: rgba(17, 17, 17, 0.6);
