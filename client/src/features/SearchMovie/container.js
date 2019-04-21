@@ -1,37 +1,27 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import SearchMovieComponent from './component';
 
-import { getMovies } from './utils.js';
-
 class SearchMovieContainer extends Component {
-  state = {
-    searchValue: '',
-    searchToggleValue: 'title',
-    sortToggleValue: 'rating',
+  static propTypes = {
+    setSortBy: PropTypes.func.isRequired,
+    setSearchBy: PropTypes.func.isRequired,
+    moviesLength: PropTypes.number.isRequired,
+    sortBy: PropTypes.string.isRequired,
   };
 
-  handleSubmit = (e, searchValue, searchToggleValue) => {
-    e.preventDefault();
-    window.scrollTo(0, 0);
-    this.setState({ searchValue: searchValue, searchToggleValue: searchToggleValue });
-  };
-
-  handleInput = e => {
-    this.setState({ [`${e.target.name}Value`]: e.target.value });
+  handleToggle = e => {
+    this.props.setSortBy(e.target.value);
   };
 
   render() {
-    const { searchToggleValue, sortToggleValue, searchValue } = this.state;
-    const allMovies = getMovies(searchToggleValue, sortToggleValue, searchValue);
+    const { moviesLength, sortBy } = this.props;
     return (
       <SearchMovieComponent
-        handleSubmit={this.handleSubmit}
-        handleToggle={this.handleInput}
-        moviesCount={allMovies.length}
-        movies={allMovies}
-        searchToggleValue={searchToggleValue}
-        sortToggleValue={sortToggleValue}
+        handleToggle={this.handleToggle}
+        moviesCount={moviesLength}
+        sortBy={sortBy}
       />
     );
   }

@@ -2,26 +2,31 @@
 
 exports[`SearchMovieComponent:  1. To match snapshot 1`] = `
 <Fragment>
-  <SearchFormContainer
+  <Connect(SearchFormContainer)
     handleSubmit={[Function]}
     handleToggle={[Function]}
-    searchToggleValue="searchToggleValue"
   />
   <SubHeader>
     <span>
       1 films are found
     </span>
     <Toggle
+      defaultValue={true}
       labels={
         Array [
-          "Rating",
-          "Year",
+          "Rate",
+          "Date",
         ]
       }
+      name="sortValue"
       onChange={[Function]}
       text="Sort by:"
-      type="sort"
-      value={true}
+      values={
+        Array [
+          "vote_average",
+          "release_date",
+        ]
+      }
     />
   </SubHeader>
   <MoviesListComponent

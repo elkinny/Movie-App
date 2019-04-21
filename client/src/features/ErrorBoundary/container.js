@@ -14,7 +14,6 @@ class ErrorBoundary extends Component {
 
   render() {
     const { errorName, componentStack, hasError } = this.state;
-
     return hasError ? (
       <ErrorBoundaryComponent errorName={errorName} componentStack={componentStack} />
     ) : (

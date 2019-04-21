@@ -12,10 +12,11 @@
   &__title {
     text-align: center;
     margin-bottom: 0;
+    text-overflow: ellipsis;
   }
 
-  &__year,
-  &__genre {
+  &__release-date,
+  &__genres {
     color: #7488ab;
   }
 
@@ -35,11 +36,11 @@
     }
   }
 
-  &__genre {
+  &__genres {
     align-self: flex-start;
   }
 
-  &__description {
+  &__overview {
     text-align: justify;
   }
 }

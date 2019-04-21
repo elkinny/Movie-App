@@ -4,32 +4,70 @@ import { shallow } from 'enzyme';
 
 describe('SearchMovieContainer: ', () => {
   window.scrollTo = () => {};
-  let component;
+  const props = {
+    getMovies: () => {},
+    searchMovies: () => {},
+    sortMovies: () => {},
+    setSortBy: () => {},
+    setSearchBy: () => {},
+    movies: [],
+    sortBy: 'vote_average',
+    searchBy: {
+      searchValue: 'name',
+      searchType: 'title',
+    },
+  };
 
-  beforeEach(() => {
-    component = shallow(<SearchMovieContainer sortToggleValue="sortToggleValue" />);
+  it('1. handleInput() to call setSortBy()', () => {
+    const setSortBy = jest.fn();
+    props.setSortBy = setSortBy;
+    const component = shallow(<SearchMovieContainer {...props} />);
+    const inst = component.instance();
+    const e = { target: { value: 'value' } };
+
+    inst.handleInput(e);
+    expect(setSortBy).toHaveBeenCalled();
   });
 
-  it('1. handleSubmit() to call setState()', () => {
-    component.setState = jest.fn();
+  it('2. handleInput() to call sortMovies()', () => {
+    const sortMovies = jest.fn();
+    props.sortMovies = sortMovies;
+    const component = shallow(<SearchMovieContainer {...props} />);
     const inst = component.instance();
-    const spy = jest.spyOn(inst, 'setState');
+    const e = { target: { value: 'value' } };
 
-    inst.handleSubmit(
-      { preventDefault: jest.fn() },
-      {
-        data: { searchValue: 'searchValue', searchToggleValue: 'searchToggleValue' },
-      },
-    );
-    expect(spy).toHaveBeenCalled();
+    inst.handleInput(e);
+    expect(sortMovies).toHaveBeenCalled();
   });
 
-  it('2. handleInput() to call setState()', () => {
-    component.setState = jest.fn();
+  it('3. handleSubmit() to call setSearchBy()', () => {
+    const setSearchBy = jest.fn();
+    props.setSearchBy = setSearchBy;
+    const component = shallow(<SearchMovieContainer {...props} />);
     const inst = component.instance();
-    const spy = jest.spyOn(inst, 'setState');
+    const e = { preventDefault: jest.fn() };
 
-    inst.handleInput({ target: { value: 'value' } });
-    expect(spy).toHaveBeenCalled();
+    inst.handleSubmit(e, 'searchValue', 'searchType');
+    expect(setSearchBy).toHaveBeenCalled();
+  });
+
+  it('4. handleSubmit() to call searchMovies()', () => {
+    const searchMovies = jest.fn();
+    props.searchMovies = searchMovies;
+    const component = shallow(<SearchMovieContainer {...props} />);
+    const inst = component.instance();
+    const e = { preventDefault: jest.fn() };
+
+    inst.handleSubmit(e, 'searchValue', 'searchType');
+    expect(searchMovies).toHaveBeenCalled();
+  });
+
+  it('4. handleSubmit() to do nothing', () => {
+    const component = shallow(<SearchMovieContainer {...props} />);
+    const inst = component.instance();
+    const e = { preventDefault: jest.fn() };
+
+    const value = inst.handleSubmit(e, 'se', 'searchType');
+    expect(value).toBe(undefined);
   });
 });

@@ -5,7 +5,7 @@ module.exports = {
   testMatch: ['<rootDir>/src/**/*.test.js'],
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.js', '!src/index.js'],
-  coveragePathIgnorePatterns: ['/node_modules/', '/config/', '/cypress/'],
+  coveragePathIgnorePatterns: ['/node_modules/', '/config/', '/cypress/', '/store/'],
   coverageThreshold: {
     global: {
       branches: 0, //-> 80

@@ -34,13 +34,13 @@
     line-height: 1.6em;
   }
 
-  &__rating {
+  &__vote_average {
     position: relative;
     top: -10px;
   }
 
-  &__rating,
-  &__year {
+  &__vote_average,
+  &__release_date {
     color: #7488ab;
   }
 }

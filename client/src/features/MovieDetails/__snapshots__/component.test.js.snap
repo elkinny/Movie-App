@@ -3,20 +3,24 @@
 exports[`MovieDetailsComponent:  1. To match snapshot 1`] = `
 <Fragment>
   <MovieCardComponent
-    description="Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races."
-    duration="120min"
-    genre="Action"
+    genres={
+      Array [
+        "Action",
+      ]
+    }
     link="https://www.youtube.com/watch?v=0LHxvxdRnYc"
-    picLink="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
-    rating="4.0"
+    overview="Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races."
+    poster_path="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+    release_date="2019"
+    runtime={120}
     title="Captain Marvel"
-    year={2019}
+    vote_average={4}
   />
   <SubHeader>
     <span>
       Films by 
       Action
-       genre
+       genres
     </span>
   </SubHeader>
   <MoviesListComponent

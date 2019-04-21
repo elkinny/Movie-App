@@ -15,7 +15,7 @@ exports[`MoviesListItemComponent:  1. To match snapshot 1`] = `
        
     </h2>
     <span
-      className="movie-item__year"
+      className="movie-item__release_date"
     >
        
       2019
@@ -31,20 +31,20 @@ exports[`MoviesListItemComponent:  1. To match snapshot 1`] = `
       src="https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
     />
     <span
-      className="movie-item__genre"
+      className="movie-item__genres"
     >
        
       Action
        
     </span>
     <p
-      className="movie-item__description"
+      className="movie-item__overview"
     >
       Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
     </p>
     <LinkButton
       cssClass="movie-item__link--cy"
-      to="/1/#"
+      to="/1"
     >
       See more
     </LinkButton>

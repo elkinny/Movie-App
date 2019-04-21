@@ -4,28 +4,32 @@ import PropTypes from 'prop-types';
 import SearchFormComponent from './component';
 
 class SearchFormContainer extends Component {
-  state = {
-    searchValue: '',
-    searchToggleValue: this.props.searchToggleValue,
-  };
+  state = { ...this.props.searchBy };
 
   static propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
-    searchToggleValue: PropTypes.string.isRequired,
+    setSearchBy: PropTypes.func.isRequired,
+    searchBy: PropTypes.object.isRequired,
+  };
+
+  handleSubmit = (e, searchValue, searchType) => {
+    e.preventDefault();
+    if (searchValue.length > 3 || searchValue === '') {
+      window.scrollTo(0, 0);
+      this.props.setSearchBy({ searchType, searchValue });
+    }
   };
 
   handleInput = e => {
-    this.setState({ [`${e.target.name}Value`]: e.target.value });
+    this.setState({ [`${e.target.name}`]: e.target.value });
   };
 
   render() {
-    const { handleSubmit } = this.props;
-    const { searchValue, searchToggleValue } = this.state;
+    const { searchValue, searchType } = this.state;
     return (
       <SearchFormComponent
-        handleSubmit={handleSubmit}
+        handleSubmit={this.handleSubmit}
         handleInput={this.handleInput}
-        searchToggleValue={searchToggleValue}
+        searchType={searchType}
         searchValue={searchValue}
       />
     );

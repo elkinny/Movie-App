@@ -6,26 +6,26 @@ import { LinkButton } from 'shared';
 import styles from './style.scss';
 
 const MovieCardComponent = props => {
-  const { title, description, year, genre, picLink, rating, duration } = props;
+  const { title, overview, release_date, genres, poster_path, vote_average, runtime } = props;
   return (
     <>
       <div className={styles['movie-card']}>
         <div className={styles['movie-card__header']}>
-          <img className={styles['movie-card__img']} src={picLink} height="400" />
+          <img className={styles['movie-card__img']} src={poster_path} height="400" />
         </div>
         <div className={styles['movie-card__body']}>
           <div className={styles['movie-card__line']}>
             <h2 className={styles['movie-card__title']}>
               {title}
-              <span className={styles['movie-card__rating']}> {rating} </span>
+              <span className={styles['movie-card__vote_average']}> {vote_average} </span>
             </h2>
           </div>
           <div className={styles['movie-card__subline']}>
-            <span className={styles['movie-card__genre']}> {genre} </span>
-            <span className={styles['movie-card__year']}> {year} </span>
-            <span className={styles['movie-card__duration']}> {duration} </span>
+            <span className={styles['movie-card__genres']}>{genres.join(', ')}</span>
+            <span className={styles['movie-card__release_date']}> {release_date} </span>
+            {runtime && <span className={styles['movie-card__runtime']}> {runtime}min </span>}
           </div>
-          <p className={styles['movie-card__description']}>{description}</p>
+          <p className={styles['movie-card__overview']}>{overview}</p>
           <LinkButton to="/" cssClass="movie-card__link-back--cy">
             Back
           </LinkButton>
@@ -37,12 +37,12 @@ const MovieCardComponent = props => {
 
 MovieCardComponent.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  picLink: PropTypes.string.isRequired,
-  year: PropTypes.number.isRequired,
-  genre: PropTypes.string.isRequired,
-  rating: PropTypes.string.isRequired,
-  duration: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  poster_path: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+  genres: PropTypes.array.isRequired,
+  vote_average: PropTypes.number.isRequired,
+  runtime: PropTypes.number,
 };
 
 export default MovieCardComponent;

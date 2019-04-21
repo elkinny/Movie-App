@@ -6,19 +6,19 @@ import { LinkButton } from 'shared';
 import styles from './style.scss';
 
 const MoviesListItemComponent = props => {
-  const { title, description, year, genre, id, picLink } = props;
+  const { title, overview, release_date, genres, id, poster_path } = props;
 
   return (
     <div className={styles['movie-item'] + ' movie-item--cy'}>
       <div className={styles['movie-item__header']}>
         <h2 className={styles['movie-item__title']}> {title} </h2>
-        <span className={styles['movie-item__year']}> {year} </span>
+        <span className={styles['movie-item__release-date']}> {release_date} </span>
       </div>
       <div className={styles['movie-item__body']}>
-        <img className={styles['movie-item__img']} src={picLink} height="400" />
-        <span className={styles['movie-item__genre']}> {genre} </span>
-        <p className={styles['movie-item__description']}>{description}</p>
-        <LinkButton to={`/${id}/#`} cssClass="movie-item__link--cy">
+        <img className={styles['movie-item__img']} src={poster_path} height="400" />
+        <span className={styles['movie-item__genres']}> {genres.join(', ')} </span>
+        <p className={styles['movie-item__overview']}>{overview}</p>
+        <LinkButton to={`/${id}`} cssClass="movie-item__link--cy">
           See more
         </LinkButton>
       </div>
@@ -28,11 +28,11 @@ const MoviesListItemComponent = props => {
 
 MoviesListItemComponent.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  picLink: PropTypes.string.isRequired,
-  year: PropTypes.number.isRequired,
-  genre: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  poster_path: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+  genres: PropTypes.array.isRequired,
 };
 
 export default MoviesListItemComponent;

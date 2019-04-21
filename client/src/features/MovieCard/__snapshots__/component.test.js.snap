@@ -25,10 +25,10 @@ exports[`MovieCardComponent:  1. To match snapshot 1`] = `
         >
           Captain Marvel
           <span
-            className="movie-card__rating"
+            className="movie-card__vote_average"
           >
              
-            4.0
+            4
              
           </span>
         </h2>
@@ -37,29 +37,27 @@ exports[`MovieCardComponent:  1. To match snapshot 1`] = `
         className="movie-card__subline"
       >
         <span
-          className="movie-card__genre"
+          className="movie-card__genres"
         >
-           
           Action
-           
         </span>
         <span
-          className="movie-card__year"
+          className="movie-card__release_date"
         >
            
           2019
            
         </span>
         <span
-          className="movie-card__duration"
+          className="movie-card__runtime"
         >
            
-          120min
-           
+          120
+          min 
         </span>
       </div>
       <p
-        className="movie-card__description"
+        className="movie-card__overview"
       >
         Carol Danvers becomes one of the universe\`s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
       </p>

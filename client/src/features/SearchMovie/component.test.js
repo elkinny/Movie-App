@@ -9,8 +9,9 @@ describe('SearchMovieComponent: ', () => {
       handleToggle: () => {},
       moviesCount: 1,
       movies: [],
-      searchToggleValue: 'searchToggleValue',
+      sortBy: 'searchType',
       sortToggleValue: 'sortToggleValue',
+      searchType: 'searchType',
     };
     const component = shallow(<SearchMovieComponent {...props} />);
     expect(component).toMatchSnapshot();
