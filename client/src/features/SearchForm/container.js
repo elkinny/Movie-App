@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import SearchFormComponent from './component';
 
@@ -13,6 +14,19 @@ class SearchFormContainer extends Component {
     };
   }
 
+  static propTypes = {
+    history: PropTypes.object,
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    if (this.state.searchValue.length > 3) {
+      this.props.history.push(
+        `/search/value=${this.state.searchValue}&type=${this.state.searchType}`,
+      );
+    } else alert('Type more than 3 symbols, please');
+  };
+
   handleInput = e => {
     this.setState({ [`${e.target.name}`]: e.target.value });
   };
@@ -21,6 +35,7 @@ class SearchFormContainer extends Component {
     const { searchValue, searchType } = this.state;
     return (
       <SearchFormComponent
+        handleSubmit={this.handleSubmit}
         handleInput={this.handleInput}
         searchType={searchType}
         searchValue={searchValue}

@@ -21,12 +21,17 @@ class MoviesListContainer extends Component {
 
   _searchMovies(query) {
     const formatedQuery = _formatedQuery(query);
-    if (formatedQuery.value.length > 3) {
-      this.props.getMovies({
-        searchType: formatedQuery.type,
-        searchValue: formatedQuery.value,
-      });
-      window.scrollTo(0, 0);
+    this.props.getMovies({
+      searchType: formatedQuery.type,
+      searchValue: formatedQuery.value,
+    });
+    window.scrollTo(0, 0);
+  }
+
+  componentDidMount() {
+    if (this.props.match.params.query) {
+      this._searchMovies(this.props.match.params.query);
+      return;
     }
   }
 

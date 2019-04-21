@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Toggle, LinkButton } from 'shared';
+import { Toggle } from 'shared';
 
 import styles from './style.scss';
 
 const SearchFormComponent = props => {
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={props.handleSubmit}>
       <input
         type="text"
-        minLength="3"
         name="searchValue"
         placeholder="Search..."
         onChange={props.handleInput}
@@ -24,14 +23,13 @@ const SearchFormComponent = props => {
         onChange={props.handleInput}
         defaultValue={'title' !== props.searchType}
       />
-      <LinkButton to={`/search/value=${props.searchValue}&type=${props.searchType}`}>
-        Search
-      </LinkButton>
+      <input type="submit" value="Search" />
     </form>
   );
 };
 
 SearchFormComponent.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
   handleInput: PropTypes.func.isRequired,
   searchType: PropTypes.string.isRequired,
   searchValue: PropTypes.string.isRequired,
