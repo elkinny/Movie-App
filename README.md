@@ -23,4 +23,4 @@ $ cd server
 $ npm start
 ```
 
-<h3 align="center">[Try it now](https://elkinny.github.io/Movie-App/)</h3>
+<h3 align="center"><a href="https://elkinny.github.io/Movie-App/">Try it now</h3>
