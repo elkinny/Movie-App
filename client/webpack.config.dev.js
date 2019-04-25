@@ -14,10 +14,12 @@ module.exports = {
   output: {
     path: outputPath,
     filename: 'index.js',
+    publicPath: '/',
   },
   devtool: 'source-map',
   watch: true,
   devServer: {
+    historyApiFallback: true,
     contentBase: outputPath,
     compress: true,
     port: 3000,

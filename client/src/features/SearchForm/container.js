@@ -3,20 +3,28 @@ import PropTypes from 'prop-types';
 
 import SearchFormComponent from './component';
 
+import { formatedQuery as _formatedQuery } from './utils';
 class SearchFormContainer extends Component {
-  state = { ...this.props.searchBy };
+  constructor(props) {
+    super();
+    const formatedQuery = _formatedQuery(props.match.params.query) || { value: '', type: 'title' };
+    this.state = {
+      searchValue: formatedQuery.value,
+      searchType: formatedQuery.type,
+    };
+  }
 
   static propTypes = {
-    setSearchBy: PropTypes.func.isRequired,
-    searchBy: PropTypes.object.isRequired,
+    history: PropTypes.object,
   };
 
-  handleSubmit = (e, searchValue, searchType) => {
+  handleSubmit = e => {
     e.preventDefault();
-    if (searchValue.length > 3 || searchValue === '') {
-      window.scrollTo(0, 0);
-      this.props.setSearchBy({ searchType, searchValue });
-    }
+    if (this.state.searchValue.length > 3) {
+      this.props.history.push(
+        `/search/value=${this.state.searchValue}&type=${this.state.searchType}`,
+      );
+    } else alert('Type more than 3 symbols, please');
   };
 
   handleInput = e => {

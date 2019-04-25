@@ -7,10 +7,7 @@ import styles from './style.scss';
 
 const SearchFormComponent = props => {
   return (
-    <form
-      className={styles.form}
-      onSubmit={e => props.handleSubmit(e, props.searchValue, props.searchType)}
-    >
+    <form className={styles.form} onSubmit={props.handleSubmit}>
       <input
         type="text"
         name="searchValue"

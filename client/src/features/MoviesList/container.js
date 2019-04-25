@@ -3,29 +3,39 @@ import PropTypes from 'prop-types';
 
 import MoviesListComponent from './component';
 
+import { _formatedQuery } from './utils';
+
 class MoviesListContainer extends Component {
   static propTypes = {
     getMovies: PropTypes.func.isRequired,
     getMoviesByGenre: PropTypes.func.isRequired,
     sortMovies: PropTypes.func.isRequired,
     movies: PropTypes.array.isRequired,
-    searchBy: PropTypes.object.isRequired,
     sortBy: PropTypes.object.isRequired,
     currentMovieGenre: PropTypes.string.isRequired,
   };
 
+  static defaultProps = {
+    currentMovieGenre: '',
+  };
+
+  _searchMovies(query) {
+    const formatedQuery = _formatedQuery(query);
+    this.props.getMovies({
+      searchType: formatedQuery.type,
+      searchValue: formatedQuery.value,
+    });
+    window.scrollTo(0, 0);
+  }
+
   componentDidMount() {
-    this.props.getMovies();
+    if (this.props.match.params.query) {
+      this._searchMovies(this.props.match.params.query);
+      return;
+    }
   }
 
   componentDidUpdate(prevProps) {
-    if (
-      this.props.searchBy.searchValue !== prevProps.searchBy.searchValue ||
-      this.props.searchBy.searchType !== prevProps.searchBy.searchType
-    ) {
-      this.props.getMovies();
-      return;
-    }
     if (
       this.props.sortBy.sortValue !== prevProps.sortBy.sortValue ||
       this.props.sortBy.sortType !== prevProps.sortBy.sortType
@@ -35,6 +45,10 @@ class MoviesListContainer extends Component {
     }
     if (this.props.currentMovieGenre !== prevProps.currentMovieGenre) {
       this.props.getMoviesByGenre();
+      return;
+    }
+    if (this.props.match.params.query !== prevProps.match.params.query) {
+      this._searchMovies(this.props.match.params.query);
       return;
     }
   }
