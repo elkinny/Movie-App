@@ -10,7 +10,7 @@ const SearchMovieComponent = props => {
   const { sortBy, moviesCount, handleToggle } = props;
 
   return (
-    <>
+    <React.Fragment>
       <SearchForm />
       <SubHeader>
         <span>{moviesCount + ' films are found'}</span>
@@ -24,7 +24,7 @@ const SearchMovieComponent = props => {
         />
       </SubHeader>
       <MoviesList />
-    </>
+    </React.Fragment>
   );
 };
 

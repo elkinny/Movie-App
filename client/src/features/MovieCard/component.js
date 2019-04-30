@@ -8,7 +8,7 @@ import styles from './style.scss';
 const MovieCardComponent = props => {
   const { title, overview, release_date, genres, poster_path, vote_average, runtime } = props;
   return (
-    <>
+    <React.Fragment>
       <div className={styles['movie-card']}>
         <div className={styles['movie-card__header']}>
           <img className={styles['movie-card__img']} src={poster_path} height="400" />
@@ -31,7 +31,7 @@ const MovieCardComponent = props => {
           </LinkButton>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

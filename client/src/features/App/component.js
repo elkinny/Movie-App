@@ -9,11 +9,9 @@ import MovieDetails from 'features/MovieDetails';
 import NotFound from 'features/NotFound';
 import ErrorBoundary from 'features/ErrorBoundary';
 
-import store from 'core/store';
-
 import styles from './style.scss';
 
-const AppComponent = ({ Router, location, context }) => {
+const AppComponent = ({ Router, location, context, store }) => {
   return (
     <Provider store={store}>
       <Header />
@@ -45,9 +43,12 @@ AppComponent.propTypes = {
   context: PropTypes.shape({
     url: PropTypes.string,
   }),
+  store: PropTypes.shape({
+    dispatch: PropTypes.func.isRequired,
+    getState: PropTypes.func.isRequired,
+  }).isRequired,
 };
 AppComponent.defaultProps = {
-  Router: null,
   location: null,
   context: null,
 };
