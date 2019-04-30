@@ -4,11 +4,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const outputPath = path.resolve(__dirname, './dist');
-const srcPath = path.resolve(__dirname, './src');
-const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+const srcPath = path.resolve('./client/src');
+const nodeModulesPath = path.resolve('./node_modules');
 
 module.exports = {
   context: srcPath,
+  name: 'client',
   mode: 'development',
   entry: './index.js',
   output: {

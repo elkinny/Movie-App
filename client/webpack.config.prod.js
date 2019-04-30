@@ -8,11 +8,13 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const outputPath = path.resolve(__dirname, './build');
 const srcPath = path.resolve(__dirname, './src');
-const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+
+const nodeModulesPath = path.resolve('../node_modules');
 
 module.exports = {
   context: srcPath,
   mode: 'production',
+  name: 'client',
   entry: './index.js',
   output: {
     path: outputPath,

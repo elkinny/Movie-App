@@ -1,4 +1,0 @@
-{
-  "./**/*.js": ["prettier --write", "eslint", "git add ."],
-  "./src/styles/**/*.scss": ["stylelint --fix", "stylelint", "git add ."],
-}

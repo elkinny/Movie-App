@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { Header, Footer } from 'shared';
 import SearchMovie from 'features/SearchMovie';
@@ -12,13 +13,18 @@ import store from 'core/store';
 
 import styles from './style.scss';
 
-const AppComponent = () => {
+const AppComponent = ({ Router, location, context }) => {
   return (
     <Provider store={store}>
       <Header />
       <main className={styles.container}>
         <ErrorBoundary>
-          <Router basename={process.env.NODE_ENV === 'production' ? '/Movie-app' : ''}>
+          {/* basename was added to make it work on gh-pages */}
+          <Router
+            location={location}
+            context={context}
+            basename={process.env.NODE_ENV === 'production' ? '/Movie-app' : ''}
+          >
             <Switch>
               <Route exact path="/" component={SearchMovie} />
               <Route path="/search/:query" component={SearchMovie} />
@@ -33,4 +39,16 @@ const AppComponent = () => {
   );
 };
 
+AppComponent.propTypes = {
+  Router: PropTypes.func.isRequired,
+  location: PropTypes.string,
+  context: PropTypes.shape({
+    url: PropTypes.string,
+  }),
+};
+AppComponent.defaultProps = {
+  Router: null,
+  location: null,
+  context: null,
+};
 export default AppComponent;
