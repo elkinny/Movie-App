@@ -1,11 +1,40 @@
-//movieList
-export const allMoviesSelector = state => state.allMovies.movies;
-export const moviesLengthSelector = state => state.allMovies.length;
+import { createSelector } from 'reselect';
 
-export const sortBySelector = state => state.formatParams.sortBy;
-export const sortValueSelector = state => sortBySelector(state).sortValue;
-export const sortTypeSelector = state => sortBySelector(state).sortType;
+const getAllMovies = state => state.allMovies;
+
+//movieList
+export const allMoviesSelector = createSelector(
+  getAllMovies,
+  allMovies => allMovies.movies,
+);
+export const moviesLengthSelector = createSelector(
+  getAllMovies,
+  allMovies => allMovies.length,
+);
+
+const sortBy = state => state.formatParams.sortBy;
+
+export const sortBySelector = createSelector(
+  sortBy,
+  sortBy => sortBy,
+);
+export const sortValueSelector = createSelector(
+  sortBy,
+  sortBy => sortBy.sortValue,
+);
+export const sortTypeSelector = createSelector(
+  sortBy,
+  sortBy => sortBy.sortType,
+);
 
 // currentMovie
-export const movieSelector = state => state.currentMovie.movie;
-export const currentMovieGenreSelector = state => state.currentMovie.movie.genres[0];
+const movie = state => state.currentMovie.movie;
+
+export const movieSelector = createSelector(
+  movie,
+  movie => movie,
+);
+export const currentMovieGenreSelector = createSelector(
+  movie,
+  movie => movie.genres[0],
+);
