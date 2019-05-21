@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import MoviesListComponent from './component';
 
 import { _formatedQuery } from './utils';
 
-class MoviesListContainer extends Component {
-  static propTypes = {
-    getMovies: PropTypes.func.isRequired,
-    getMoviesByGenre: PropTypes.func.isRequired,
-    sortMovies: PropTypes.func.isRequired,
-    movies: PropTypes.array.isRequired,
-    sortBy: PropTypes.object.isRequired,
-    currentMovieGenre: PropTypes.string.isRequired,
-  };
+//@flow
 
-  static defaultProps = {
-    currentMovieGenre: '',
-  };
+type Props = {
+  getMovies: ?(value: string) => mixed,
+  getMoviesByGenre: ?(value: string) => mixed,
+  sortMovies: ?(value: string) => mixed,
+  movies: ?Array<string>,
+  sortBy: ?mixed,
+  currentMovieGenre: ?string,
+};
+
+class MoviesListContainer extends Component {
+  props: Props;
 
   _searchMovies(query) {
     const formatedQuery = _formatedQuery(query);

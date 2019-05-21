@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ErrorBoundaryComponent from './component';
 
+//@flow
+
 class ErrorBoundary extends Component {
   state = { hasError: false };
 

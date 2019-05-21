@@ -1,11 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { LinkButton } from 'shared';
 
 import styles from './style.scss';
 
-const MoviesListItemComponent = props => {
+//@flow
+
+type Props = {
+  title: ?string,
+  overview: ?string,
+  id: ?number,
+  poster_path: ?string,
+  release_date: ?string,
+  genres: ?Array<string>,
+};
+
+const MoviesListItemComponent = (props: Props) => {
   const { title, overview, release_date, genres, id, poster_path } = props;
 
   return (
@@ -24,15 +34,6 @@ const MoviesListItemComponent = props => {
       </div>
     </div>
   );
-};
-
-MoviesListItemComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  overview: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-  poster_path: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
-  genres: PropTypes.array.isRequired,
 };
 
 export default MoviesListItemComponent;

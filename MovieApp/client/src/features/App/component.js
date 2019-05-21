@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import { Header, Footer } from 'shared';
 import SearchMovie from 'features/SearchMovie';
@@ -11,7 +10,16 @@ import ErrorBoundary from 'features/ErrorBoundary';
 
 import styles from './style.scss';
 
-const AppComponent = ({ Router, location, context, store }) => {
+//@flow
+
+type Props = {
+  Router: (value: mixed) => mixed,
+  location: string,
+  context: ?mixed,
+  store: ?mixed,
+};
+
+const AppComponent = ({ Router, location, context, store }: Props) => {
   return (
     <Provider store={store}>
       <Header />
@@ -37,19 +45,4 @@ const AppComponent = ({ Router, location, context, store }) => {
   );
 };
 
-AppComponent.propTypes = {
-  Router: PropTypes.func.isRequired,
-  location: PropTypes.string,
-  context: PropTypes.shape({
-    url: PropTypes.string,
-  }),
-  store: PropTypes.shape({
-    dispatch: PropTypes.func.isRequired,
-    getState: PropTypes.func.isRequired,
-  }).isRequired,
-};
-AppComponent.defaultProps = {
-  location: null,
-  context: null,
-};
 export default AppComponent;

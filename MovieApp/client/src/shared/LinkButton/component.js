@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import styles from './style.scss';
 
-const LinkButton = props => {
+//@flow
+
+type Props = {
+  to: ?string,
+  cssClass: string,
+};
+
+const LinkButton = (props: Props) => {
   const { to, cssClass, children } = props;
   return (
     <Link to={to} className={cssClass}>
@@ -14,8 +20,3 @@ const LinkButton = props => {
 };
 
 export default LinkButton;
-
-LinkButton.propTypes = {
-  to: PropTypes.string.isRequired,
-  cssClass: PropTypes.string,
-};

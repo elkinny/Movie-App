@@ -1,9 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './style.scss';
 
-const Toggle = props => {
+//@flow
+
+type Props = {
+  labels: ?Array<string>,
+  onChange: ?(value: mixed) => mixed,
+  text: ?string,
+  name: ?string,
+  defaultValue: ?boolean,
+  values: ?Array<string>,
+};
+
+const Toggle = (props: Props) => {
   const { labels, text, name, onChange, values, defaultValue } = props;
   return (
     <div className={styles['toggle']}>
@@ -36,15 +46,6 @@ const Toggle = props => {
       </div>
     </div>
   );
-};
-
-Toggle.propTypes = {
-  labels: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  defaultValue: PropTypes.bool.isRequired,
-  values: PropTypes.array.isRequired,
 };
 
 export default Toggle;

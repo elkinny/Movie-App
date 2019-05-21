@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './style.scss';
 
-const ErrorBoundaryComponent = props => {
+//@flow
+
+type Props = {
+  errorName: string,
+  componentStack: string,
+};
+
+const ErrorBoundaryComponent = (props: Props) => {
   const { errorName, componentStack } = props;
   const formattedComponentStack = (componentStack + '').trim().split('\n');
 
@@ -25,11 +31,6 @@ const ErrorBoundaryComponent = props => {
       </article>
     </div>
   );
-};
-
-ErrorBoundaryComponent.propTypes = {
-  errorName: PropTypes.string,
-  componentStack: PropTypes.string,
 };
 
 export default ErrorBoundaryComponent;
