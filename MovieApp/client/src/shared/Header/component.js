@@ -1,12 +1,12 @@
 import React from 'react';
 
-import styles from './style.scss';
+import { StyledHeader, StyledTitle } from './styled.component.js';
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <span className={styles.title}>Movie app</span>
-    </header>
+    <StyledHeader>
+      <StyledTitle>Movie app</StyledTitle>
+    </StyledHeader>
   );
 };
 

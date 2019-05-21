@@ -1,4 +1,6 @@
-.link {
+import styled from 'styled-components';
+
+export const StyledLinkButton = styled.span`{
   margin: 10px auto;
   color: #7488ab;
   text-decoration: none;
@@ -16,4 +18,4 @@
     box-shadow: 0 .5em .5em -.4em #fff;
     transform: translateY(-.25em);
   }
-}
+`;

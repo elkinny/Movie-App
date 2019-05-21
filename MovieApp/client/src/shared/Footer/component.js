@@ -1,12 +1,12 @@
 import React from 'react';
 
-import styles from './style.scss';
+import { StyledFooter, StyledText } from './styled.component.js';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <span className={styles['footer__text']}>Copyright elkin (c) 2019</span>
-    </footer>
+    <StyledFooter>
+      <StyledText>Copyright elkin (c) 2019</StyledText>
+    </StyledFooter>
   );
 };
 

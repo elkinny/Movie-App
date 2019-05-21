@@ -1,4 +1,6 @@
-.subheader {
+import styled from 'styled-components';
+
+export const StyledSubheader = styled.div`{
   padding: 20px 10px;
   display: flex;
   align-items: center;
@@ -11,4 +13,4 @@
   @media screen and (max-width: 800px) {
     flex-direction: column;
   }
-}
+`;
