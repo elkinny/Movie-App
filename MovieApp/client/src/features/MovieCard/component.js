@@ -1,11 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { LinkButton } from 'shared';
 
 import styles from './style.scss';
 
-const MovieCardComponent = props => {
+//@flow
+
+type Props = {
+  title: ?string,
+  overview: ?string,
+  poster_path: ?string,
+  release_date: ?string,
+  genres: ?Array<string>,
+  vote_average: ?number,
+  runtime: number,
+};
+
+const MovieCardComponent = (props: Props) => {
   const { title, overview, release_date, genres, poster_path, vote_average, runtime } = props;
   return (
     <React.Fragment>
@@ -33,16 +44,6 @@ const MovieCardComponent = props => {
       </div>
     </React.Fragment>
   );
-};
-
-MovieCardComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  overview: PropTypes.string.isRequired,
-  poster_path: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
-  genres: PropTypes.array.isRequired,
-  vote_average: PropTypes.number.isRequired,
-  runtime: PropTypes.number,
 };
 
 export default MovieCardComponent;

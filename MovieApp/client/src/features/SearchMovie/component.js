@@ -1,12 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import MoviesList from 'features/MoviesList';
 
 import SearchForm from 'features/SearchForm';
 import { SubHeader, Toggle } from 'shared';
 
-const SearchMovieComponent = props => {
+//@flow
+
+type Props = {
+  handleToggle: (value: mixed) => mixed,
+  sortBy: string,
+  moviesCount: number,
+};
+
+const SearchMovieComponent = (props: Props) => {
   const { sortBy, moviesCount, handleToggle } = props;
 
   return (
@@ -26,12 +33,6 @@ const SearchMovieComponent = props => {
       <MoviesList />
     </React.Fragment>
   );
-};
-
-SearchMovieComponent.propTypes = {
-  handleToggle: PropTypes.func.isRequired,
-  sortBy: PropTypes.string.isRequired,
-  moviesCount: PropTypes.number.isRequired,
 };
 
 export default SearchMovieComponent;

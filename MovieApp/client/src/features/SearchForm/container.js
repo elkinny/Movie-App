@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import SearchFormComponent from './component';
 
 import { formatedQuery as _formatedQuery } from './utils';
+
+//@flow
+
+type Props = {
+  history: mixed,
+};
+
 class SearchFormContainer extends Component {
+  props: Props;
+
   constructor(props) {
     super();
     const formatedQuery = _formatedQuery(props.match.params.query) || { value: '', type: 'title' };
@@ -13,10 +21,6 @@ class SearchFormContainer extends Component {
       searchType: formatedQuery.type,
     };
   }
-
-  static propTypes = {
-    history: PropTypes.object,
-  };
 
   handleSubmit = e => {
     e.preventDefault();

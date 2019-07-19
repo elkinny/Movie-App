@@ -1,11 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Toggle } from 'shared';
 
 import styles from './style.scss';
 
-const SearchFormComponent = props => {
+//@flow
+
+type Props = {
+  handleSubmit: (value: mixed) => mixed,
+  handleInput: (value: mixed) => mixed,
+  searchType: ?string,
+  searchValue: ?string,
+};
+
+const SearchFormComponent = (props: Props) => {
   return (
     <form className={styles.form} onSubmit={props.handleSubmit}>
       <input
@@ -26,13 +34,6 @@ const SearchFormComponent = props => {
       <input type="submit" value="Search" />
     </form>
   );
-};
-
-SearchFormComponent.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-  handleInput: PropTypes.func.isRequired,
-  searchType: PropTypes.string.isRequired,
-  searchValue: PropTypes.string.isRequired,
 };
 
 export default SearchFormComponent;

@@ -1,11 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import MovieItem from 'features/MoviesListItem';
 
 import styles from './style.scss';
 
-const MoviesListComponent = props => {
+//@flow
+
+type Props = {
+  movies: ?Array<string>,
+};
+
+const MoviesListComponent = (props: Props) => {
   const createList = () => {
     const { movies } = props;
     if (movies.length)
@@ -17,10 +22,6 @@ const MoviesListComponent = props => {
   };
 
   return <div className={styles['movie-list']}>{createList()}</div>;
-};
-
-MoviesListComponent.propTypes = {
-  movies: PropTypes.array.isRequired,
 };
 
 export default MoviesListComponent;

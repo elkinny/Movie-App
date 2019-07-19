@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './style.scss';
+import { StyledSubheader } from './styled.component';
 
 const SubHeader = props => {
-  return <div className={styles.subheader}>{props.children}</div>;
+  return <StyledSubheader>{props.children}</StyledSubheader>;
 };
 
 export default SubHeader;

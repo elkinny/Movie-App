@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import MovieCardComponent from './component';
 
+//@flow
+
+type Props = {
+  getMovie: (value: string) => mixed,
+  movie: ?mixed,
+};
+
 class MovieCardContainer extends Component {
+  props: Props;
+
   state = {
     loading: true,
-  };
-
-  static propTypes = {
-    getMovie: PropTypes.func.isRequired,
-    movie: PropTypes.object.isRequired,
   };
 
   _drawNewMovie = () => {
